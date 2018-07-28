@@ -29,7 +29,7 @@ void set_read_basys3_leds(spi_transaction_t* transaction, spi_device_handle_t* h
     uint16_t ledstate=rand()%65536;
 
     //Default initial state is one in order to differentiate it from actual value 0 read if ok during testing
-    uint32_t readstate=1;
+    uint32_t readstate=0;
 
     //Stuff 16 bit data to transmit into tx_data array member in transaction struct.
     transaction->tx_data[0]=(uint8_t)(ledstate & 0x00ff);
@@ -42,7 +42,7 @@ void set_read_basys3_leds(spi_transaction_t* transaction, spi_device_handle_t* h
 	//Convert from four element byte array to 32 bit integer variable with endianness preserved
 	for(int i=0; i<=3; i++)
 	{
-            readstate += (transaction->rx_data[i] << (i*8)); //Pointer points to transaction rx array
+            readstate += (((uint32_t)(transaction->rx_data[i])) << (i*8)); //Pointer points to transaction rx array
 	}
         ESP_LOGI(TAG, "Note: SPI read success");
 	ESP_LOGI(TAG, "Value read is %d", readstate);
@@ -59,7 +59,8 @@ void app_main()
     esp_err_t ret;
     spi_device_handle_t spi;
     //Configure the spi bus
-    spi_bus_config_t buscfg={
+    spi_bus_config_t buscfg=
+    {
         .miso_io_num=PIN_NUM_MISO,
         .mosi_io_num=PIN_NUM_MOSI,
         .sclk_io_num=PIN_NUM_CLK,
@@ -67,7 +68,8 @@ void app_main()
         .quadhd_io_num=-1
     };
 
-    spi_device_interface_config_t devcfg={
+    spi_device_interface_config_t devcfg=
+    {
         .clock_speed_hz=SCLK_SPEED,             //Clock out at SCLK_SPEED Hz
         .address_bits=0,			//No address bits in transaction
 	.command_bits=0,			//No command bits in transaction
@@ -78,20 +80,22 @@ void app_main()
     //Initialize the SPI bus
     ret=spi_bus_initialize(HSPI_HOST, &buscfg, 1);
     assert(ret==ESP_OK);
-    //Attach the LCD to the SPI bus
+    //Attach the FPGA to the SPI bus
     ret=spi_bus_add_device(HSPI_HOST, &devcfg, &spi);
     assert(ret==ESP_OK);
 
     spi_transaction_t tx;
+    //Zero out the memory statically allocated for the transaction struct on the stack.
     memset(&tx, 0, sizeof(tx));
     //Store transmit and receive data in the transaction struct itself as both are 4 bytes and less.
     tx.flags=SPI_TRANS_USE_TXDATA|SPI_TRANS_USE_RXDATA;
+    //Total number of LEDs to read on the basys3 board is 16
     tx.length=16;
 
     while(1)
     {
         set_read_basys3_leds(&tx, &spi);
-	vTaskDelay(1000 / portTICK_PERIOD_MS);
+	vTaskDelay(100 / portTICK_PERIOD_MS);
     }
 
 }

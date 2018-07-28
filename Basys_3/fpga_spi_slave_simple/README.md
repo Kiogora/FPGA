@@ -15,6 +15,6 @@ The spi transactions shall be full duplex with a transaction size of 2 bytes to 
 
 If the read state matches the state written previously, it reports back an okay status to the user via UART to the computer. If not, it reports a failure status.
 
-The status of the communication is inspected via a logic analyzer for the first few transactions and images stored in the logic_analyzer_cap folder.
+The status of the communication is inspected via a logic analyzer for the first few transactions. Images and actual capture files are stored in the logic_analyzer_cap folder.
 
 
