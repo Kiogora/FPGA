@@ -37,10 +37,8 @@ entity spi_slave_simple is
     generic(datawidth: integer:= 16);
     port ( sck: in std_logic;
            ss: in std_logic;
-           --mosi: in std_logic;
            miso: out std_logic;
            data: in std_logic_vector(datawidth-1 downto 0));
-           --ready: out std_logic);
 end spi_slave_simple;
 
 architecture behavioral of spi_slave_simple is
@@ -48,15 +46,13 @@ architecture behavioral of spi_slave_simple is
     type state_type is (idle, load, shift);
     signal present_state, next_state : state_type;
     
-    --signal input_shift_register : std_logic_vector(datawidth-1 downto 0);
     signal output_shift_register : std_logic_vector(datawidth-1 downto 0);
 
-    --signal index : integer;
     
 begin
 
---Realises to a FF
---Has factors affecting state transition. Usually asynchronous.
+--Realises to a FF(s)
+--Has factors affecting state transition in sensitivity list. Usually asynchronous.
 state_sync: process(sck, ss)
 begin
     --Force next state as idle state when ss is high, regardless of sck
@@ -73,8 +69,6 @@ begin
 case present_state is
 when idle =>
     output_shift_register<=(others=>'0');
-    --input_shift_register<=(others=>'0');
-    --index <= datawidth-1;
     next_state <= load;
 when load =>
     output_shift_register<=data;
