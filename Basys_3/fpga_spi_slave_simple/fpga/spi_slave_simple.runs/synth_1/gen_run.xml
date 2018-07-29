@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1532821242">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1532896258">
   <File Type="VDS-TIMING-PB" Name="spi_slave_simple_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="spi_slave_simple_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="spi_slave_simple.dcp"/>
@@ -13,6 +13,13 @@
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/spi_slave_simple.vhd">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/led_top.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -36,9 +43,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>
