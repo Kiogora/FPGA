@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1'
+HD_PWD='/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -36,4 +36,8 @@ EAStep()
      fi
 }
 
-EAStep vivado -log led_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source led_top.tcl
+# pre-commands:
+/bin/touch .init_design.begin.rst
+EAStep vivado -log led_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source led_top.tcl -notrace
+
+

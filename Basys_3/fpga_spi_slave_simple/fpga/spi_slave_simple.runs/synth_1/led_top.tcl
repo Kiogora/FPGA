@@ -29,7 +29,10 @@ set_property board_part_repo_paths /home/alois/.vivado_boards [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
 set_property ip_output_repo /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library xil_defaultlib /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd
+read_vhdl -library xil_defaultlib {
+  /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd
+  /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/led_top.vhd
+}
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -42,10 +45,10 @@ read_xdc /home/alois/Xilinx_projects/constraints/basys3.xdc
 set_property used_in_implementation false [get_files /home/alois/Xilinx_projects/constraints/basys3.xdc]
 
 
-synth_design -top spi_slave_simple -part xc7a35tcpg236-1
+synth_design -top led_top -part xc7a35tcpg236-1
 
 
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef spi_slave_simple.dcp
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file spi_slave_simple_utilization_synth.rpt -pb spi_slave_simple_utilization_synth.pb"
+write_checkpoint -force -noxdef led_top.dcp
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file led_top_utilization_synth.rpt -pb led_top_utilization_synth.pb"

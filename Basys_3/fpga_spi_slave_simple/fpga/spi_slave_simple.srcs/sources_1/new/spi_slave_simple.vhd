@@ -37,8 +37,9 @@ entity spi_slave_simple is
     generic(datawidth: integer:= 16);
     port ( sck: in std_logic;
            ss: in std_logic;
-           miso: out std_logic;
-           data: in std_logic_vector(datawidth-1 downto 0));
+           mosi: in std_logic;
+           data: out std_logic_vector(datawidth-1 downto 0);
+           ready: out std_logic);
 end spi_slave_simple;
 
 architecture behavioral of spi_slave_simple is
@@ -46,20 +47,26 @@ architecture behavioral of spi_slave_simple is
     type state_type is (idle, load, shift);
     signal present_state, next_state : state_type;
     
-    signal output_shift_register : std_logic_vector(datawidth-1 downto 0);
+    signal input_shift_register : std_logic_vector(datawidth-1 downto 0);
+    signal index : integer;
 
     
 begin
 
 --Realises to a FF(s)
 --Has factors affecting state transition in sensitivity list. Usually asynchronous.
-state_sync: process(sck, ss)
+state_sync: process(sck)
 begin
     --Force next state as idle state when ss is high, regardless of sck
-    if(ss = '1') then 
-        present_state <= idle;
-    elsif(rising_edge(sck)) then 
-        present_state <= next_state;
+    if(rising_edge(sck)) then
+        if(ss = '0') then
+            present_state <= next_state;
+            ready<='0';
+        else
+            present_state <= idle;
+            data<=input_shift_register;
+            ready <= '1';
+        end if;
     end if;
 end process state_sync;
 
@@ -68,14 +75,17 @@ combinatorial : process(present_state)
 begin
 case present_state is
 when idle =>
-    output_shift_register<=(others=>'0');
-    next_state <= load;
-when load =>
-    output_shift_register<=data;
+    input_shift_register<=(others=>'0');
+    index<=datawidth-1;
     next_state <= shift;
 when shift =>
-    miso<=output_shift_register(datawidth-1);
-    output_shift_register(datawidth-1 downto 0)<=output_shift_register(datawidth-2 downto 0) & '0';
+    if (index /= 0) then
+        input_shift_register(index) <= mosi;
+        index <= index-1;
+    else
+        --Left shift and append to the right
+        input_shift_register(datawidth-1 downto 0)<=input_shift_register(datawidth-2 downto 0) & mosi;
+    end if;
     next_state <= shift;
 --Catch all to avoid latch inferencing by synthesis tools
 when others =>
