@@ -35,37 +35,56 @@ use IEEE.STD_LOGIC_1164.ALL;
 --May not work reliably for other SPI modes
 entity spi_slave_simple is
     generic(datawidth: integer:= 16);
-    port ( sck: in std_logic;
-           ss: in std_logic;
-           mosi: in std_logic;
-           data: out std_logic_vector(datawidth-1 downto 0);
-           ready: out std_logic);
+    port ( rst_i: in std_logic; --Async reset
+           clk_i: in std_logic;
+           sck_i: in std_logic;
+           ss_i: in std_logic;
+           mosi_i: in std_logic;
+           data_o: out std_logic_vector(datawidth-1 downto 0);
+           ready_o: out std_logic);
 end spi_slave_simple;
 
 architecture behavioral of spi_slave_simple is
-    -- Internal entity signals
-    type state_type is (idle, load, shift);
-    signal present_state, next_state : state_type;
-    
-    signal input_shift_register : std_logic_vector(datawidth-1 downto 0);
-    signal index : integer;
+
+type state_type is (idle, load, shift);
+signal present_state, next_state : state_type;
+
+signal input_shift_register : std_logic_vector(datawidth-1 downto 0);
+signal index : integer;
+
+signal synced_mosi, synced_sck : std_logic;
+
+component synchronizer is
+    generic ( stages : natural := 3 );
+    Port ( clk_i : in std_logic;
+             i : in std_logic;
+             o : out std_logic;
+             rise_o: out std_logic;
+             fall_o: out std_logic);
+end component;
 
     
 begin
 
---Realises to a FF(s)
+sck_sync: synchronizer port map(clk_i => clk_i, i => sck_i, o => open);
+mosi_sync: synchronizer port map(clk_i => clk_i, i => mosi_i, o => synced_mosi);
+
+--Realises to a 3 FFs with asynchronous reset
 --Has factors affecting state transition in sensitivity list. Usually asynchronous.
-state_sync: process(sck)
+state_sync: process(rst_i,clk_i)
 begin
-    --Force next state as idle state when ss is high, regardless of sck
-    if(rising_edge(sck)) then
-        if(ss = '0') then
+    if(rst_i = '0') then
+        present_state <= idle;
+        data_o<=(others => '0');
+        ready_o <= '0';    
+    elsif(rising_edge(clk_i)) then
+        if(ss_i = '0') then
             present_state <= next_state;
-            ready<='0';
+            ready_o<='0';
         else
             present_state <= idle;
-            data<=input_shift_register;
-            ready <= '1';
+            data_o<=input_shift_register;
+            ready_o <= '1';
         end if;
     end if;
 end process state_sync;
@@ -80,11 +99,11 @@ when idle =>
     next_state <= shift;
 when shift =>
     if (index /= 0) then
-        input_shift_register(index) <= mosi;
+        input_shift_register(index) <= synced_mosi;
         index <= index-1;
     else
         --Left shift and append to the right
-        input_shift_register(datawidth-1 downto 0)<=input_shift_register(datawidth-2 downto 0) & mosi;
+        input_shift_register(datawidth-1 downto 0)<=input_shift_register(datawidth-2 downto 0) & synced_mosi;
     end if;
     next_state <= shift;
 --Catch all to avoid latch inferencing by synthesis tools

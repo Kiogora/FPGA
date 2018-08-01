@@ -43,7 +43,7 @@ signal ready : std_logic;
 
 --Declarative architecture section, declare used entities in structural way
 component spi_slave_simple is
-    generic(datawidth: integer);
+    generic(datawidth: integer:= 16);
     port ( sck: in std_logic;
            ss: in std_logic;
            mosi: in std_logic;
@@ -53,18 +53,15 @@ end component;
 
 begin
 
-data_ready: process(ready)
-begin
-if(rising_edge(ready)) then
-LED <= pipo_buffer;
-end if;
-end process data_ready;
+--data_ready: process(ready)
+--begin
+--if(rising_edge(ready)) then
+--pipo_buffer <= ;
+--end if;
+--end process data_ready;
 
-spi_slave_input: spi_slave_simple generic map (datawidth => 16)
-                                  port map(ss => JA(0),
-                                           sck => JA(1),
-                                           mosi => JA(2),
-                                           data => pipo_buffer,
-                                           ready => ready);
+spi_slave_input: spi_slave_simple port map(ss => JA(0),sck => JA(1),mosi => JA(2),data => pipo_buffer,ready => ready);
+
+LED <= pipo_buffer;
 
 end behavioral;
