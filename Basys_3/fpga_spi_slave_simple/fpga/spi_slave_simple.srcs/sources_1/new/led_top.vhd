@@ -33,7 +33,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity led_top is
   Port (JA : in std_logic_vector(2 downto 0); -- SPI lines ss, sck, mosi connected to Pmod connectors
-        LED: out std_logic_vector(15 downto 0)); --All 16 LEDs on the Basys 3 board
+        LED: out std_logic_vector(15 downto 0) := (others => '0'); --All 16 LEDs on the Basys 3 board. Initialise output as low.
+        CLK100MHZ: in std_logic);
 end led_top;
 
 architecture Behavioral of led_top is
@@ -44,24 +45,27 @@ signal ready : std_logic;
 --Declarative architecture section, declare used entities in structural way
 component spi_slave_simple is
     generic(datawidth: integer:= 16);
-    port ( sck: in std_logic;
-           ss: in std_logic;
-           mosi: in std_logic;
-           data: out std_logic_vector(datawidth-1 downto 0);
-           ready: out std_logic);
+    port ( rst_i: in std_logic; --Async reset
+           clk_i: in std_logic;
+           sck_i: in std_logic;
+           ss_i: in std_logic;
+           mosi_i: in std_logic;
+           data_o: out std_logic_vector(datawidth-1 downto 0);
+           ready_o: out std_logic);
 end component;
 
 begin
 
---data_ready: process(ready)
---begin
---if(rising_edge(ready)) then
---pipo_buffer <= ;
---end if;
---end process data_ready;
-
-spi_slave_input: spi_slave_simple port map(ss => JA(0),sck => JA(1),mosi => JA(2),data => pipo_buffer,ready => ready);
-
+data_ready: process(ready)
+begin
+if(rising_edge(ready)) then
 LED <= pipo_buffer;
+end if;
+end process data_ready;
+
+spi_slave_input: spi_slave_simple port map(rst_i => '1', clk_i => CLK100MHZ, ss_i => JA(0),sck_i => JA(1), 
+                                           mosi_i => JA(2),data_o => pipo_buffer,ready_o => ready);
+
+
 
 end behavioral;

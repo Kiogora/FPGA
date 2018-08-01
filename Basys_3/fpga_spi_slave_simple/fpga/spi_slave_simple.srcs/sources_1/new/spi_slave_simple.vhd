@@ -46,13 +46,13 @@ end spi_slave_simple;
 
 architecture behavioral of spi_slave_simple is
 
-type state_type is (idle, load, shift);
-signal present_state, next_state : state_type;
+type state_type is (idle, shift);
+signal present_state, next_state : state_type ;
 
 signal input_shift_register : std_logic_vector(datawidth-1 downto 0);
-signal index : integer;
+signal index : integer range datawidth-1 downto 0;
 
-signal synced_mosi, synced_sck : std_logic;
+signal synced_mosi, synced_sck, synced_ss, sck_rise, sck_fall : std_logic;
 
 component synchronizer is
     generic ( stages : natural := 3 );
@@ -66,26 +66,29 @@ end component;
     
 begin
 
-sck_sync: synchronizer port map(clk_i => clk_i, i => sck_i, o => open);
-mosi_sync: synchronizer port map(clk_i => clk_i, i => mosi_i, o => synced_mosi);
+ss_sync: synchronizer port map(clk_i => clk_i, i => ss_i, o => synced_ss, rise_o => open, fall_o => open);
+sck_sync: synchronizer port map(clk_i => clk_i, i => sck_i, o => open, rise_o => sck_rise, fall_o => sck_fall);
+mosi_sync: synchronizer port map(clk_i => clk_i, i => mosi_i, o => synced_mosi, rise_o => open, fall_o => open);
 
 --Realises to a 3 FFs with asynchronous reset
---Has factors affecting state transition in sensitivity list. Usually asynchronous.
-state_sync: process(rst_i,clk_i)
+--Has factors affecting state transition in sensitivity list.
+state_sync: process(rst_i, clk_i)
 begin
     if(rst_i = '0') then
         present_state <= idle;
         data_o<=(others => '0');
-        ready_o <= '0';    
+        ready_o <= '0';
     elsif(rising_edge(clk_i)) then
-        if(ss_i = '0') then
-            present_state <= next_state;
-            ready_o<='0';
-        else
-            present_state <= idle;
-            data_o<=input_shift_register;
-            ready_o <= '1';
-        end if;
+            if(synced_ss = '0') then
+                if(sck_rise = '1') then
+                    present_state <= next_state;
+                    ready_o<='0';
+                end if;
+            else
+                    present_state <= idle;
+                    data_o<=input_shift_register;
+                    ready_o <= '1';
+            end if;
     end if;
 end process state_sync;
 
@@ -94,13 +97,13 @@ combinatorial : process(present_state)
 begin
 case present_state is
 when idle =>
-    input_shift_register<=(others=>'0');
-    index<=datawidth-1;
+    input_shift_register <= (others=>'0');
+    index <= datawidth-1;
     next_state <= shift;
 when shift =>
     if (index /= 0) then
         input_shift_register(index) <= synced_mosi;
-        index <= index-1;
+        index <= index-1;   
     else
         --Left shift and append to the right
         input_shift_register(datawidth-1 downto 0)<=input_shift_register(datawidth-2 downto 0) & synced_mosi;

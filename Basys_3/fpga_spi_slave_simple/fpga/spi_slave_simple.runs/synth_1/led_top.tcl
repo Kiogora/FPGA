@@ -31,6 +31,7 @@ set_property ip_output_repo /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
   /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd
+  /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/synchronizer.vhd
   /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/led_top.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
