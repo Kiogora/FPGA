@@ -50,7 +50,6 @@ type state_type is (idle, shift);
 signal present_state, next_state : state_type ;
 
 signal input_shift_register : std_logic_vector(datawidth-1 downto 0);
-signal index : integer range datawidth-1 downto 0;
 
 signal synced_mosi, synced_sck, synced_ss, sck_rise, sck_fall : std_logic;
 
@@ -70,9 +69,9 @@ ss_sync: synchronizer port map(clk_i => clk_i, i => ss_i, o => synced_ss, rise_o
 sck_sync: synchronizer port map(clk_i => clk_i, i => sck_i, o => open, rise_o => sck_rise, fall_o => sck_fall);
 mosi_sync: synchronizer port map(clk_i => clk_i, i => mosi_i, o => synced_mosi, rise_o => open, fall_o => open);
 
---Realises to a 3 FFs with asynchronous reset
+--Realises FFs with asynchronous reset
 --Has factors affecting state transition in sensitivity list.
-state_sync: process(rst_i, clk_i)
+state_sync: process(rst_i, clk_i, next_state, synced_ss, sck_rise)
 begin
     if(rst_i = '0') then
         present_state <= idle;
@@ -85,34 +84,27 @@ begin
                     ready_o<='0';
                 end if;
             else
-                    present_state <= idle;
-                    data_o<=input_shift_register;
-                    ready_o <= '1';
+                present_state <= idle;
+                data_o<=input_shift_register;
+                ready_o <= '1';
             end if;
     end if;
 end process state_sync;
 
 --Outputs are function of past inputs and outputs, no present input on any data lines
-combinatorial : process(present_state)
+combinatorial : process(present_state, synced_mosi, input_shift_register)
 begin
 case present_state is
 when idle =>
     input_shift_register <= (others=>'0');
-    index <= datawidth-1;
     next_state <= shift;
 when shift =>
-    if (index /= 0) then
-        input_shift_register(index) <= synced_mosi;
-        index <= index-1;   
-    else
-        --Left shift and append to the right
-        input_shift_register(datawidth-1 downto 0)<=input_shift_register(datawidth-2 downto 0) & synced_mosi;
-    end if;
+    input_shift_register<=input_shift_register(datawidth-2 downto 0) & synced_mosi;
     next_state <= shift;
 --Catch all to avoid latch inferencing by synthesis tools
 when others =>
+input_shift_register <= (others=>'0');
 next_state <= idle;
-
 end case;
 end process combinatorial;
 

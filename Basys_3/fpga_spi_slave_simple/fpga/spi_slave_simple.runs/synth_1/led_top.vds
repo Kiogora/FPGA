@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Thu Aug  2 00:56:39 2018
-# Process ID: 16411
+# Start of session at: Thu Aug  2 11:05:56 2018
+# Process ID: 14109
 # Current directory: /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1
 # Command line: vivado -log led_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source led_top.tcl
 # Log file: /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/led_top.vds
@@ -16,9 +16,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 16419 
+INFO: Helper process launched with PID 14116 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1264.250 ; gain = 82.992 ; free physical = 1039 ; free virtual = 5284
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1264.250 ; gain = 82.992 ; free physical = 2596 ; free virtual = 7115
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'led_top' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/led_top.vhd:40]
 	Parameter datawidth bound to: 16 - type: integer 
@@ -26,23 +26,20 @@ INFO: [Synth 8-3491] module 'spi_slave_simple' declared at '/home/alois/Music/es
 INFO: [Synth 8-638] synthesizing module 'spi_slave_simple' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:47]
 	Parameter datawidth bound to: 16 - type: integer 
 	Parameter stages bound to: 3 - type: integer 
-INFO: [Synth 8-3491] module 'synchronizer' declared at '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/synchronizer.vhd:34' bound to instance 'ss_sync' of component 'synchronizer' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:69]
+INFO: [Synth 8-3491] module 'synchronizer' declared at '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/synchronizer.vhd:34' bound to instance 'ss_sync' of component 'synchronizer' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:68]
 INFO: [Synth 8-638] synthesizing module 'synchronizer' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/synchronizer.vhd:43]
 	Parameter stages bound to: 3 - type: integer 
 INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/synchronizer.vhd:44]
 INFO: [Synth 8-256] done synthesizing module 'synchronizer' (1#1) [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/synchronizer.vhd:43]
 	Parameter stages bound to: 3 - type: integer 
-INFO: [Synth 8-3491] module 'synchronizer' declared at '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/synchronizer.vhd:34' bound to instance 'sck_sync' of component 'synchronizer' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:70]
+INFO: [Synth 8-3491] module 'synchronizer' declared at '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/synchronizer.vhd:34' bound to instance 'sck_sync' of component 'synchronizer' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:69]
 	Parameter stages bound to: 3 - type: integer 
-INFO: [Synth 8-3491] module 'synchronizer' declared at '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/synchronizer.vhd:34' bound to instance 'mosi_sync' of component 'synchronizer' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:71]
-INFO: [Synth 8-226] default block is never used [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:98]
-WARNING: [Synth 8-614] signal 'index' is read in the process but is not in the sensitivity list [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:96]
-WARNING: [Synth 8-614] signal 'synced_mosi' is read in the process but is not in the sensitivity list [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:96]
-WARNING: [Synth 8-614] signal 'input_shift_register' is read in the process but is not in the sensitivity list [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:96]
+INFO: [Synth 8-3491] module 'synchronizer' declared at '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/synchronizer.vhd:34' bound to instance 'mosi_sync' of component 'synchronizer' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:70]
+INFO: [Synth 8-226] default block is never used [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:97]
 INFO: [Synth 8-256] done synthesizing module 'spi_slave_simple' (2#1) [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:47]
 INFO: [Synth 8-256] done synthesizing module 'led_top' (3#1) [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/led_top.vhd:40]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1305.781 ; gain = 124.523 ; free physical = 1053 ; free virtual = 5298
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1305.781 ; gain = 124.523 ; free physical = 2610 ; free virtual = 7129
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -52,7 +49,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1305.781 ; gain = 124.523 ; free physical = 1052 ; free virtual = 5298
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1305.781 ; gain = 124.523 ; free physical = 2609 ; free virtual = 7128
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -68,27 +65,25 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1622.578 ; gain = 0.000 ; free physical = 810 ; free virtual = 5056
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1616.984 ; gain = 0.000 ; free physical = 2363 ; free virtual = 6882
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:36 . Memory (MB): peak = 1622.578 ; gain = 441.320 ; free physical = 885 ; free virtual = 5131
+Finished Constraint Validation : Time (s): cpu = 00:00:29 ; elapsed = 00:00:43 . Memory (MB): peak = 1616.984 ; gain = 435.727 ; free physical = 2436 ; free virtual = 6955
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:36 . Memory (MB): peak = 1622.578 ; gain = 441.320 ; free physical = 885 ; free virtual = 5131
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:29 ; elapsed = 00:00:43 . Memory (MB): peak = 1616.984 ; gain = 435.727 ; free physical = 2436 ; free virtual = 6955
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:36 . Memory (MB): peak = 1622.578 ; gain = 441.320 ; free physical = 886 ; free virtual = 5132
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:43 . Memory (MB): peak = 1616.984 ; gain = 435.727 ; free physical = 2438 ; free virtual = 6957
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'input_shift_register_reg' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:89]
-WARNING: [Synth 8-327] inferring latch for variable 'index_reg' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:101]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:37 . Memory (MB): peak = 1622.578 ; gain = 441.320 ; free physical = 877 ; free virtual = 5123
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:43 . Memory (MB): peak = 1616.984 ; gain = 435.727 ; free physical = 2428 ; free virtual = 6947
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -100,15 +95,13 @@ Report RTL Partitions:
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      4 Bit       Adders := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
 	                3 Bit    Registers := 3     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -126,14 +119,12 @@ Detailed RTL Component Info :
 	                3 Bit    Registers := 1     
 Module spi_slave_simple 
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      4 Bit       Adders := 1     
 +---Registers : 
 	               16 Bit    Registers := 1     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -150,7 +141,7 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1622.578 ; gain = 441.320 ; free physical = 868 ; free virtual = 5114
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:44 . Memory (MB): peak = 1616.984 ; gain = 435.727 ; free physical = 2419 ; free virtual = 6938
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -162,13 +153,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:46 . Memory (MB): peak = 1622.578 ; gain = 441.320 ; free physical = 745 ; free virtual = 4991
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:54 . Memory (MB): peak = 1616.984 ; gain = 435.727 ; free physical = 2296 ; free virtual = 6815
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:46 . Memory (MB): peak = 1622.578 ; gain = 441.320 ; free physical = 744 ; free virtual = 4990
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:54 . Memory (MB): peak = 1616.984 ; gain = 435.727 ; free physical = 2295 ; free virtual = 6814
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -179,8 +170,34 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'spi_slave_input/data_o_reg[1]' (FDRE) to 'spi_slave_input/data_o_reg[15]'
+INFO: [Synth 8-3886] merging instance 'spi_slave_input/data_o_reg[2]' (FDRE) to 'spi_slave_input/data_o_reg[14]'
+INFO: [Synth 8-3886] merging instance 'spi_slave_input/data_o_reg[3]' (FDRE) to 'spi_slave_input/data_o_reg[15]'
+INFO: [Synth 8-3886] merging instance 'spi_slave_input/data_o_reg[4]' (FDRE) to 'spi_slave_input/data_o_reg[14]'
+INFO: [Synth 8-3886] merging instance 'spi_slave_input/data_o_reg[5]' (FDRE) to 'spi_slave_input/data_o_reg[15]'
+INFO: [Synth 8-3886] merging instance 'spi_slave_input/data_o_reg[6]' (FDRE) to 'spi_slave_input/data_o_reg[14]'
+INFO: [Synth 8-3886] merging instance 'spi_slave_input/data_o_reg[7]' (FDRE) to 'spi_slave_input/data_o_reg[15]'
+INFO: [Synth 8-3886] merging instance 'spi_slave_input/data_o_reg[8]' (FDRE) to 'spi_slave_input/data_o_reg[14]'
+INFO: [Synth 8-3886] merging instance 'spi_slave_input/data_o_reg[9]' (FDRE) to 'spi_slave_input/data_o_reg[15]'
+INFO: [Synth 8-3886] merging instance 'spi_slave_input/data_o_reg[10]' (FDRE) to 'spi_slave_input/data_o_reg[14]'
+INFO: [Synth 8-3886] merging instance 'spi_slave_input/data_o_reg[11]' (FDRE) to 'spi_slave_input/data_o_reg[15]'
+INFO: [Synth 8-3886] merging instance 'spi_slave_input/data_o_reg[12]' (FDRE) to 'spi_slave_input/data_o_reg[14]'
+INFO: [Synth 8-3886] merging instance 'spi_slave_input/data_o_reg[13]' (FDRE) to 'spi_slave_input/data_o_reg[15]'
+INFO: [Synth 8-3886] merging instance 'LED_reg[1]' (FD) to 'LED_reg[13]'
+INFO: [Synth 8-3886] merging instance 'LED_reg[2]' (FD) to 'LED_reg[12]'
+INFO: [Synth 8-3886] merging instance 'LED_reg[3]' (FD) to 'LED_reg[13]'
+INFO: [Synth 8-3886] merging instance 'LED_reg[4]' (FD) to 'LED_reg[12]'
+INFO: [Synth 8-3886] merging instance 'LED_reg[5]' (FD) to 'LED_reg[13]'
+INFO: [Synth 8-3886] merging instance 'LED_reg[6]' (FD) to 'LED_reg[12]'
+INFO: [Synth 8-3886] merging instance 'LED_reg[7]' (FD) to 'LED_reg[13]'
+INFO: [Synth 8-3886] merging instance 'LED_reg[8]' (FD) to 'LED_reg[12]'
+INFO: [Synth 8-3886] merging instance 'LED_reg[9]' (FD) to 'LED_reg[13]'
+INFO: [Synth 8-3886] merging instance 'LED_reg[10]' (FD) to 'LED_reg[12]'
+INFO: [Synth 8-3886] merging instance 'LED_reg[11]' (FD) to 'LED_reg[13]'
+INFO: [Synth 8-3886] merging instance 'LED_reg[12]' (FD) to 'LED_reg[14]'
+INFO: [Synth 8-3886] merging instance 'LED_reg[13]' (FD) to 'LED_reg[15]'
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:46 . Memory (MB): peak = 1622.578 ; gain = 441.320 ; free physical = 744 ; free virtual = 4990
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:54 . Memory (MB): peak = 1616.984 ; gain = 435.727 ; free physical = 2295 ; free virtual = 6814
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -204,7 +221,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:46 . Memory (MB): peak = 1622.578 ; gain = 441.320 ; free physical = 744 ; free virtual = 4990
+Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:00:55 . Memory (MB): peak = 1616.984 ; gain = 435.727 ; free physical = 2293 ; free virtual = 6812
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -217,7 +234,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:46 . Memory (MB): peak = 1622.578 ; gain = 441.320 ; free physical = 744 ; free virtual = 4990
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:55 . Memory (MB): peak = 1616.984 ; gain = 435.727 ; free physical = 2293 ; free virtual = 6812
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -229,25 +246,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:46 . Memory (MB): peak = 1622.578 ; gain = 441.320 ; free physical = 744 ; free virtual = 4990
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:55 . Memory (MB): peak = 1616.984 ; gain = 435.727 ; free physical = 2293 ; free virtual = 6812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:46 . Memory (MB): peak = 1622.578 ; gain = 441.320 ; free physical = 744 ; free virtual = 4990
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:55 . Memory (MB): peak = 1616.984 ; gain = 435.727 ; free physical = 2293 ; free virtual = 6812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:46 . Memory (MB): peak = 1622.578 ; gain = 441.320 ; free physical = 744 ; free virtual = 4990
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:55 . Memory (MB): peak = 1616.984 ; gain = 435.727 ; free physical = 2293 ; free virtual = 6812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:46 . Memory (MB): peak = 1622.578 ; gain = 441.320 ; free physical = 744 ; free virtual = 4990
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:00:55 . Memory (MB): peak = 1616.984 ; gain = 435.727 ; free physical = 2293 ; free virtual = 6812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -264,49 +281,42 @@ Report Cell Usage:
 |      |Cell |Count |
 +------+-----+------+
 |1     |BUFG |     1|
-|2     |LUT1 |     2|
-|3     |LUT2 |     1|
-|4     |LUT3 |     5|
-|5     |LUT4 |    16|
-|6     |LUT6 |    15|
-|7     |FDRE |    43|
-|8     |LDC  |    16|
-|9     |LDP  |     4|
-|10    |IBUF |     4|
-|11    |OBUF |    16|
+|2     |LUT2 |     3|
+|3     |LUT4 |     2|
+|4     |FDRE |    17|
+|5     |IBUF |     4|
+|6     |OBUF |    16|
 +------+-----+------+
 
 Report Instance Areas: 
 +------+------------------+-----------------+------+
 |      |Instance          |Module           |Cells |
 +------+------------------+-----------------+------+
-|1     |top               |                 |   123|
-|2     |  spi_slave_input |spi_slave_simple |    86|
+|1     |top               |                 |    43|
+|2     |  spi_slave_input |spi_slave_simple |    19|
 |3     |    mosi_sync     |synchronizer     |     3|
 |4     |    sck_sync      |synchronizer_0   |     5|
-|5     |    ss_sync       |synchronizer_1   |     3|
+|5     |    ss_sync       |synchronizer_1   |     4|
 +------+------------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:46 . Memory (MB): peak = 1622.578 ; gain = 441.320 ; free physical = 744 ; free virtual = 4990
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:00:55 . Memory (MB): peak = 1616.984 ; gain = 435.727 ; free physical = 2293 ; free virtual = 6812
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 1622.578 ; gain = 124.523 ; free physical = 798 ; free virtual = 5044
-Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:47 . Memory (MB): peak = 1622.586 ; gain = 441.320 ; free physical = 798 ; free virtual = 5044
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1616.984 ; gain = 124.523 ; free physical = 2347 ; free virtual = 6866
+Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:00:55 . Memory (MB): peak = 1616.992 ; gain = 435.727 ; free physical = 2347 ; free virtual = 6866
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 24 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 20 instances were transformed.
-  LDC => LDCE: 16 instances
-  LDP => LDPE: 4 instances
+No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-24 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+50 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:48 . Memory (MB): peak = 1622.586 ; gain = 460.434 ; free physical = 794 ; free virtual = 5040
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:57 . Memory (MB): peak = 1616.992 ; gain = 454.840 ; free physical = 2343 ; free virtual = 6862
 INFO: [Common 17-1381] The checkpoint '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/led_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file led_top_utilization_synth.rpt -pb led_top_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.11 . Memory (MB): peak = 1646.590 ; gain = 0.000 ; free physical = 794 ; free virtual = 5040
-INFO: [Common 17-206] Exiting Vivado at Thu Aug  2 00:57:38 2018...
+report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.12 . Memory (MB): peak = 1640.996 ; gain = 0.000 ; free physical = 2343 ; free virtual = 6862
+INFO: [Common 17-206] Exiting Vivado at Thu Aug  2 11:07:05 2018...
