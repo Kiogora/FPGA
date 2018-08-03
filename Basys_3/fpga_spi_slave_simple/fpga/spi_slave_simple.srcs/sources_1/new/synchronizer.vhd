@@ -51,12 +51,13 @@ begin
 o <= flipflops(flipflops'high);
 
 --Rising/falling output is delayed by stages-1 system clock cycles. System clock should be much faster than the communication clock.
-rise_o <= flipflops(flipflops'high) and not flipflops(flipflops'high-1);
-fall_o <= not flipflops(flipflops'high) and flipflops(flipflops'high-1);
+fall_o <= flipflops(flipflops'high) and not flipflops(flipflops'high-1);
+rise_o <= not flipflops(flipflops'high) and flipflops(flipflops'high-1);
 
 clk_proc: process(clk_i)
 begin
-    if rising_edge(clk_i) then
+    --Use falling edge in order to change the outpu
+    if falling_edge(clk_i) then
         flipflops <= flipflops(flipflops'high-1 downto 0) & i;
     end if;
 end process;

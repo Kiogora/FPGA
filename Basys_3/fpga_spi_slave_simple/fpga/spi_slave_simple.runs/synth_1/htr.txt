@@ -6,4 +6,4 @@
 # Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 #
 
-vivado -log led_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source led_top.tcl
+vivado -log spi_slave_simple.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source spi_slave_simple.tcl

@@ -1,0 +1,1 @@
+The synchronizer here in the simulation is a 3 flipflop deep synchronizer and it changes an asynchronously changing input to change synchronous to the rising edge off the system clock 3 system clock periods later.
