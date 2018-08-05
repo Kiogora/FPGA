@@ -45,7 +45,7 @@ signal ss: std_logic ;
 signal mosi: std_logic;
 signal data: std_logic_vector(15 downto 0);
 signal ready: std_logic := '0';
-signal state: std_logic_vector(1 downto 0);
+signal state: std_logic;
 signal shift_register_state: std_logic_vector(15 downto 0);
 
 component spi_slave_simple is
@@ -58,13 +58,13 @@ component spi_slave_simple is
            data_o: out std_logic_vector(datawidth-1 downto 0);
            shift_register_state_o: out std_logic_vector(datawidth-1 downto 0);
            ready_o: out std_logic;
-           state_o: out std_logic_vector(1 downto 0));
+           state_o: out std_logic);
 end component;
 
 
 begin
 
-uut : spi_slave_simple port map (rst_i => rst, shift_register_state_o => shift_register_state, clk_i => clk, sck_i => sck, ss_i => ss, mosi_i => mosi, data_o => data, ready_o => ready, state_o => state);
+uut : spi_slave_simple generic map(datawidth => 16) port map (rst_i => rst, shift_register_state_o => shift_register_state, clk_i => clk, sck_i => sck, ss_i => ss, mosi_i => mosi, data_o => data, ready_o => ready, state_o => state);
 
 rst <= '1';
 
@@ -94,5 +94,14 @@ begin
     clk <= '1';
     wait for 5 ns;
 end process;
+
+--100 MHz system clock
+--async_reset: process
+--begin
+--    rst <= '0';
+--    wait for 800 ns;
+--    rst <= '1';
+--    wait for 800 ns;
+--end process;
 
 end Behavioral;

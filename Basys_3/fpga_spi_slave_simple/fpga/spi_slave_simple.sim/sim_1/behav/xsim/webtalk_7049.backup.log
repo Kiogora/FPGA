@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Webtalk v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sat Aug  4 22:49:10 2018
+# Process ID: 7049
+# Current directory: /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.sim/sim_1/behav/xsim
+# Command line: wbtcv -mode batch -source /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.sim/sim_1/behav/xsim/xsim.dir/tb_led_top_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.sim/sim_1/behav/xsim/webtalk.jou
+#-----------------------------------------------------------
+source /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.sim/sim_1/behav/xsim/xsim.dir/tb_led_top_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.sim/sim_1/behav/xsim/xsim.dir/tb_led_top_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sat Aug  4 22:49:15 2018. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2017.4/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00.59 ; elapsed = 00:00:05 . Memory (MB): peak = 289.812 ; gain = 0.000 ; free physical = 2873 ; free virtual = 7032
+INFO: [Common 17-206] Exiting Webtalk at Sat Aug  4 22:49:15 2018...

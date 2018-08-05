@@ -43,19 +43,16 @@ entity spi_slave_simple is
            data_o: out std_logic_vector(datawidth-1 downto 0);
            shift_register_state_o: out std_logic_vector(datawidth-1 downto 0);
            ready_o: out std_logic;
-           state_o: out std_logic_vector(1 downto 0)); --For checking the two internal states
+           state_o: out std_logic); --For checking the two internal states
 end spi_slave_simple;
 
 architecture behavioral of spi_slave_simple is
 
-type state_type is (reset, shift, store);
-signal present_state, next_state : state_type ;
+type state_type is (idle, shift);
+signal next_state : state_type ;
 
 type reg_state is (shifted, unshifted);
-signal register_state : reg_state :=unshifted ;
-
-type init_state is (yes, no);
-signal core_init_flag: init_state := no ;
+signal shifted_state : reg_state := unshifted ;
 
 signal input_shift_register : std_logic_vector(datawidth-1 downto 0);
 
@@ -74,63 +71,68 @@ end component;
     
 begin
 
-ss_sync: synchronizer port map(clk_i => clk_i, i => ss_i, o => synced_ss, rise_o => ss_rise, fall_o => ss_fall);
+ss_sync: synchronizer generic map(stages => 3) port map(clk_i => clk_i, i => ss_i, o => synced_ss, rise_o => ss_rise, fall_o => ss_fall);
 sck_sync: synchronizer port map(clk_i => clk_i, i => sck_i, o => open, rise_o => sck_rise, fall_o => sck_fall);
 mosi_sync: synchronizer port map(clk_i => clk_i, i => mosi_i, o => synced_mosi, rise_o => open, fall_o => open);
 
---Realises FFs with asynchronous reset
---Has factors affecting state transition in sensitivity list.
-state_sync: process(rst_i, clk_i, next_state, core_init_flag, register_state) --ss, mosi, sck are synchronous to the system clock. No need to include in sensitivity list
+
+process(rst_i, clk_i)
 begin
-    if(rst_i = '0') then
-        --Toggle current init flag state to trigger initialisation
-        present_state <= reset;
-    elsif(rising_edge(clk_i)) then
-        if(core_init_flag = no) then
-            present_state <= reset;
-        elsif(synced_ss = '0') then
-            if(sck_fall = '1') then
-                present_state <= next_state;
-            elsif(ss_rise = '1') then
-                present_state <= store;
+
+if(rst_i = '0')then
+--Initialise all storage and outputs
+data_o<=(others => '0');
+input_shift_register<=(others => '0');
+ready_o <= '0';
+next_state<= shift;
+elsif(rising_edge(clk_i)) then
+    case next_state is
+    when idle =>
+        if(synced_ss = '0') then
+            input_shift_register<=(others => '0');
+            shifted_state <= unshifted;
+            ready_o <= '0';
+            next_state<=shift;
+        else
+            input_shift_register<=(others => '0');
+            ready_o <= '0';
+            shifted_state <= unshifted;
+            next_state<=idle;
+        end if;
+    when shift =>
+        if(synced_ss = '0') then
+            if(sck_rise = '1') then
+                input_shift_register<=input_shift_register(datawidth-2 downto 0) & synced_mosi;
+                shift_register_state_o <= input_shift_register;
+                shifted_state <= shifted;
+                ready_o <= '0';
+                next_state <= shift;
             end if;
-        end if;  
-    end if;
-end process state_sync;
-
-combinatorial: process(present_state, synced_mosi)
-begin
-case present_state is
-when reset =>
-    --Initialise all storage and outputs
-    data_o<=(others => '0');
-    input_shift_register<=(others => '0');
-    ready_o <= '0';
-    next_state<= shift;
-    --Signal the sync process to change state
-    core_init_flag <= yes;
-when shift =>
-    ready_o <= '0';
-    input_shift_register<=input_shift_register(datawidth-2 downto 0) & synced_mosi;
-    shift_register_state_o <= input_shift_register;
-    next_state <= shift;
-    register_state <= shifted;
-when store =>
-    data_o <= input_shift_register;
-    ready_o<='1'; --Pulse this pin for one system clock cycle
-    next_state <= shift;
-    register_state <= unshifted;
-when others =>
-    next_state <= reset;
-    register_state <= unshifted;
-
-end case;
-end process combinatorial;
-
-with present_state select
-state_o <= "00" when reset,
-           "01" when shift,
-           "10" when store,
-          "00" when others;
-
+        elsif(synced_ss='1') then
+            if(shifted_state = shifted) then
+                data_o <= input_shift_register;
+                shift_register_state_o <= input_shift_register;
+                ready_o <= '1';
+                next_state<=idle;
+            else
+                ready_o <= '0';
+                shift_register_state_o <= input_shift_register;
+                next_state<=idle;
+            end if;
+        end if;
+        when others =>
+            data_o<=(others => '0');
+            shift_register_state_o <= input_shift_register;
+            input_shift_register<=(others => '0');
+            ready_o <= '0';
+            next_state<= shift;
+        end case;
+   end  if;
+end process;
+   
+with next_state select
+   state_o <= '0' when idle,
+              '1' when shift,
+             '0' when others;    
+             
 end behavioral;
