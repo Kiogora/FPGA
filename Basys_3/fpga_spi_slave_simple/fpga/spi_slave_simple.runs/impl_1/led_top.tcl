@@ -69,7 +69,8 @@ set rc [catch {
   create_msg_db init_design.pb
   set_param xicom.use_bs_reader 1
   set_param board.repoPaths /home/alois/.vivado_boards
-  set_param synth.incrementalSynthesisCache ./.Xil/Vivado-6201-bae/incrSyn
+  set_param tcl.collectionResultDisplayLimit 0
+  set_param synth.incrementalSynthesisCache ./.Xil/Vivado-16074-bae/incrSyn
   create_project -in_memory -part xc7a35tcpg236-1
   set_property board_part_repo_paths /home/alois/.vivado_boards [current_project]
   set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
@@ -79,7 +80,10 @@ set rc [catch {
   set_property parent.project_path /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.xpr [current_project]
   set_property ip_output_repo /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   add_files -quiet /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/led_top.dcp
+  read_ip -quiet /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/vio_core_0.xci
+  read_ip -quiet /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/ila_0.xci
   read_xdc /home/alois/Xilinx_projects/constraints/basys3.xdc
   link_design -top led_top -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
@@ -157,6 +161,7 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   catch { write_mem_info -force led_top.mmi }
   write_bitstream -force led_top.bit 
   catch {write_debug_probes -quiet -force led_top}

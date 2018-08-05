@@ -32,43 +32,106 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity led_top is
-  Port (JA : in std_logic_vector(7 downto 0); -- SPI lines ss, sck, mosi connected to Pmod connectors
-        JB : out std_logic_vector(7 downto 0);
+  Port (JA : in std_logic_vector(2 downto 0); -- SPI lines ss, sck, mosi connected to Pmod connectors
+        JB : out std_logic_vector(1 downto 0); --Debug outputs
         LED : out std_logic_vector(15 downto 0) := (others => '0'); --All 16 LEDs on the Basys 3 board. Initialise output as low.
         CLK100MHZ : in std_logic);
 end led_top;
 
 architecture Behavioral of led_top is
 
-signal pipo_buffer : std_logic_vector(15 downto 0);
 signal ready : std_logic;
+
+signal debug_mosi, debug_ss, debug_sck, debug_state, debug_ready, clk_buffer : std_logic;
+signal debug_internal_shift_reg, output_buffer : std_logic_vector(15 downto 0);
 
 --Declarative architecture section, declare used entities in structural way
 component spi_slave_simple is
-    generic(datawidth: integer:= 16);
-    port ( rst_i: in std_logic; --Async reset
-           clk_i: in std_logic;
-           sck_i: in std_logic;
-           ss_i: in std_logic;
-           mosi_i: in std_logic;
-           shift_register_state_o: out std_logic_vector(datawidth-1 downto 0);
-           data_o: out std_logic_vector(datawidth-1 downto 0);
-           ready_o: out std_logic;
-           state_o: out std_logic);
+generic(datawidth: integer:= 16);
+port (  
+rst_i: in std_logic; --Async reset
+clk_i: in std_logic;
+sck_i: in std_logic;
+ss_i: in std_logic;
+mosi_i: in std_logic;
+data_o: out std_logic_vector(datawidth-1 downto 0);
+dbg_shift_register_state_o: out std_logic_vector(datawidth-1 downto 0);
+ready_o: out std_logic;
+dbg_state_o: out std_logic; --Debug port for checking the internal states
+dbg_sck_o: out std_logic; --Debug port for checking synchronised sck output
+dbg_ss_o: out std_logic; --Debug port for checking synchronised ss output
+dbg_mosi_o: out std_logic);
+end component;
+
+component ila_0 
+port ( 
+clk : in std_logic;
+probe0 : in std_logic; 
+probe1 : in std_logic; 
+probe2 : in std_logic; 
+probe3 : in std_logic; 
+probe4 : in std_logic; 
+probe5 : in std_logic_vector(15 downto 0);
+probe6 : in std_logic_vector(15 downto 0));
+end component;
+
+--Cut from vio ip core instantiation file
+component vio_core_0
+port (
+clk : in std_logic;
+probe_in0 : in std_logic;
+probe_in1 : in std_logic;
+probe_in2 : in std_logic;
+probe_in3 : in std_logic;
+probe_in4 : in std_logic;
+probe_in5 : in std_logic_vector(15 downto 0);
+probe_in6 : in std_logic_vector(15 downto 0));
 end component;
 
 begin
 
---data_ready: process(ready)
---begin
---if(rising_edge(ready)) then
+vio_core : vio_core_0 
+port map (
+clk => CLK100MHZ,
+probe_in0 => debug_ss,
+probe_in1 => debug_sck,
+probe_in2 => debug_mosi,
+probe_in3 => debug_state,
+probe_in4 => debug_ready,
+probe_in5 => debug_internal_shift_reg,
+probe_in6 => output_buffer);
+                                
+ila_core : ila_0
+port map (
+clk => CLK100MHZ,
+probe0 => debug_ss,
+probe1 => debug_sck,
+probe2 => debug_mosi,
+probe3 => debug_state,
+probe4 => debug_ready,
+probe5 => debug_internal_shift_reg,
+probe6 => output_buffer
+);
+  
+spi_slave_input: spi_slave_simple 
+port map(
+rst_i => '1', 
+clk_i => CLK100MHZ, 
+ss_i => JA(0),
+sck_i => JA(1), 
+mosi_i => JA(2),
+data_o => output_buffer,
+ready_o => debug_ready, 
+dbg_shift_register_state_o => debug_internal_shift_reg, 
+dbg_state_o => debug_state,
+dbg_sck_o => debug_sck,
+dbg_ss_o => debug_ss,
+dbg_mosi_o => debug_mosi);
 
---end if;
---end process data_ready;
-LED <= pipo_buffer;
-spi_slave_input: spi_slave_simple port map(rst_i => '1', clk_i => CLK100MHZ, ss_i => JA(0),sck_i => JA(1), 
-                                           mosi_i => JA(2),data_o => pipo_buffer,ready_o => JB(1), shift_register_state_o => open, state_o => JB(0));
+LED <= output_buffer;
 
-
+--Debug signals sent via IO for external debug probing
+JB(0) <= debug_state;
+JB(1) <= debug_ready;
 
 end behavioral;

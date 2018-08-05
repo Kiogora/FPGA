@@ -18,7 +18,7 @@ There is no command or address bits in the transaction, which contains data only
 #define PIN_NUM_CLK  19
 #define PIN_NUM_CS   22
 
-#define SCLK_SPEED 10000000UL
+#define SCLK_SPEED 1UL
 
 static const char* TAG = "[FPGA_SPI_SLAVE]";
 
@@ -95,7 +95,7 @@ void app_main()
     while(1)
     {
         set_read_basys3_leds(&tx, &spi);
-	vTaskDelay(100 / portTICK_PERIOD_MS);
+	vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 
 }
