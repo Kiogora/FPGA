@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="vio_core_0_synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1533468404">
+<GenRun Id="vio_core_0_synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1534019919">
+  <File Type="VDS-TIMING-PB" Name="vio_core_0_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="vio_core_0_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="vio_core_0.dcp"/>
   <File Type="RDS-UTIL-PB" Name="vio_core_0_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="vio_core_0_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="vio_core_0_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="vio_core_0.vds"/>
-  <File Type="RDS-DCP" Name="vio_core_0.dcp"/>
-  <File Type="PA-TCL" Name="vio_core_0.tcl"/>
   <File Type="REPORTS-TCL" Name="vio_core_0_reports.tcl"/>
+  <File Type="PA-TCL" Name="vio_core_0.tcl"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/vio_core_0">
     <File Path="$PSRCDIR/sources_1/ip/vio_core_0/vio_core_0.xci">
       <FileInfo>

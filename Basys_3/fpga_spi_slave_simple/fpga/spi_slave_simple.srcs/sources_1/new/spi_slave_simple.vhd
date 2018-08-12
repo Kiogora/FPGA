@@ -32,7 +32,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 --Default working of this SPI slave is in SPI mode 0(CPOL_CPHA='00')
---May not work reliably for other SPI modes
+--May not work reliably for other SPI modes.
 entity spi_slave_simple is
 generic(datawidth: integer:= 16);
 port ( 
@@ -41,26 +41,27 @@ clk_i: in std_logic;
 sck_i: in std_logic;
 ss_i: in std_logic;
 mosi_i: in std_logic;
+miso_o: buffer std_logic;
+data_i: in std_logic_vector(datawidth-1 downto 0);
 data_o: out std_logic_vector(datawidth-1 downto 0);
-dbg_shift_register_state_o: out std_logic_vector(datawidth-1 downto 0);
+dbg_input_shift_register_state_o: out std_logic_vector(datawidth-1 downto 0);
+dbg_output_shift_register_state_o: out std_logic_vector(datawidth-1 downto 0);
 ready_o: out std_logic;
-dbg_state_o: out std_logic; --Debug port for checking the internal state
+dbg_state_o: out std_logic_vector(2 downto 0); --Debug port for checking the internal state
 dbg_sck_o: out std_logic; --Debug port for checking synchronised sck output
 dbg_ss_o: out std_logic; --Debug port for checking synchronised ss output
-dbg_mosi_o: out std_logic); --Debug port for checking synchronised mosi input
+dbg_mosi_o: out std_logic; --Debug port for checking synchronised mosi input
+dbg_miso_o: out std_logic); --Debug port for checking synchronised mosi input
 end spi_slave_simple;
 
 architecture behavioral of spi_slave_simple is
 
-type state_type is (idle, shift);
+type state_type is (load, idle, shift, store);
 signal next_state : state_type ;
 
-type reg_state is (shifted, unshifted);
-signal shifted_state : reg_state := unshifted ;
+signal input_shift_register, output_shift_register : std_logic_vector(datawidth-1 downto 0);
 
-signal input_shift_register : std_logic_vector(datawidth-1 downto 0);
-
-signal synced_mosi, synced_sck, synced_ss, sck_rise, sck_fall, ss_rise, ss_fall, init_done, store_done: std_logic;
+signal synced_mosi, synced_sck, synced_ss, sck_rise, sck_fall, ss_rise, ss_fall, init_done, store_done, miso_buffer: std_logic;
 
 
 component synchronizer is
@@ -86,49 +87,41 @@ begin
 if(rst_i = '0')then
 --Initialise all storage and outputs
 data_o<=(others => '0');
+output_shift_register<=(others => '0');
 input_shift_register<=(others => '0');
-dbg_shift_register_state_o<=(others => '0');
 ready_o <= '0';
-next_state<= shift;
+next_state<= idle;
 elsif(rising_edge(clk_i)) then
     case next_state is
-    when idle =>
+    when load =>
+        output_shift_register<=data_i;
+        next_state<=shift;
+    when store =>
+        data_o <= input_shift_register;
+        next_state<=idle;     
+    when idle => 
         if(synced_ss = '0') then
             --input_shift_register<=(others => '0');
-            shifted_state <= unshifted;
-            next_state<=shift;
+            ready_o <= '0';
+            next_state<=load;
         else
-            --input_shift_register<=(others => '0');
-            shifted_state <= unshifted;
+            ready_o <= '1';
             next_state<=idle;
         end if;
-    when shift =>
+    when shift => 
         if(synced_ss = '0') then
             if(sck_rise = '1') then
                 input_shift_register<=input_shift_register(datawidth-2 downto 0) & synced_mosi;
-                dbg_shift_register_state_o <= input_shift_register;
-                shifted_state <= shifted;
-                ready_o <= '0';
-                next_state <= shift;
+            elsif(sck_fall = '1') then
+                miso_o <= output_shift_register(datawidth-1);
+                output_shift_register<=output_shift_register(datawidth-2 downto 0) & '0';
             end if;
+            next_state <= shift;
         else
-            if(shifted_state = shifted) then
-                data_o <= input_shift_register;
-                dbg_shift_register_state_o <= input_shift_register;
-                ready_o <= '1';
-                next_state<=idle;
-            else
-                ready_o <= '0';
-                dbg_shift_register_state_o <= input_shift_register;
-                next_state<=idle;
-            end if;
+            next_state<=store;
         end if;
     when others =>
-        data_o<=(others => '0');
-        dbg_shift_register_state_o <= input_shift_register;
-        input_shift_register<=(others => '0');
-        ready_o <= '0';
-        next_state<= shift;
+        next_state<= idle;
 end case;
 end  if;
 end process;
@@ -137,11 +130,19 @@ end process;
 --Debug output section
 dbg_sck_o <= synced_sck;
 dbg_ss_o <= synced_ss;
-dbg_mosi_o <= synced_mosi;
+miso_buffer <= synced_mosi;
+
+dbg_miso_o <= miso_o;
+dbg_mosi_o <= mosi_i;
+
+dbg_input_shift_register_state_o <= input_shift_register;
+dbg_output_shift_register_state_o <= output_shift_register;
    
 with next_state select
-   dbg_state_o <= '0' when idle,
-                  '1' when shift,
-                  '0' when others;    
+   dbg_state_o <= "000" when idle,
+                  "001" when shift,
+                  "010" when load,
+                  "011" when store,
+                  "100" when others;    
                   
 end behavioral;

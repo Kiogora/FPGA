@@ -59,10 +59,12 @@ vio_core_0 your_instance_name (
   .probe_in0(probe_in0),  // input wire [0 : 0] probe_in0
   .probe_in1(probe_in1),  // input wire [0 : 0] probe_in1
   .probe_in2(probe_in2),  // input wire [0 : 0] probe_in2
-  .probe_in3(probe_in3),  // input wire [0 : 0] probe_in3
+  .probe_in3(probe_in3),  // input wire [2 : 0] probe_in3
   .probe_in4(probe_in4),  // input wire [0 : 0] probe_in4
   .probe_in5(probe_in5),  // input wire [15 : 0] probe_in5
-  .probe_in6(probe_in6)  // input wire [15 : 0] probe_in6
+  .probe_in6(probe_in6),  // input wire [15 : 0] probe_in6
+  .probe_in7(probe_in7),  // input wire [0 : 0] probe_in7
+  .probe_in8(probe_in8)  // input wire [15 : 0] probe_in8
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

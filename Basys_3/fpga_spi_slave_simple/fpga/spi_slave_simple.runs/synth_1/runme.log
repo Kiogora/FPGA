@@ -15,36 +15,36 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10780 
+INFO: Helper process launched with PID 30657 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1301.848 ; gain = 76.992 ; free physical = 1175 ; free virtual = 3986
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1303.852 ; gain = 77.992 ; free physical = 1525 ; free virtual = 5120
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'led_top' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/led_top.vhd:41]
-INFO: [Synth 8-3491] module 'vio_core_0' declared at '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/.Xil/Vivado-10758-bae/realtime/vio_core_0_stub.vhdl:5' bound to instance 'vio_core' of component 'vio_core_0' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/led_top.vhd:93]
-INFO: [Synth 8-638] synthesizing module 'vio_core_0' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/.Xil/Vivado-10758-bae/realtime/vio_core_0_stub.vhdl:19]
-INFO: [Synth 8-3491] module 'ila_0' declared at '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/.Xil/Vivado-10758-bae/realtime/ila_0_stub.vhdl:5' bound to instance 'ila_core' of component 'ila_0' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/led_top.vhd:104]
-INFO: [Synth 8-638] synthesizing module 'ila_0' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/.Xil/Vivado-10758-bae/realtime/ila_0_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'vio_core_0' declared at '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/.Xil/Vivado-30647-bae/realtime/vio_core_0_stub.vhdl:5' bound to instance 'vio_core' of component 'vio_core_0' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/led_top.vhd:103]
+INFO: [Synth 8-638] synthesizing module 'vio_core_0' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/.Xil/Vivado-30647-bae/realtime/vio_core_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'ila_0' declared at '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/.Xil/Vivado-30647-bae/realtime/ila_0_stub.vhdl:5' bound to instance 'ila_core' of component 'ila_0' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/led_top.vhd:116]
+INFO: [Synth 8-638] synthesizing module 'ila_0' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/.Xil/Vivado-30647-bae/realtime/ila_0_stub.vhdl:21]
 	Parameter datawidth bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'spi_slave_simple' declared at '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:36' bound to instance 'spi_slave_input' of component 'spi_slave_simple' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/led_top.vhd:116]
-INFO: [Synth 8-638] synthesizing module 'spi_slave_simple' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:53]
+INFO: [Synth 8-3491] module 'spi_slave_simple' declared at '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:36' bound to instance 'spi_slave_input' of component 'spi_slave_simple' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/led_top.vhd:129]
+INFO: [Synth 8-638] synthesizing module 'spi_slave_simple' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:57]
 	Parameter datawidth bound to: 16 - type: integer 
 	Parameter stages bound to: 3 - type: integer 
-INFO: [Synth 8-3491] module 'synchronizer' declared at '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/synchronizer.vhd:34' bound to instance 'ss_sync' of component 'synchronizer' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:79]
+INFO: [Synth 8-3491] module 'synchronizer' declared at '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/synchronizer.vhd:34' bound to instance 'ss_sync' of component 'synchronizer' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:80]
 INFO: [Synth 8-638] synthesizing module 'synchronizer' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/synchronizer.vhd:43]
 	Parameter stages bound to: 3 - type: integer 
 INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/synchronizer.vhd:44]
 INFO: [Synth 8-256] done synthesizing module 'synchronizer' (1#1) [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/synchronizer.vhd:43]
 	Parameter stages bound to: 3 - type: integer 
-INFO: [Synth 8-3491] module 'synchronizer' declared at '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/synchronizer.vhd:34' bound to instance 'sck_sync' of component 'synchronizer' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:80]
+INFO: [Synth 8-3491] module 'synchronizer' declared at '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/synchronizer.vhd:34' bound to instance 'sck_sync' of component 'synchronizer' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:81]
 	Parameter stages bound to: 3 - type: integer 
-INFO: [Synth 8-3491] module 'synchronizer' declared at '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/synchronizer.vhd:34' bound to instance 'mosi_sync' of component 'synchronizer' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:81]
-INFO: [Synth 8-226] default block is never used [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:94]
-INFO: [Synth 8-226] default block is never used [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:143]
-INFO: [Synth 8-256] done synthesizing module 'spi_slave_simple' (2#1) [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:53]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'spi_slave_input'. This will prevent further optimization [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/led_top.vhd:116]
+INFO: [Synth 8-3491] module 'synchronizer' declared at '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/synchronizer.vhd:34' bound to instance 'mosi_sync' of component 'synchronizer' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:82]
+INFO: [Synth 8-226] default block is never used [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:95]
+INFO: [Synth 8-226] default block is never used [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:142]
+INFO: [Synth 8-256] done synthesizing module 'spi_slave_simple' (2#1) [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/spi_slave_simple.vhd:57]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'spi_slave_input'. This will prevent further optimization [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/led_top.vhd:129]
 INFO: [Synth 8-256] done synthesizing module 'led_top' (3#1) [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/new/led_top.vhd:41]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1343.379 ; gain = 118.523 ; free physical = 1187 ; free virtual = 4001
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1345.383 ; gain = 119.523 ; free physical = 1538 ; free virtual = 5134
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -54,17 +54,17 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1343.379 ; gain = 118.523 ; free physical = 1191 ; free virtual = 4004
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1345.383 ; gain = 119.523 ; free physical = 1537 ; free virtual = 5133
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/.Xil/Vivado-10758-bae/dcp2/vio_core_0_in_context.xdc] for cell 'vio_core'
-Finished Parsing XDC File [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/.Xil/Vivado-10758-bae/dcp2/vio_core_0_in_context.xdc] for cell 'vio_core'
-Parsing XDC File [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/.Xil/Vivado-10758-bae/dcp3/ila_0_in_context.xdc] for cell 'ila_core'
-Finished Parsing XDC File [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/.Xil/Vivado-10758-bae/dcp3/ila_0_in_context.xdc] for cell 'ila_core'
+Parsing XDC File [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/.Xil/Vivado-30647-bae/dcp2/vio_core_0_in_context.xdc] for cell 'vio_core'
+Finished Parsing XDC File [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/.Xil/Vivado-30647-bae/dcp2/vio_core_0_in_context.xdc] for cell 'vio_core'
+Parsing XDC File [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/.Xil/Vivado-30647-bae/dcp3/ila_0_in_context.xdc] for cell 'ila_core'
+Finished Parsing XDC File [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/.Xil/Vivado-30647-bae/dcp3/ila_0_in_context.xdc] for cell 'ila_core'
 Parsing XDC File [/home/alois/Xilinx_projects/constraints/basys3.xdc]
 Finished Parsing XDC File [/home/alois/Xilinx_projects/constraints/basys3.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/alois/Xilinx_projects/constraints/basys3.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/led_top_propImpl.xdc].
@@ -74,16 +74,16 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1664.551 ; gain = 0.000 ; free physical = 900 ; free virtual = 3740
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1660.555 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4888
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:31 ; elapsed = 00:00:48 . Memory (MB): peak = 1664.551 ; gain = 439.695 ; free physical = 983 ; free virtual = 3823
+Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:38 . Memory (MB): peak = 1660.555 ; gain = 434.695 ; free physical = 1366 ; free virtual = 4964
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:31 ; elapsed = 00:00:48 . Memory (MB): peak = 1664.551 ; gain = 439.695 ; free physical = 982 ; free virtual = 3822
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:38 . Memory (MB): peak = 1660.555 ; gain = 434.695 ; free physical = 1366 ; free virtual = 4964
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -91,10 +91,10 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property DONT_TOUCH = true for ila_core. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for vio_core. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:48 . Memory (MB): peak = 1664.551 ; gain = 439.695 ; free physical = 984 ; free virtual = 3824
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:38 . Memory (MB): peak = 1660.555 ; gain = 434.695 ; free physical = 1368 ; free virtual = 4966
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:49 . Memory (MB): peak = 1664.551 ; gain = 439.695 ; free physical = 983 ; free virtual = 3823
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:38 . Memory (MB): peak = 1660.555 ; gain = 434.695 ; free physical = 1360 ; free virtual = 4958
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -108,11 +108,13 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Registers : 
 	               16 Bit    Registers := 3     
-	                1 Bit    Registers := 3     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     16 Bit        Muxes := 2     
-	   4 Input     15 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 6     
+	   4 Input     16 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 5     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -124,11 +126,13 @@ Module spi_slave_simple
 Detailed RTL Component Info : 
 +---Registers : 
 	               16 Bit    Registers := 3     
-	                1 Bit    Registers := 3     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     16 Bit        Muxes := 2     
-	   4 Input     15 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 6     
+	   4 Input     16 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 5     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -144,10 +148,8 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (spi_slave_input/\data_o_reg[15] )
-WARNING: [Synth 8-3332] Sequential element (data_o_reg[15]) is unused and will be removed from module spi_slave_simple.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:49 . Memory (MB): peak = 1664.551 ; gain = 439.695 ; free physical = 970 ; free virtual = 3811
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:38 . Memory (MB): peak = 1660.555 ; gain = 434.695 ; free physical = 1351 ; free virtual = 4949
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -159,13 +161,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:01:01 . Memory (MB): peak = 1664.551 ; gain = 439.695 ; free physical = 833 ; free virtual = 3681
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:48 . Memory (MB): peak = 1660.555 ; gain = 434.695 ; free physical = 1229 ; free virtual = 4826
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:01:01 . Memory (MB): peak = 1664.551 ; gain = 439.695 ; free physical = 832 ; free virtual = 3681
+Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:48 . Memory (MB): peak = 1660.555 ; gain = 434.695 ; free physical = 1228 ; free virtual = 4826
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -177,7 +179,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:01:01 . Memory (MB): peak = 1664.551 ; gain = 439.695 ; free physical = 831 ; free virtual = 3680
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:48 . Memory (MB): peak = 1660.555 ; gain = 434.695 ; free physical = 1228 ; free virtual = 4826
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -195,7 +197,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:01:02 . Memory (MB): peak = 1664.551 ; gain = 439.695 ; free physical = 826 ; free virtual = 3678
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:48 . Memory (MB): peak = 1660.555 ; gain = 434.695 ; free physical = 1228 ; free virtual = 4826
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -208,7 +210,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:01:02 . Memory (MB): peak = 1664.551 ; gain = 439.695 ; free physical = 826 ; free virtual = 3678
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:48 . Memory (MB): peak = 1660.555 ; gain = 434.695 ; free physical = 1228 ; free virtual = 4826
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -220,7 +222,7 @@ Report RTL Partitions:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:01:02 . Memory (MB): peak = 1664.551 ; gain = 439.695 ; free physical = 826 ; free virtual = 3678
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:48 . Memory (MB): peak = 1660.555 ; gain = 434.695 ; free physical = 1228 ; free virtual = 4826
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -242,33 +244,35 @@ Report Cell Usage:
 |2     |vio_core_0_bbox_0 |     1|
 |3     |BUFG              |     1|
 |4     |LUT1              |     2|
-|5     |LUT2              |     2|
-|6     |LUT3              |     3|
-|7     |LUT5              |     2|
-|8     |FDCE              |    48|
-|9     |FDPE              |     1|
-|10    |FDRE              |     1|
-|11    |FD_1              |     9|
-|12    |IBUF              |     4|
-|13    |OBUF              |    18|
+|5     |LUT2              |     5|
+|6     |LUT3              |    16|
+|7     |LUT4              |     2|
+|8     |LUT5              |     1|
+|9     |LUT6              |     1|
+|10    |FDCE              |    50|
+|11    |FDPE              |     1|
+|12    |FDRE              |     1|
+|13    |FD_1              |     9|
+|14    |IBUF              |     4|
+|15    |OBUF              |    17|
 +------+------------------+------+
 
 Report Instance Areas: 
 +------+------------------+-----------------+------+
 |      |Instance          |Module           |Cells |
 +------+------------------+-----------------+------+
-|1     |top               |                 |    91|
-|2     |  spi_slave_input |spi_slave_simple |    68|
+|1     |top               |                 |   110|
+|2     |  spi_slave_input |spi_slave_simple |    88|
 |3     |    ss_sync       |synchronizer__1  |     3|
-|4     |    sck_sync      |synchronizer__2  |     4|
+|4     |    sck_sync      |synchronizer__2  |     5|
 |5     |    mosi_sync     |synchronizer     |     3|
 +------+------------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:01:02 . Memory (MB): peak = 1664.551 ; gain = 439.695 ; free physical = 826 ; free virtual = 3678
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:48 . Memory (MB): peak = 1660.555 ; gain = 434.695 ; free physical = 1228 ; free virtual = 4826
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:37 . Memory (MB): peak = 1664.551 ; gain = 118.523 ; free physical = 881 ; free virtual = 3733
-Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:01:02 . Memory (MB): peak = 1664.559 ; gain = 439.695 ; free physical = 881 ; free virtual = 3733
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 1660.555 ; gain = 119.523 ; free physical = 1282 ; free virtual = 4879
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:49 . Memory (MB): peak = 1660.562 ; gain = 434.695 ; free physical = 1282 ; free virtual = 4880
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -279,12 +283,12 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   FD_1 => FDRE (inverted pins: C): 9 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-31 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+30 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:01:05 . Memory (MB): peak = 1664.559 ; gain = 453.082 ; free physical = 878 ; free virtual = 3730
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:51 . Memory (MB): peak = 1660.562 ; gain = 448.082 ; free physical = 1277 ; free virtual = 4874
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.collectionResultDisplayLimit
 INFO: [Common 17-1381] The checkpoint '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/led_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file led_top_utilization_synth.rpt -pb led_top_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.14 . Memory (MB): peak = 1664.559 ; gain = 0.000 ; free physical = 877 ; free virtual = 3729
-INFO: [Common 17-206] Exiting Vivado at Sun Aug  5 21:51:56 2018...
+report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.12 . Memory (MB): peak = 1684.566 ; gain = 0.000 ; free physical = 1277 ; free virtual = 4874
+INFO: [Common 17-206] Exiting Vivado at Sun Aug 12 03:41:25 2018...

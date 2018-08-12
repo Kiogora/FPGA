@@ -18,7 +18,7 @@ There is no command or address bits in the transaction, which contains data only
 #define PIN_NUM_CLK  19
 #define PIN_NUM_CS   22
 
-#define SCLK_SPEED 1UL
+#define SCLK_SPEED 1000000UL
 
 static const char* TAG = "[FPGA_SPI_SLAVE]";
 
@@ -27,29 +27,30 @@ void set_read_basys3_leds(spi_transaction_t* transaction, spi_device_handle_t* h
     //Generate pseudorandom 16 bit value with initial default seed = 1 for traceability during reruns.
     //The rand() functions keeps current state between calls
     uint16_t ledstate=rand()%65536;
+    ESP_LOGI(TAG, "Ledstate value is 0x%04x", ledstate);
 
     //Default initial state is one in order to differentiate it from actual value 0 read if ok during testing
-    uint32_t readstate=0;
+    uint16_t readstate=0;
 
     //Stuff 16 bit data to transmit into tx_data array member in transaction struct.
-    transaction->tx_data[0]=(uint8_t)(ledstate & 0x00ff);
-    transaction->tx_data[1]=(uint8_t)(ledstate & 0xff00);
+    //Byte 0 is sent out first which should be the MSByte, sent as msb first.
+    transaction->tx_data[0]=(uint8_t)((ledstate>>8) & 0xff);
+    transaction->tx_data[1]=(uint8_t)(ledstate & 0xff);
+    ESP_LOGI(TAG, "Upper byte of asembled state value sent firstly is 0x%02x", transaction->tx_data[0]);
+    ESP_LOGI(TAG, "Lower byte of asembled state value sent lastly is 0x%02x", transaction->tx_data[1]);
 
     esp_err_t ret=spi_device_transmit(*(handler), transaction);
 
     if(ret == ESP_OK)
     {
 	//Convert from four element byte array to 32 bit integer variable with endianness preserved
-	for(int i=0; i<=3; i++)
-	{
-            readstate += (((uint32_t)(transaction->rx_data[i])) << (i*8)); //Pointer points to transaction rx array
-	}
+	readstate =  (((uint16_t)(transaction->rx_data[0]<<8))|transaction->rx_data[1]);
         ESP_LOGI(TAG, "Note: SPI read success");
-	ESP_LOGI(TAG, "Value read is %d", readstate);
+	ESP_LOGI(TAG, "Value read is 0x%04x\n", readstate);
     }
     else
     {
-        ESP_LOGE(TAG, "ERROR: SPI read failure");
+        ESP_LOGE(TAG, "ERROR: SPI read failure\n");
     }
     
 }
@@ -89,13 +90,13 @@ void app_main()
     memset(&tx, 0, sizeof(tx));
     //Store transmit and receive data in the transaction struct itself as both are 4 bytes and less.
     tx.flags=SPI_TRANS_USE_TXDATA|SPI_TRANS_USE_RXDATA;
-    //Total number of LEDs to read on the basys3 board is 16
+    //Total number of LEDs to write/read on the basys3 board is 16
     tx.length=16;
 
     while(1)
     {
         set_read_basys3_leds(&tx, &spi);
-	vTaskDelay(1 / portTICK_PERIOD_MS);
+	vTaskDelay(5000 / portTICK_PERIOD_MS);
     }
 
 }

@@ -10,16 +10,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1024001fs"></ZoomEndTime>
-      <Cursor1Time time="626000fs"></Cursor1Time>
+      <ZoomEndTime time="8911fs"></ZoomEndTime>
+      <Cursor1Time time="506000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="142"></ValueColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="7" />
-   <wave_markers>
-   </wave_markers>
    <wvobject type="logic" fp_name="debug_ss">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">debug_ss</obj_property>
@@ -44,34 +42,33 @@
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="debug_state_1">
+   <wvobject type="logic" fp_name="debug_miso_1">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">debug_state_1</obj_property>
-      <obj_property name="ObjectShortName">debug_state_1</obj_property>
+      <obj_property name="ElementShortName">debug_miso_1</obj_property>
+      <obj_property name="ObjectShortName">debug_miso_1</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="debug_state">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">debug_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">debug_state[2:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="debug_ready_1">
+   <wvobject type="array" fp_name="debug_input_shift_reg_1">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">debug_ready_1</obj_property>
-      <obj_property name="ObjectShortName">debug_ready_1</obj_property>
+      <obj_property name="ElementShortName">debug_input_shift_reg_1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">debug_input_shift_reg_1[15:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="debug_internal_shift_reg">
+   <wvobject type="array" fp_name="debug_output_shift_reg_1">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">debug_internal_shift_reg[15:0]</obj_property>
-      <obj_property name="ObjectShortName">debug_internal_shift_reg[15:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="output_buffer_1">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">output_buffer_1[15:0]</obj_property>
-      <obj_property name="ObjectShortName">output_buffer_1[15:0]</obj_property>
+      <obj_property name="ElementShortName">debug_output_shift_reg_1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">debug_output_shift_reg_1[15:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>

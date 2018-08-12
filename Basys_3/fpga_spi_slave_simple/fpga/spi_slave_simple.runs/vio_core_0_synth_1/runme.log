@@ -15,15 +15,13 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8381 
+INFO: Helper process launched with PID 12738 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:26 . Memory (MB): peak = 1287.500 ; gain = 93.996 ; free physical = 968 ; free virtual = 4875
+Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 1289.996 ; gain = 93.996 ; free physical = 2104 ; free virtual = 6170
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'vio_core_0' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:59]
-WARNING: [Synth 8-3848] Net sl_iport0 in module/entity vio_core_0 does not have driver. [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:77]
+WARNING: [Synth 8-3848] Net sl_iport0 in module/entity vio_core_0 does not have driver. [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:79]
 INFO: [Synth 8-256] done synthesizing module 'vio_core_0' (6#1) [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:59]
-WARNING: [Synth 8-3331] design vio_v3_0_17_vio has unconnected port probe_in7[0]
-WARNING: [Synth 8-3331] design vio_v3_0_17_vio has unconnected port probe_in8[0]
 WARNING: [Synth 8-3331] design vio_v3_0_17_vio has unconnected port probe_in9[0]
 WARNING: [Synth 8-3331] design vio_v3_0_17_vio has unconnected port probe_in10[0]
 WARNING: [Synth 8-3331] design vio_v3_0_17_vio has unconnected port probe_in11[0]
@@ -122,9 +120,11 @@ WARNING: [Synth 8-3331] design vio_v3_0_17_vio has unconnected port probe_in103[
 WARNING: [Synth 8-3331] design vio_v3_0_17_vio has unconnected port probe_in104[0]
 WARNING: [Synth 8-3331] design vio_v3_0_17_vio has unconnected port probe_in105[0]
 WARNING: [Synth 8-3331] design vio_v3_0_17_vio has unconnected port probe_in106[0]
+WARNING: [Synth 8-3331] design vio_v3_0_17_vio has unconnected port probe_in107[0]
+WARNING: [Synth 8-3331] design vio_v3_0_17_vio has unconnected port probe_in108[0]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:23 ; elapsed = 00:00:44 . Memory (MB): peak = 1415.031 ; gain = 221.527 ; free physical = 964 ; free virtual = 4873
+Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:37 . Memory (MB): peak = 1417.527 ; gain = 221.527 ; free physical = 2072 ; free virtual = 6139
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -133,45 +133,45 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[36] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[35] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[34] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[33] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[32] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[31] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[30] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[29] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[28] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[27] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[26] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[25] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[24] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[23] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[22] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[21] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[20] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[19] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[18] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[17] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[16] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[15] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[14] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[13] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[12] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[11] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[10] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[9] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[8] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[7] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[6] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[5] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[4] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[3] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[2] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[1] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
-WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[0] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:867]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[36] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[35] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[34] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[33] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[32] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[31] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[30] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[29] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[28] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[27] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[26] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[25] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[24] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[23] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[22] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[21] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[20] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[19] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[18] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[17] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[16] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[15] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[14] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[13] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[12] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[11] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[10] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[9] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[8] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[7] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[6] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[5] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[4] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[3] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[2] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[1] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[0] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/synth/vio_core_0.v:869]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:45 . Memory (MB): peak = 1415.031 ; gain = 221.527 ; free physical = 966 ; free virtual = 4875
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:37 . Memory (MB): peak = 1417.527 ; gain = 221.527 ; free physical = 2076 ; free virtual = 6143
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -187,22 +187,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1652.055 ; gain = 0.000 ; free physical = 686 ; free virtual = 4629
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1654.551 ; gain = 0.000 ; free physical = 1762 ; free virtual = 5843
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:42 ; elapsed = 00:01:20 . Memory (MB): peak = 1652.055 ; gain = 458.551 ; free physical = 762 ; free virtual = 4706
+Finished Constraint Validation : Time (s): cpu = 00:00:36 ; elapsed = 00:01:06 . Memory (MB): peak = 1654.551 ; gain = 458.551 ; free physical = 1856 ; free virtual = 5901
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:42 ; elapsed = 00:01:20 . Memory (MB): peak = 1652.055 ; gain = 458.551 ; free physical = 762 ; free virtual = 4706
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:36 ; elapsed = 00:01:06 . Memory (MB): peak = 1654.551 ; gain = 458.551 ; free physical = 1856 ; free virtual = 5901
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:01:20 . Memory (MB): peak = 1652.055 ; gain = 458.551 ; free physical = 762 ; free virtual = 4705
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:01:06 . Memory (MB): peak = 1654.551 ; gain = 458.551 ; free physical = 1856 ; free virtual = 5901
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "wr_en_int0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "wr_en_int0" won't be mapped to RAM because it is too sparse
@@ -212,7 +212,7 @@ INFO: [Synth 8-5546] ROM "wr_en_int0" won't be mapped to RAM because it is too s
 INFO: [Synth 8-5546] ROM "rd_en_int0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "rd_en_int0" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:43 ; elapsed = 00:01:20 . Memory (MB): peak = 1652.055 ; gain = 458.551 ; free physical = 754 ; free virtual = 4698
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:36 ; elapsed = 00:01:07 . Memory (MB): peak = 1654.551 ; gain = 458.551 ; free physical = 1848 ; free virtual = 5893
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -225,22 +225,22 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input      4 Bit       Adders := 1     
 	   2 Input      3 Bit       Adders := 1     
-	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
 	              128 Bit    Registers := 1     
-	               37 Bit    Registers := 3     
+	               56 Bit    Registers := 3     
 	               16 Bit    Registers := 6     
 	               12 Bit    Registers := 1     
 	                7 Bit    Registers := 1     
 	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
 	                3 Bit    Registers := 3     
-	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 11    
 +---Muxes : 
-	   3 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 2     
-	   4 Input     12 Bit        Muxes := 1     
+	   5 Input     12 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 8     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -252,23 +252,23 @@ Hierarchical RTL Component report
 Module vio_v3_0_17_probe_in_one 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      3 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
 +---Registers : 
-	               37 Bit    Registers := 3     
+	               56 Bit    Registers := 3     
 	               16 Bit    Registers := 1     
-	                3 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   3 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
 Module vio_v3_0_17_probe_width 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      2 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
 	               12 Bit    Registers := 1     
-	                2 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
 +---Muxes : 
-	   4 Input     12 Bit        Muxes := 1     
+	   5 Input     12 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_xsdbs 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -322,8 +322,7 @@ INFO: [Synth 8-3886] merging instance 'inst/PROBE_IN_WIDTH_INST/probe_width_int_
 INFO: [Synth 8-3886] merging instance 'inst/PROBE_IN_WIDTH_INST/probe_width_int_reg[5]' (FD) to 'inst/PROBE_IN_WIDTH_INST/probe_width_int_reg[6]'
 INFO: [Synth 8-3886] merging instance 'inst/PROBE_IN_WIDTH_INST/probe_width_int_reg[6]' (FD) to 'inst/PROBE_IN_WIDTH_INST/probe_width_int_reg[7]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\PROBE_IN_WIDTH_INST/probe_width_int_reg[7] )
-INFO: [Synth 8-3886] merging instance 'inst/PROBE_IN_WIDTH_INST/probe_width_int_reg[8]' (FD) to 'inst/PROBE_IN_WIDTH_INST/probe_width_int_reg[9]'
-INFO: [Synth 8-3886] merging instance 'inst/PROBE_IN_WIDTH_INST/probe_width_int_reg[9]' (FD) to 'inst/PROBE_IN_WIDTH_INST/probe_width_int_reg[10]'
+INFO: [Synth 8-3886] merging instance 'inst/PROBE_IN_WIDTH_INST/probe_width_int_reg[8]' (FD) to 'inst/PROBE_IN_WIDTH_INST/probe_width_int_reg[10]'
 INFO: [Synth 8-3886] merging instance 'inst/PROBE_IN_WIDTH_INST/probe_width_int_reg[10]' (FD) to 'inst/PROBE_IN_WIDTH_INST/probe_width_int_reg[11]'
 INFO: [Synth 8-3332] Sequential element (DECODER_INST/wr_en_reg[3]) is unused and will be removed from module vio_v3_0_17_vio.
 INFO: [Synth 8-3332] Sequential element (DECODER_INST/wr_en_reg[1]) is unused and will be removed from module vio_v3_0_17_vio.
@@ -336,7 +335,7 @@ INFO: [Synth 8-3332] Sequential element (DECODER_INST/rd_en_reg[1]) is unused an
 INFO: [Synth 8-3332] Sequential element (DECODER_INST/rd_en_reg[0]) is unused and will be removed from module vio_v3_0_17_vio.
 INFO: [Synth 8-3332] Sequential element (PROBE_IN_WIDTH_INST/probe_width_int_reg[7]) is unused and will be removed from module vio_v3_0_17_vio.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:01:22 . Memory (MB): peak = 1652.055 ; gain = 458.551 ; free physical = 742 ; free virtual = 4688
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:01:08 . Memory (MB): peak = 1654.551 ; gain = 458.551 ; free physical = 1836 ; free virtual = 5881
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -348,13 +347,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:51 ; elapsed = 00:01:33 . Memory (MB): peak = 1652.055 ; gain = 458.551 ; free physical = 611 ; free virtual = 4564
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:01:17 . Memory (MB): peak = 1654.551 ; gain = 458.551 ; free physical = 1707 ; free virtual = 5752
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:01:33 . Memory (MB): peak = 1652.055 ; gain = 458.551 ; free physical = 615 ; free virtual = 4568
+Finished Timing Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:01:17 . Memory (MB): peak = 1654.551 ; gain = 458.551 ; free physical = 1707 ; free virtual = 5752
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -366,7 +365,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:52 ; elapsed = 00:01:33 . Memory (MB): peak = 1652.055 ; gain = 458.551 ; free physical = 626 ; free virtual = 4579
+Finished Technology Mapping : Time (s): cpu = 00:00:44 ; elapsed = 00:01:17 . Memory (MB): peak = 1654.551 ; gain = 458.551 ; free physical = 1705 ; free virtual = 5750
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -427,7 +426,7 @@ WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[2] to constant 0
 WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[1] to constant 0
 WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[0] to constant 0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:52 ; elapsed = 00:01:34 . Memory (MB): peak = 1652.055 ; gain = 458.551 ; free physical = 625 ; free virtual = 4578
+Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:01:18 . Memory (MB): peak = 1654.551 ; gain = 458.551 ; free physical = 1705 ; free virtual = 5750
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -440,7 +439,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:52 ; elapsed = 00:01:34 . Memory (MB): peak = 1652.055 ; gain = 458.551 ; free physical = 625 ; free virtual = 4578
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:01:18 . Memory (MB): peak = 1654.551 ; gain = 458.551 ; free physical = 1705 ; free virtual = 5750
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -452,25 +451,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:52 ; elapsed = 00:01:34 . Memory (MB): peak = 1652.055 ; gain = 458.551 ; free physical = 625 ; free virtual = 4578
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:01:18 . Memory (MB): peak = 1654.551 ; gain = 458.551 ; free physical = 1705 ; free virtual = 5750
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:52 ; elapsed = 00:01:34 . Memory (MB): peak = 1652.055 ; gain = 458.551 ; free physical = 625 ; free virtual = 4578
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:01:18 . Memory (MB): peak = 1654.551 ; gain = 458.551 ; free physical = 1705 ; free virtual = 5750
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:52 ; elapsed = 00:01:34 . Memory (MB): peak = 1652.055 ; gain = 458.551 ; free physical = 625 ; free virtual = 4578
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:01:18 . Memory (MB): peak = 1654.551 ; gain = 458.551 ; free physical = 1705 ; free virtual = 5750
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:52 ; elapsed = 00:01:34 . Memory (MB): peak = 1652.055 ; gain = 458.551 ; free physical = 625 ; free virtual = 4578
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:01:18 . Memory (MB): peak = 1654.551 ; gain = 458.551 ; free physical = 1705 ; free virtual = 5750
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -486,32 +485,32 @@ Report Cell Usage:
 +------+-----+------+
 |      |Cell |Count |
 +------+-----+------+
-|1     |LUT1 |     1|
+|1     |LUT1 |     2|
 |2     |LUT2 |     5|
-|3     |LUT3 |    19|
-|4     |LUT4 |    21|
-|5     |LUT5 |    22|
-|6     |LUT6 |    74|
-|7     |FDRE |   362|
+|3     |LUT3 |    23|
+|4     |LUT4 |     9|
+|5     |LUT5 |    27|
+|6     |LUT6 |    81|
+|7     |FDRE |   422|
 +------+-----+------+
 
 Report Instance Areas: 
 +------+------------------------+-------------------------+------+
 |      |Instance                |Module                   |Cells |
 +------+------------------------+-------------------------+------+
-|1     |top                     |                         |   504|
-|2     |  inst                  |vio_v3_0_17_vio          |   504|
+|1     |top                     |                         |   569|
+|2     |  inst                  |vio_v3_0_17_vio          |   569|
 |3     |    U_XSDB_SLAVE        |xsdbs_v1_0_2_xsdbs       |   248|
-|4     |    DECODER_INST        |vio_v3_0_17_decoder      |    80|
-|5     |    PROBE_IN_INST       |vio_v3_0_17_probe_in_one |   152|
-|6     |    PROBE_IN_WIDTH_INST |vio_v3_0_17_probe_width  |     8|
+|4     |    DECODER_INST        |vio_v3_0_17_decoder      |    81|
+|5     |    PROBE_IN_INST       |vio_v3_0_17_probe_in_one |   212|
+|6     |    PROBE_IN_WIDTH_INST |vio_v3_0_17_probe_width  |    12|
 +------+------------------------+-------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:52 ; elapsed = 00:01:34 . Memory (MB): peak = 1652.055 ; gain = 458.551 ; free physical = 625 ; free virtual = 4578
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:01:18 . Memory (MB): peak = 1654.551 ; gain = 458.551 ; free physical = 1705 ; free virtual = 5750
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 286 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:43 ; elapsed = 00:01:09 . Memory (MB): peak = 1652.055 ; gain = 221.527 ; free physical = 678 ; free virtual = 4631
-Synthesis Optimization Complete : Time (s): cpu = 00:00:53 ; elapsed = 00:01:34 . Memory (MB): peak = 1652.062 ; gain = 458.551 ; free physical = 687 ; free virtual = 4640
+Synthesis finished with 0 errors, 0 critical warnings and 284 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:36 ; elapsed = 00:00:58 . Memory (MB): peak = 1654.551 ; gain = 221.527 ; free physical = 1760 ; free virtual = 5805
+Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:01:18 . Memory (MB): peak = 1654.559 ; gain = 458.551 ; free physical = 1768 ; free virtual = 5813
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -519,13 +518,15 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-46 Infos, 175 Warnings, 0 Critical Warnings and 0 Errors encountered.
+45 Infos, 175 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:54 ; elapsed = 00:01:36 . Memory (MB): peak = 1652.062 ; gain = 483.387 ; free physical = 660 ; free virtual = 4614
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:01:19 . Memory (MB): peak = 1654.559 ; gain = 483.387 ; free physical = 1732 ; free virtual = 5795
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
 INFO: [Common 17-1381] The checkpoint '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/vio_core_0_synth_1/vio_core_0.dcp' has been generated.
 INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/vio_core_0.xci
 INFO: [Coretcl 2-1174] Renamed 5 cell refs.
 INFO: [Common 17-1381] The checkpoint '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/vio_core_0_synth_1/vio_core_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file vio_core_0_utilization_synth.rpt -pb vio_core_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.18 . Memory (MB): peak = 1676.066 ; gain = 0.000 ; free physical = 657 ; free virtual = 4615
-INFO: [Common 17-206] Exiting Vivado at Sun Aug  5 14:28:37 2018...
+report_utilization: Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.13 . Memory (MB): peak = 1678.562 ; gain = 0.000 ; free physical = 1729 ; free virtual = 5793
+INFO: [Common 17-206] Exiting Vivado at Sat Aug 11 23:40:13 2018...

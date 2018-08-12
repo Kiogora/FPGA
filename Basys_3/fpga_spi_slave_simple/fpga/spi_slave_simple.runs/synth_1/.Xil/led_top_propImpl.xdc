@@ -41,5 +41,3 @@ set_property src_info {type:XDC file:1 line:132 export:INPUT save:INPUT read:REA
 set_property PACKAGE_PIN J2 [get_ports {JA[2]}]
 set_property src_info {type:XDC file:1 line:154 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN A14 [get_ports {JB[0]}]
-set_property src_info {type:XDC file:1 line:157 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN A16 [get_ports {JB[1]}]

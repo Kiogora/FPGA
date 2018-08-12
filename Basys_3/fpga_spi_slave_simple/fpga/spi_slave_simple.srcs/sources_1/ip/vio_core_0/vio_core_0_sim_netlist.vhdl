@@ -1,7 +1,7 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Sun Aug  5 14:28:37 2018
+-- Date        : Sat Aug 11 23:40:13 2018
 -- Host        : bae running 64-bit Ubuntu 16.04.4 LTS
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/vio_core_0_sim_netlist.vhdl
@@ -27,7 +27,7 @@ entity vio_core_0_vio_v3_0_17_decoder is
     \out\ : in STD_LOGIC;
     s_daddr_o : in STD_LOGIC_VECTOR ( 16 downto 0 );
     \Bus_Data_out_reg[15]\ : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    \probe_width_int_reg[11]\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    \probe_width_int_reg[11]\ : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s_dwe_o : in STD_LOGIC;
     s_den_o : in STD_LOGIC
   );
@@ -50,6 +50,7 @@ architecture STRUCTURE of vio_core_0_vio_v3_0_17_decoder is
   signal \Bus_data_out[2]_i_1_n_0\ : STD_LOGIC;
   signal \Bus_data_out[2]_i_2_n_0\ : STD_LOGIC;
   signal \Bus_data_out[3]_i_1_n_0\ : STD_LOGIC;
+  signal \Bus_data_out[3]_i_2_n_0\ : STD_LOGIC;
   signal \Bus_data_out[4]_i_1_n_0\ : STD_LOGIC;
   signal \Bus_data_out[5]_i_1_n_0\ : STD_LOGIC;
   signal \Bus_data_out[6]_i_1_n_0\ : STD_LOGIC;
@@ -114,11 +115,11 @@ begin
     );
 \Bus_data_out[10]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"F0AA00CC"
+      INIT => X"F0CC00AA"
     )
         port map (
-      I0 => \probe_width_int_reg[11]\(1),
-      I1 => probe_out_modified(10),
+      I0 => probe_out_modified(10),
+      I1 => \probe_width_int_reg[11]\(2),
       I2 => \Bus_Data_out_reg[15]\(10),
       I3 => xsdb_addr_2_0_p2(1),
       I4 => xsdb_addr_2_0_p2(0),
@@ -135,11 +136,11 @@ begin
     );
 \Bus_data_out[11]_i_2\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"F0AA00CC"
+      INIT => X"F0CC00AA"
     )
         port map (
-      I0 => \probe_width_int_reg[11]\(1),
-      I1 => probe_out_modified(11),
+      I0 => probe_out_modified(11),
+      I1 => \probe_width_int_reg[11]\(2),
       I2 => \Bus_Data_out_reg[15]\(11),
       I3 => xsdb_addr_2_0_p2(1),
       I4 => xsdb_addr_2_0_p2(0),
@@ -199,57 +200,67 @@ begin
     );
 \Bus_data_out[1]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"00000000AAAAAFAB"
+      INIT => X"00000000A0ACA0A0"
     )
         port map (
       I0 => \Bus_data_out[1]_i_2_n_0\,
-      I1 => xsdb_addr_2_0_p2(1),
+      I1 => clear_int,
       I2 => xsdb_addr_2_0_p2(2),
-      I3 => clear_int,
-      I4 => xsdb_addr_2_0_p2(0),
+      I3 => xsdb_addr_2_0_p2(0),
+      I4 => xsdb_addr_2_0_p2(1),
       I5 => xsdb_addr_8_p2,
       O => \Bus_data_out[1]_i_1_n_0\
     );
-\Bus_data_out[1]_i_2\: unisim.vcomponents.LUT6
+\Bus_data_out[1]_i_2\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"B3A2918000000000"
+      INIT => X"F0AA00CC"
     )
         port map (
-      I0 => xsdb_addr_2_0_p2(0),
-      I1 => xsdb_addr_2_0_p2(1),
+      I0 => \probe_width_int_reg[11]\(0),
+      I1 => probe_out_modified(1),
       I2 => \Bus_Data_out_reg[15]\(1),
-      I3 => probe_out_modified(1),
-      I4 => \probe_width_int_reg[11]\(0),
-      I5 => xsdb_addr_2_0_p2(2),
+      I3 => xsdb_addr_2_0_p2(1),
+      I4 => xsdb_addr_2_0_p2(0),
       O => \Bus_data_out[1]_i_2_n_0\
     );
 \Bus_data_out[2]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"00000000AAAAAFAB"
+      INIT => X"00000000A0ACA0A0"
     )
         port map (
       I0 => \Bus_data_out[2]_i_2_n_0\,
-      I1 => xsdb_addr_2_0_p2(1),
+      I1 => \^internal_cnt_rst\,
       I2 => xsdb_addr_2_0_p2(2),
-      I3 => \^internal_cnt_rst\,
-      I4 => xsdb_addr_2_0_p2(0),
+      I3 => xsdb_addr_2_0_p2(0),
+      I4 => xsdb_addr_2_0_p2(1),
       I5 => xsdb_addr_8_p2,
       O => \Bus_data_out[2]_i_1_n_0\
     );
-\Bus_data_out[2]_i_2\: unisim.vcomponents.LUT6
+\Bus_data_out[2]_i_2\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"B3A2918000000000"
+      INIT => X"F0AA00CC"
     )
         port map (
-      I0 => xsdb_addr_2_0_p2(0),
-      I1 => xsdb_addr_2_0_p2(1),
+      I0 => \probe_width_int_reg[11]\(0),
+      I1 => probe_out_modified(2),
       I2 => \Bus_Data_out_reg[15]\(2),
-      I3 => probe_out_modified(2),
-      I4 => \probe_width_int_reg[11]\(0),
-      I5 => xsdb_addr_2_0_p2(2),
+      I3 => xsdb_addr_2_0_p2(1),
+      I4 => xsdb_addr_2_0_p2(0),
       O => \Bus_data_out[2]_i_2_n_0\
     );
 \Bus_data_out[3]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"00AA0003"
+    )
+        port map (
+      I0 => \Bus_data_out[3]_i_2_n_0\,
+      I1 => xsdb_addr_2_0_p2(1),
+      I2 => xsdb_addr_2_0_p2(0),
+      I3 => xsdb_addr_8_p2,
+      I4 => xsdb_addr_2_0_p2(2),
+      O => \Bus_data_out[3]_i_1_n_0\
+    );
+\Bus_data_out[3]_i_2\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"F0AA00CC"
     )
@@ -259,7 +270,7 @@ begin
       I2 => \Bus_Data_out_reg[15]\(3),
       I3 => xsdb_addr_2_0_p2(1),
       I4 => xsdb_addr_2_0_p2(0),
-      O => \Bus_data_out[3]_i_1_n_0\
+      O => \Bus_data_out[3]_i_2_n_0\
     );
 \Bus_data_out[4]_i_1\: unisim.vcomponents.LUT6
     generic map(
@@ -315,11 +326,11 @@ begin
     );
 \Bus_data_out[8]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"F0AA00CC"
+      INIT => X"F0CC00AA"
     )
         port map (
-      I0 => \probe_width_int_reg[11]\(1),
-      I1 => probe_out_modified(8),
+      I0 => probe_out_modified(8),
+      I1 => \probe_width_int_reg[11]\(2),
       I2 => \Bus_Data_out_reg[15]\(8),
       I3 => xsdb_addr_2_0_p2(1),
       I4 => xsdb_addr_2_0_p2(0),
@@ -327,11 +338,11 @@ begin
     );
 \Bus_data_out[9]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"F0AA00CC"
+      INIT => X"F0CC00AA"
     )
         port map (
-      I0 => \probe_width_int_reg[11]\(1),
-      I1 => probe_out_modified(9),
+      I0 => probe_out_modified(9),
+      I1 => \probe_width_int_reg[11]\(1),
       I2 => \Bus_Data_out_reg[15]\(9),
       I3 => xsdb_addr_2_0_p2(1),
       I4 => xsdb_addr_2_0_p2(0),
@@ -415,7 +426,7 @@ begin
       CE => '1',
       D => \Bus_data_out[3]_i_1_n_0\,
       Q => s_do_i(3),
-      R => \Bus_data_out[11]_i_1_n_0\
+      R => '0'
     );
 \Bus_data_out_reg[4]\: unisim.vcomponents.FDRE
      port map (
@@ -497,7 +508,7 @@ int_cnt_rst_reg: unisim.vcomponents.FDRE
       Q => \^internal_cnt_rst\,
       R => s_rst_o
     );
-\probe_in_reg[36]_i_1\: unisim.vcomponents.LUT1
+\probe_in_reg[55]_i_1\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
@@ -853,12 +864,12 @@ entity vio_core_0_vio_v3_0_17_probe_in_one is
     Q : out STD_LOGIC_VECTOR ( 15 downto 0 );
     s_den_o_INST_0_i_1 : in STD_LOGIC;
     CLK : in STD_LOGIC;
-    internal_cnt_rst : in STD_LOGIC;
     s_rst_o : in STD_LOGIC;
+    internal_cnt_rst : in STD_LOGIC;
     s_daddr_o : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s_dwe_o : in STD_LOGIC;
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
-    D : in STD_LOGIC_VECTOR ( 36 downto 0 );
+    D : in STD_LOGIC_VECTOR ( 55 downto 0 );
     \^clk\ : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -884,23 +895,28 @@ architecture STRUCTURE of vio_core_0_vio_v3_0_17_probe_in_one is
   signal \Bus_Data_out[9]_i_1_n_0\ : STD_LOGIC;
   signal Read_int : STD_LOGIC;
   signal Read_int_i_1_n_0 : STD_LOGIC;
-  signal addr_count : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal \addr_count[0]_i_1_n_0\ : STD_LOGIC;
-  signal \addr_count[1]_i_1_n_0\ : STD_LOGIC;
-  signal \addr_count[2]_i_1_n_0\ : STD_LOGIC;
-  signal \addr_count[2]_i_2_n_0\ : STD_LOGIC;
-  signal data_int_sync1 : STD_LOGIC_VECTOR ( 36 downto 0 );
+  signal addr_count : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \addr_count[3]_i_1_n_0\ : STD_LOGIC;
+  signal \addr_count[3]_i_3_n_0\ : STD_LOGIC;
+  signal data_int_sync1 : STD_LOGIC_VECTOR ( 55 downto 0 );
   attribute async_reg : string;
   attribute async_reg of data_int_sync1 : signal is "true";
-  signal data_int_sync2 : STD_LOGIC_VECTOR ( 36 downto 0 );
+  signal data_int_sync2 : STD_LOGIC_VECTOR ( 55 downto 0 );
   attribute async_reg of data_int_sync2 : signal is "true";
-  signal probe_in_reg : STD_LOGIC_VECTOR ( 36 downto 0 );
+  signal p_1_in : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal probe_in_reg : STD_LOGIC_VECTOR ( 55 downto 0 );
   attribute DONT_TOUCH : boolean;
   attribute DONT_TOUCH of probe_in_reg : signal is std.standard.true;
+  attribute SOFT_HLUTNM : string;
+  attribute SOFT_HLUTNM of \addr_count[1]_i_1\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \addr_count[2]_i_1\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \addr_count[3]_i_2\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \addr_count[3]_i_3\ : label is "soft_lutpair13";
   attribute MAX_FANOUT : string;
   attribute MAX_FANOUT of \addr_count_reg[0]\ : label is "100";
   attribute MAX_FANOUT of \addr_count_reg[1]\ : label is "100";
   attribute MAX_FANOUT of \addr_count_reg[2]\ : label is "100";
+  attribute MAX_FANOUT of \addr_count_reg[3]\ : label is "100";
   attribute ASYNC_REG_boolean : boolean;
   attribute ASYNC_REG_boolean of \data_int_sync1_reg[0]\ : label is std.standard.true;
   attribute KEEP : string;
@@ -963,10 +979,48 @@ architecture STRUCTURE of vio_core_0_vio_v3_0_17_probe_in_one is
   attribute KEEP of \data_int_sync1_reg[35]\ : label is "yes";
   attribute ASYNC_REG_boolean of \data_int_sync1_reg[36]\ : label is std.standard.true;
   attribute KEEP of \data_int_sync1_reg[36]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync1_reg[37]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync1_reg[37]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync1_reg[38]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync1_reg[38]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync1_reg[39]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync1_reg[39]\ : label is "yes";
   attribute ASYNC_REG_boolean of \data_int_sync1_reg[3]\ : label is std.standard.true;
   attribute KEEP of \data_int_sync1_reg[3]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync1_reg[40]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync1_reg[40]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync1_reg[41]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync1_reg[41]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync1_reg[42]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync1_reg[42]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync1_reg[43]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync1_reg[43]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync1_reg[44]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync1_reg[44]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync1_reg[45]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync1_reg[45]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync1_reg[46]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync1_reg[46]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync1_reg[47]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync1_reg[47]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync1_reg[48]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync1_reg[48]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync1_reg[49]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync1_reg[49]\ : label is "yes";
   attribute ASYNC_REG_boolean of \data_int_sync1_reg[4]\ : label is std.standard.true;
   attribute KEEP of \data_int_sync1_reg[4]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync1_reg[50]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync1_reg[50]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync1_reg[51]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync1_reg[51]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync1_reg[52]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync1_reg[52]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync1_reg[53]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync1_reg[53]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync1_reg[54]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync1_reg[54]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync1_reg[55]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync1_reg[55]\ : label is "yes";
   attribute ASYNC_REG_boolean of \data_int_sync1_reg[5]\ : label is std.standard.true;
   attribute KEEP of \data_int_sync1_reg[5]\ : label is "yes";
   attribute ASYNC_REG_boolean of \data_int_sync1_reg[6]\ : label is std.standard.true;
@@ -1037,10 +1091,48 @@ architecture STRUCTURE of vio_core_0_vio_v3_0_17_probe_in_one is
   attribute KEEP of \data_int_sync2_reg[35]\ : label is "yes";
   attribute ASYNC_REG_boolean of \data_int_sync2_reg[36]\ : label is std.standard.true;
   attribute KEEP of \data_int_sync2_reg[36]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync2_reg[37]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync2_reg[37]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync2_reg[38]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync2_reg[38]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync2_reg[39]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync2_reg[39]\ : label is "yes";
   attribute ASYNC_REG_boolean of \data_int_sync2_reg[3]\ : label is std.standard.true;
   attribute KEEP of \data_int_sync2_reg[3]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync2_reg[40]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync2_reg[40]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync2_reg[41]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync2_reg[41]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync2_reg[42]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync2_reg[42]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync2_reg[43]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync2_reg[43]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync2_reg[44]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync2_reg[44]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync2_reg[45]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync2_reg[45]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync2_reg[46]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync2_reg[46]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync2_reg[47]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync2_reg[47]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync2_reg[48]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync2_reg[48]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync2_reg[49]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync2_reg[49]\ : label is "yes";
   attribute ASYNC_REG_boolean of \data_int_sync2_reg[4]\ : label is std.standard.true;
   attribute KEEP of \data_int_sync2_reg[4]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync2_reg[50]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync2_reg[50]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync2_reg[51]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync2_reg[51]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync2_reg[52]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync2_reg[52]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync2_reg[53]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync2_reg[53]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync2_reg[54]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync2_reg[54]\ : label is "yes";
+  attribute ASYNC_REG_boolean of \data_int_sync2_reg[55]\ : label is std.standard.true;
+  attribute KEEP of \data_int_sync2_reg[55]\ : label is "yes";
   attribute ASYNC_REG_boolean of \data_int_sync2_reg[5]\ : label is std.standard.true;
   attribute KEEP of \data_int_sync2_reg[5]\ : label is "yes";
   attribute ASYNC_REG_boolean of \data_int_sync2_reg[6]\ : label is std.standard.true;
@@ -1111,10 +1203,48 @@ architecture STRUCTURE of vio_core_0_vio_v3_0_17_probe_in_one is
   attribute KEEP of \probe_in_reg_reg[35]\ : label is "yes";
   attribute DONT_TOUCH of \probe_in_reg_reg[36]\ : label is std.standard.true;
   attribute KEEP of \probe_in_reg_reg[36]\ : label is "yes";
+  attribute DONT_TOUCH of \probe_in_reg_reg[37]\ : label is std.standard.true;
+  attribute KEEP of \probe_in_reg_reg[37]\ : label is "yes";
+  attribute DONT_TOUCH of \probe_in_reg_reg[38]\ : label is std.standard.true;
+  attribute KEEP of \probe_in_reg_reg[38]\ : label is "yes";
+  attribute DONT_TOUCH of \probe_in_reg_reg[39]\ : label is std.standard.true;
+  attribute KEEP of \probe_in_reg_reg[39]\ : label is "yes";
   attribute DONT_TOUCH of \probe_in_reg_reg[3]\ : label is std.standard.true;
   attribute KEEP of \probe_in_reg_reg[3]\ : label is "yes";
+  attribute DONT_TOUCH of \probe_in_reg_reg[40]\ : label is std.standard.true;
+  attribute KEEP of \probe_in_reg_reg[40]\ : label is "yes";
+  attribute DONT_TOUCH of \probe_in_reg_reg[41]\ : label is std.standard.true;
+  attribute KEEP of \probe_in_reg_reg[41]\ : label is "yes";
+  attribute DONT_TOUCH of \probe_in_reg_reg[42]\ : label is std.standard.true;
+  attribute KEEP of \probe_in_reg_reg[42]\ : label is "yes";
+  attribute DONT_TOUCH of \probe_in_reg_reg[43]\ : label is std.standard.true;
+  attribute KEEP of \probe_in_reg_reg[43]\ : label is "yes";
+  attribute DONT_TOUCH of \probe_in_reg_reg[44]\ : label is std.standard.true;
+  attribute KEEP of \probe_in_reg_reg[44]\ : label is "yes";
+  attribute DONT_TOUCH of \probe_in_reg_reg[45]\ : label is std.standard.true;
+  attribute KEEP of \probe_in_reg_reg[45]\ : label is "yes";
+  attribute DONT_TOUCH of \probe_in_reg_reg[46]\ : label is std.standard.true;
+  attribute KEEP of \probe_in_reg_reg[46]\ : label is "yes";
+  attribute DONT_TOUCH of \probe_in_reg_reg[47]\ : label is std.standard.true;
+  attribute KEEP of \probe_in_reg_reg[47]\ : label is "yes";
+  attribute DONT_TOUCH of \probe_in_reg_reg[48]\ : label is std.standard.true;
+  attribute KEEP of \probe_in_reg_reg[48]\ : label is "yes";
+  attribute DONT_TOUCH of \probe_in_reg_reg[49]\ : label is std.standard.true;
+  attribute KEEP of \probe_in_reg_reg[49]\ : label is "yes";
   attribute DONT_TOUCH of \probe_in_reg_reg[4]\ : label is std.standard.true;
   attribute KEEP of \probe_in_reg_reg[4]\ : label is "yes";
+  attribute DONT_TOUCH of \probe_in_reg_reg[50]\ : label is std.standard.true;
+  attribute KEEP of \probe_in_reg_reg[50]\ : label is "yes";
+  attribute DONT_TOUCH of \probe_in_reg_reg[51]\ : label is std.standard.true;
+  attribute KEEP of \probe_in_reg_reg[51]\ : label is "yes";
+  attribute DONT_TOUCH of \probe_in_reg_reg[52]\ : label is std.standard.true;
+  attribute KEEP of \probe_in_reg_reg[52]\ : label is "yes";
+  attribute DONT_TOUCH of \probe_in_reg_reg[53]\ : label is std.standard.true;
+  attribute KEEP of \probe_in_reg_reg[53]\ : label is "yes";
+  attribute DONT_TOUCH of \probe_in_reg_reg[54]\ : label is std.standard.true;
+  attribute KEEP of \probe_in_reg_reg[54]\ : label is "yes";
+  attribute DONT_TOUCH of \probe_in_reg_reg[55]\ : label is std.standard.true;
+  attribute KEEP of \probe_in_reg_reg[55]\ : label is "yes";
   attribute DONT_TOUCH of \probe_in_reg_reg[5]\ : label is std.standard.true;
   attribute KEEP of \probe_in_reg_reg[5]\ : label is "yes";
   attribute DONT_TOUCH of \probe_in_reg_reg[6]\ : label is std.standard.true;
@@ -1126,185 +1256,204 @@ architecture STRUCTURE of vio_core_0_vio_v3_0_17_probe_in_one is
   attribute DONT_TOUCH of \probe_in_reg_reg[9]\ : label is std.standard.true;
   attribute KEEP of \probe_in_reg_reg[9]\ : label is "yes";
 begin
-\Bus_Data_out[0]_i_1\: unisim.vcomponents.LUT5
+\Bus_Data_out[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"00CCF0AA"
+      INIT => X"CAFFCAF0CA0FCA00"
     )
         port map (
-      I0 => data_int_sync2(0),
-      I1 => data_int_sync2(16),
-      I2 => data_int_sync2(32),
+      I0 => data_int_sync2(32),
+      I1 => data_int_sync2(48),
+      I2 => addr_count(0),
       I3 => addr_count(1),
-      I4 => addr_count(0),
+      I4 => data_int_sync2(0),
+      I5 => data_int_sync2(16),
       O => \Bus_Data_out[0]_i_1_n_0\
     );
-\Bus_Data_out[10]_i_1\: unisim.vcomponents.LUT4
+\Bus_Data_out[10]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0A0C"
+      INIT => X"00CCF0AA"
     )
         port map (
-      I0 => data_int_sync2(26),
-      I1 => data_int_sync2(10),
-      I2 => addr_count(1),
-      I3 => addr_count(0),
+      I0 => data_int_sync2(10),
+      I1 => data_int_sync2(26),
+      I2 => data_int_sync2(42),
+      I3 => addr_count(1),
+      I4 => addr_count(0),
       O => \Bus_Data_out[10]_i_1_n_0\
     );
-\Bus_Data_out[11]_i_1\: unisim.vcomponents.LUT4
+\Bus_Data_out[11]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0A0C"
+      INIT => X"00CCF0AA"
     )
         port map (
-      I0 => data_int_sync2(27),
-      I1 => data_int_sync2(11),
-      I2 => addr_count(1),
-      I3 => addr_count(0),
+      I0 => data_int_sync2(11),
+      I1 => data_int_sync2(27),
+      I2 => data_int_sync2(43),
+      I3 => addr_count(1),
+      I4 => addr_count(0),
       O => \Bus_Data_out[11]_i_1_n_0\
     );
-\Bus_Data_out[12]_i_1\: unisim.vcomponents.LUT4
+\Bus_Data_out[12]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0A0C"
+      INIT => X"00CCF0AA"
     )
         port map (
-      I0 => data_int_sync2(28),
-      I1 => data_int_sync2(12),
-      I2 => addr_count(1),
-      I3 => addr_count(0),
+      I0 => data_int_sync2(12),
+      I1 => data_int_sync2(28),
+      I2 => data_int_sync2(44),
+      I3 => addr_count(1),
+      I4 => addr_count(0),
       O => \Bus_Data_out[12]_i_1_n_0\
     );
-\Bus_Data_out[13]_i_1\: unisim.vcomponents.LUT4
+\Bus_Data_out[13]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0A0C"
+      INIT => X"00CCF0AA"
     )
         port map (
-      I0 => data_int_sync2(29),
-      I1 => data_int_sync2(13),
-      I2 => addr_count(1),
-      I3 => addr_count(0),
+      I0 => data_int_sync2(13),
+      I1 => data_int_sync2(29),
+      I2 => data_int_sync2(45),
+      I3 => addr_count(1),
+      I4 => addr_count(0),
       O => \Bus_Data_out[13]_i_1_n_0\
     );
-\Bus_Data_out[14]_i_1\: unisim.vcomponents.LUT4
+\Bus_Data_out[14]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0A0C"
+      INIT => X"00CCF0AA"
     )
         port map (
-      I0 => data_int_sync2(30),
-      I1 => data_int_sync2(14),
-      I2 => addr_count(1),
-      I3 => addr_count(0),
+      I0 => data_int_sync2(14),
+      I1 => data_int_sync2(30),
+      I2 => data_int_sync2(46),
+      I3 => addr_count(1),
+      I4 => addr_count(0),
       O => \Bus_Data_out[14]_i_1_n_0\
     );
-\Bus_Data_out[15]_i_1\: unisim.vcomponents.LUT4
+\Bus_Data_out[15]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0A0C"
+      INIT => X"00CCF0AA"
     )
         port map (
-      I0 => data_int_sync2(31),
-      I1 => data_int_sync2(15),
-      I2 => addr_count(1),
-      I3 => addr_count(0),
+      I0 => data_int_sync2(15),
+      I1 => data_int_sync2(31),
+      I2 => data_int_sync2(47),
+      I3 => addr_count(1),
+      I4 => addr_count(0),
       O => \Bus_Data_out[15]_i_1_n_0\
     );
-\Bus_Data_out[1]_i_1\: unisim.vcomponents.LUT5
+\Bus_Data_out[1]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"00CCF0AA"
+      INIT => X"CAFFCAF0CA0FCA00"
     )
         port map (
-      I0 => data_int_sync2(1),
-      I1 => data_int_sync2(17),
-      I2 => data_int_sync2(33),
+      I0 => data_int_sync2(33),
+      I1 => data_int_sync2(49),
+      I2 => addr_count(0),
       I3 => addr_count(1),
-      I4 => addr_count(0),
+      I4 => data_int_sync2(1),
+      I5 => data_int_sync2(17),
       O => \Bus_Data_out[1]_i_1_n_0\
     );
-\Bus_Data_out[2]_i_1\: unisim.vcomponents.LUT5
+\Bus_Data_out[2]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"00CCF0AA"
+      INIT => X"CAFFCAF0CA0FCA00"
     )
         port map (
-      I0 => data_int_sync2(2),
-      I1 => data_int_sync2(18),
-      I2 => data_int_sync2(34),
+      I0 => data_int_sync2(34),
+      I1 => data_int_sync2(50),
+      I2 => addr_count(0),
       I3 => addr_count(1),
-      I4 => addr_count(0),
+      I4 => data_int_sync2(2),
+      I5 => data_int_sync2(18),
       O => \Bus_Data_out[2]_i_1_n_0\
     );
-\Bus_Data_out[3]_i_1\: unisim.vcomponents.LUT5
+\Bus_Data_out[3]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"00CCF0AA"
+      INIT => X"CAFFCAF0CA0FCA00"
     )
         port map (
-      I0 => data_int_sync2(3),
-      I1 => data_int_sync2(19),
-      I2 => data_int_sync2(35),
+      I0 => data_int_sync2(35),
+      I1 => data_int_sync2(51),
+      I2 => addr_count(0),
       I3 => addr_count(1),
-      I4 => addr_count(0),
+      I4 => data_int_sync2(3),
+      I5 => data_int_sync2(19),
       O => \Bus_Data_out[3]_i_1_n_0\
     );
-\Bus_Data_out[4]_i_1\: unisim.vcomponents.LUT5
+\Bus_Data_out[4]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"CAFFCAF0CA0FCA00"
+    )
+        port map (
+      I0 => data_int_sync2(36),
+      I1 => data_int_sync2(52),
+      I2 => addr_count(0),
+      I3 => addr_count(1),
+      I4 => data_int_sync2(4),
+      I5 => data_int_sync2(20),
+      O => \Bus_Data_out[4]_i_1_n_0\
+    );
+\Bus_Data_out[5]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"CAFFCAF0CA0FCA00"
+    )
+        port map (
+      I0 => data_int_sync2(37),
+      I1 => data_int_sync2(53),
+      I2 => addr_count(0),
+      I3 => addr_count(1),
+      I4 => data_int_sync2(5),
+      I5 => data_int_sync2(21),
+      O => \Bus_Data_out[5]_i_1_n_0\
+    );
+\Bus_Data_out[6]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"CAFFCAF0CA0FCA00"
+    )
+        port map (
+      I0 => data_int_sync2(38),
+      I1 => data_int_sync2(54),
+      I2 => addr_count(0),
+      I3 => addr_count(1),
+      I4 => data_int_sync2(6),
+      I5 => data_int_sync2(22),
+      O => \Bus_Data_out[6]_i_1_n_0\
+    );
+\Bus_Data_out[7]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"CAFFCAF0CA0FCA00"
+    )
+        port map (
+      I0 => data_int_sync2(39),
+      I1 => data_int_sync2(55),
+      I2 => addr_count(0),
+      I3 => addr_count(1),
+      I4 => data_int_sync2(7),
+      I5 => data_int_sync2(23),
+      O => \Bus_Data_out[7]_i_1_n_0\
+    );
+\Bus_Data_out[8]_i_1\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"00CCF0AA"
     )
         port map (
-      I0 => data_int_sync2(4),
-      I1 => data_int_sync2(20),
-      I2 => data_int_sync2(36),
+      I0 => data_int_sync2(8),
+      I1 => data_int_sync2(24),
+      I2 => data_int_sync2(40),
       I3 => addr_count(1),
       I4 => addr_count(0),
-      O => \Bus_Data_out[4]_i_1_n_0\
-    );
-\Bus_Data_out[5]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0A0C"
-    )
-        port map (
-      I0 => data_int_sync2(21),
-      I1 => data_int_sync2(5),
-      I2 => addr_count(1),
-      I3 => addr_count(0),
-      O => \Bus_Data_out[5]_i_1_n_0\
-    );
-\Bus_Data_out[6]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0A0C"
-    )
-        port map (
-      I0 => data_int_sync2(22),
-      I1 => data_int_sync2(6),
-      I2 => addr_count(1),
-      I3 => addr_count(0),
-      O => \Bus_Data_out[6]_i_1_n_0\
-    );
-\Bus_Data_out[7]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0A0C"
-    )
-        port map (
-      I0 => data_int_sync2(23),
-      I1 => data_int_sync2(7),
-      I2 => addr_count(1),
-      I3 => addr_count(0),
-      O => \Bus_Data_out[7]_i_1_n_0\
-    );
-\Bus_Data_out[8]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0A0C"
-    )
-        port map (
-      I0 => data_int_sync2(24),
-      I1 => data_int_sync2(8),
-      I2 => addr_count(1),
-      I3 => addr_count(0),
       O => \Bus_Data_out[8]_i_1_n_0\
     );
-\Bus_Data_out[9]_i_1\: unisim.vcomponents.LUT4
+\Bus_Data_out[9]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0A0C"
+      INIT => X"00CCF0AA"
     )
         port map (
-      I0 => data_int_sync2(25),
-      I1 => data_int_sync2(9),
-      I2 => addr_count(1),
-      I3 => addr_count(0),
+      I0 => data_int_sync2(9),
+      I1 => data_int_sync2(25),
+      I2 => data_int_sync2(41),
+      I3 => addr_count(1),
+      I4 => addr_count(0),
       O => \Bus_Data_out[9]_i_1_n_0\
     );
 \Bus_Data_out_reg[0]\: unisim.vcomponents.FDRE
@@ -1454,78 +1603,97 @@ Read_int_reg: unisim.vcomponents.FDRE
       Q => Read_int,
       R => s_den_o_INST_0_i_1
     );
-\addr_count[0]_i_1\: unisim.vcomponents.LUT4
+\addr_count[0]_i_1\: unisim.vcomponents.LUT1
     generic map(
-      INIT => X"002E"
+      INIT => X"1"
     )
         port map (
       I0 => addr_count(0),
-      I1 => Read_int,
-      I2 => addr_count(0),
-      I3 => \addr_count[2]_i_2_n_0\,
-      O => \addr_count[0]_i_1_n_0\
+      O => p_1_in(0)
     );
-\addr_count[1]_i_1\: unisim.vcomponents.LUT5
+\addr_count[1]_i_1\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"00002EE2"
+      INIT => X"6"
     )
         port map (
       I0 => addr_count(1),
-      I1 => Read_int,
-      I2 => addr_count(0),
-      I3 => addr_count(1),
-      I4 => \addr_count[2]_i_2_n_0\,
-      O => \addr_count[1]_i_1_n_0\
+      I1 => addr_count(0),
+      O => p_1_in(1)
     );
-\addr_count[2]_i_1\: unisim.vcomponents.LUT6
+\addr_count[2]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"000000002EE2E2E2"
+      INIT => X"78"
     )
         port map (
-      I0 => addr_count(2),
-      I1 => Read_int,
+      I0 => addr_count(0),
+      I1 => addr_count(1),
       I2 => addr_count(2),
-      I3 => addr_count(1),
-      I4 => addr_count(0),
-      I5 => \addr_count[2]_i_2_n_0\,
-      O => \addr_count[2]_i_1_n_0\
+      O => p_1_in(2)
     );
-\addr_count[2]_i_2\: unisim.vcomponents.LUT6
+\addr_count[3]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"EEEEEEEEEEFEEEEE"
+      INIT => X"EEEEEEFEEEEEEEEE"
     )
         port map (
-      I0 => internal_cnt_rst,
-      I1 => s_rst_o,
-      I2 => addr_count(1),
-      I3 => addr_count(0),
-      I4 => Read_int,
-      I5 => addr_count(2),
-      O => \addr_count[2]_i_2_n_0\
+      I0 => s_rst_o,
+      I1 => internal_cnt_rst,
+      I2 => \addr_count[3]_i_3_n_0\,
+      I3 => addr_count(3),
+      I4 => addr_count(2),
+      I5 => Read_int,
+      O => \addr_count[3]_i_1_n_0\
+    );
+\addr_count[3]_i_2\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"7F80"
+    )
+        port map (
+      I0 => addr_count(1),
+      I1 => addr_count(0),
+      I2 => addr_count(2),
+      I3 => addr_count(3),
+      O => p_1_in(3)
+    );
+\addr_count[3]_i_3\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => addr_count(1),
+      I1 => addr_count(0),
+      O => \addr_count[3]_i_3_n_0\
     );
 \addr_count_reg[0]\: unisim.vcomponents.FDRE
      port map (
       C => CLK,
-      CE => '1',
-      D => \addr_count[0]_i_1_n_0\,
+      CE => Read_int,
+      D => p_1_in(0),
       Q => addr_count(0),
-      R => '0'
+      R => \addr_count[3]_i_1_n_0\
     );
 \addr_count_reg[1]\: unisim.vcomponents.FDRE
      port map (
       C => CLK,
-      CE => '1',
-      D => \addr_count[1]_i_1_n_0\,
+      CE => Read_int,
+      D => p_1_in(1),
       Q => addr_count(1),
-      R => '0'
+      R => \addr_count[3]_i_1_n_0\
     );
 \addr_count_reg[2]\: unisim.vcomponents.FDRE
      port map (
       C => CLK,
-      CE => '1',
-      D => \addr_count[2]_i_1_n_0\,
+      CE => Read_int,
+      D => p_1_in(2),
       Q => addr_count(2),
-      R => '0'
+      R => \addr_count[3]_i_1_n_0\
+    );
+\addr_count_reg[3]\: unisim.vcomponents.FDRE
+     port map (
+      C => CLK,
+      CE => Read_int,
+      D => p_1_in(3),
+      Q => addr_count(3),
+      R => \addr_count[3]_i_1_n_0\
     );
 \data_int_sync1_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -1857,6 +2025,39 @@ Read_int_reg: unisim.vcomponents.FDRE
       Q => data_int_sync1(36),
       R => '0'
     );
+\data_int_sync1_reg[37]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => probe_in_reg(37),
+      Q => data_int_sync1(37),
+      R => '0'
+    );
+\data_int_sync1_reg[38]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => probe_in_reg(38),
+      Q => data_int_sync1(38),
+      R => '0'
+    );
+\data_int_sync1_reg[39]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => probe_in_reg(39),
+      Q => data_int_sync1(39),
+      R => '0'
+    );
 \data_int_sync1_reg[3]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
@@ -1868,6 +2069,116 @@ Read_int_reg: unisim.vcomponents.FDRE
       Q => data_int_sync1(3),
       R => '0'
     );
+\data_int_sync1_reg[40]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => probe_in_reg(40),
+      Q => data_int_sync1(40),
+      R => '0'
+    );
+\data_int_sync1_reg[41]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => probe_in_reg(41),
+      Q => data_int_sync1(41),
+      R => '0'
+    );
+\data_int_sync1_reg[42]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => probe_in_reg(42),
+      Q => data_int_sync1(42),
+      R => '0'
+    );
+\data_int_sync1_reg[43]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => probe_in_reg(43),
+      Q => data_int_sync1(43),
+      R => '0'
+    );
+\data_int_sync1_reg[44]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => probe_in_reg(44),
+      Q => data_int_sync1(44),
+      R => '0'
+    );
+\data_int_sync1_reg[45]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => probe_in_reg(45),
+      Q => data_int_sync1(45),
+      R => '0'
+    );
+\data_int_sync1_reg[46]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => probe_in_reg(46),
+      Q => data_int_sync1(46),
+      R => '0'
+    );
+\data_int_sync1_reg[47]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => probe_in_reg(47),
+      Q => data_int_sync1(47),
+      R => '0'
+    );
+\data_int_sync1_reg[48]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => probe_in_reg(48),
+      Q => data_int_sync1(48),
+      R => '0'
+    );
+\data_int_sync1_reg[49]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => probe_in_reg(49),
+      Q => data_int_sync1(49),
+      R => '0'
+    );
 \data_int_sync1_reg[4]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
@@ -1877,6 +2188,72 @@ Read_int_reg: unisim.vcomponents.FDRE
       CE => '1',
       D => probe_in_reg(4),
       Q => data_int_sync1(4),
+      R => '0'
+    );
+\data_int_sync1_reg[50]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => probe_in_reg(50),
+      Q => data_int_sync1(50),
+      R => '0'
+    );
+\data_int_sync1_reg[51]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => probe_in_reg(51),
+      Q => data_int_sync1(51),
+      R => '0'
+    );
+\data_int_sync1_reg[52]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => probe_in_reg(52),
+      Q => data_int_sync1(52),
+      R => '0'
+    );
+\data_int_sync1_reg[53]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => probe_in_reg(53),
+      Q => data_int_sync1(53),
+      R => '0'
+    );
+\data_int_sync1_reg[54]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => probe_in_reg(54),
+      Q => data_int_sync1(54),
+      R => '0'
+    );
+\data_int_sync1_reg[55]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => probe_in_reg(55),
+      Q => data_int_sync1(55),
       R => '0'
     );
 \data_int_sync1_reg[5]\: unisim.vcomponents.FDRE
@@ -2264,6 +2641,39 @@ Read_int_reg: unisim.vcomponents.FDRE
       Q => data_int_sync2(36),
       R => '0'
     );
+\data_int_sync2_reg[37]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => data_int_sync1(37),
+      Q => data_int_sync2(37),
+      R => '0'
+    );
+\data_int_sync2_reg[38]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => data_int_sync1(38),
+      Q => data_int_sync2(38),
+      R => '0'
+    );
+\data_int_sync2_reg[39]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => data_int_sync1(39),
+      Q => data_int_sync2(39),
+      R => '0'
+    );
 \data_int_sync2_reg[3]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
@@ -2275,6 +2685,116 @@ Read_int_reg: unisim.vcomponents.FDRE
       Q => data_int_sync2(3),
       R => '0'
     );
+\data_int_sync2_reg[40]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => data_int_sync1(40),
+      Q => data_int_sync2(40),
+      R => '0'
+    );
+\data_int_sync2_reg[41]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => data_int_sync1(41),
+      Q => data_int_sync2(41),
+      R => '0'
+    );
+\data_int_sync2_reg[42]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => data_int_sync1(42),
+      Q => data_int_sync2(42),
+      R => '0'
+    );
+\data_int_sync2_reg[43]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => data_int_sync1(43),
+      Q => data_int_sync2(43),
+      R => '0'
+    );
+\data_int_sync2_reg[44]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => data_int_sync1(44),
+      Q => data_int_sync2(44),
+      R => '0'
+    );
+\data_int_sync2_reg[45]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => data_int_sync1(45),
+      Q => data_int_sync2(45),
+      R => '0'
+    );
+\data_int_sync2_reg[46]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => data_int_sync1(46),
+      Q => data_int_sync2(46),
+      R => '0'
+    );
+\data_int_sync2_reg[47]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => data_int_sync1(47),
+      Q => data_int_sync2(47),
+      R => '0'
+    );
+\data_int_sync2_reg[48]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => data_int_sync1(48),
+      Q => data_int_sync2(48),
+      R => '0'
+    );
+\data_int_sync2_reg[49]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => data_int_sync1(49),
+      Q => data_int_sync2(49),
+      R => '0'
+    );
 \data_int_sync2_reg[4]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
@@ -2284,6 +2804,72 @@ Read_int_reg: unisim.vcomponents.FDRE
       CE => '1',
       D => data_int_sync1(4),
       Q => data_int_sync2(4),
+      R => '0'
+    );
+\data_int_sync2_reg[50]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => data_int_sync1(50),
+      Q => data_int_sync2(50),
+      R => '0'
+    );
+\data_int_sync2_reg[51]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => data_int_sync1(51),
+      Q => data_int_sync2(51),
+      R => '0'
+    );
+\data_int_sync2_reg[52]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => data_int_sync1(52),
+      Q => data_int_sync2(52),
+      R => '0'
+    );
+\data_int_sync2_reg[53]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => data_int_sync1(53),
+      Q => data_int_sync2(53),
+      R => '0'
+    );
+\data_int_sync2_reg[54]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => data_int_sync1(54),
+      Q => data_int_sync2(54),
+      R => '0'
+    );
+\data_int_sync2_reg[55]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => CLK,
+      CE => '1',
+      D => data_int_sync1(55),
+      Q => data_int_sync2(55),
       R => '0'
     );
 \data_int_sync2_reg[5]\: unisim.vcomponents.FDRE
@@ -2671,6 +3257,39 @@ Read_int_reg: unisim.vcomponents.FDRE
       Q => probe_in_reg(36),
       R => '0'
     );
+\probe_in_reg_reg[37]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => \^clk\,
+      CE => E(0),
+      D => D(37),
+      Q => probe_in_reg(37),
+      R => '0'
+    );
+\probe_in_reg_reg[38]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => \^clk\,
+      CE => E(0),
+      D => D(38),
+      Q => probe_in_reg(38),
+      R => '0'
+    );
+\probe_in_reg_reg[39]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => \^clk\,
+      CE => E(0),
+      D => D(39),
+      Q => probe_in_reg(39),
+      R => '0'
+    );
 \probe_in_reg_reg[3]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
@@ -2682,6 +3301,116 @@ Read_int_reg: unisim.vcomponents.FDRE
       Q => probe_in_reg(3),
       R => '0'
     );
+\probe_in_reg_reg[40]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => \^clk\,
+      CE => E(0),
+      D => D(40),
+      Q => probe_in_reg(40),
+      R => '0'
+    );
+\probe_in_reg_reg[41]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => \^clk\,
+      CE => E(0),
+      D => D(41),
+      Q => probe_in_reg(41),
+      R => '0'
+    );
+\probe_in_reg_reg[42]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => \^clk\,
+      CE => E(0),
+      D => D(42),
+      Q => probe_in_reg(42),
+      R => '0'
+    );
+\probe_in_reg_reg[43]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => \^clk\,
+      CE => E(0),
+      D => D(43),
+      Q => probe_in_reg(43),
+      R => '0'
+    );
+\probe_in_reg_reg[44]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => \^clk\,
+      CE => E(0),
+      D => D(44),
+      Q => probe_in_reg(44),
+      R => '0'
+    );
+\probe_in_reg_reg[45]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => \^clk\,
+      CE => E(0),
+      D => D(45),
+      Q => probe_in_reg(45),
+      R => '0'
+    );
+\probe_in_reg_reg[46]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => \^clk\,
+      CE => E(0),
+      D => D(46),
+      Q => probe_in_reg(46),
+      R => '0'
+    );
+\probe_in_reg_reg[47]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => \^clk\,
+      CE => E(0),
+      D => D(47),
+      Q => probe_in_reg(47),
+      R => '0'
+    );
+\probe_in_reg_reg[48]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => \^clk\,
+      CE => E(0),
+      D => D(48),
+      Q => probe_in_reg(48),
+      R => '0'
+    );
+\probe_in_reg_reg[49]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => \^clk\,
+      CE => E(0),
+      D => D(49),
+      Q => probe_in_reg(49),
+      R => '0'
+    );
 \probe_in_reg_reg[4]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
@@ -2691,6 +3420,72 @@ Read_int_reg: unisim.vcomponents.FDRE
       CE => E(0),
       D => D(4),
       Q => probe_in_reg(4),
+      R => '0'
+    );
+\probe_in_reg_reg[50]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => \^clk\,
+      CE => E(0),
+      D => D(50),
+      Q => probe_in_reg(50),
+      R => '0'
+    );
+\probe_in_reg_reg[51]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => \^clk\,
+      CE => E(0),
+      D => D(51),
+      Q => probe_in_reg(51),
+      R => '0'
+    );
+\probe_in_reg_reg[52]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => \^clk\,
+      CE => E(0),
+      D => D(52),
+      Q => probe_in_reg(52),
+      R => '0'
+    );
+\probe_in_reg_reg[53]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => \^clk\,
+      CE => E(0),
+      D => D(53),
+      Q => probe_in_reg(53),
+      R => '0'
+    );
+\probe_in_reg_reg[54]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => \^clk\,
+      CE => E(0),
+      D => D(54),
+      Q => probe_in_reg(54),
+      R => '0'
+    );
+\probe_in_reg_reg[55]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => \^clk\,
+      CE => E(0),
+      D => D(55),
+      Q => probe_in_reg(55),
       R => '0'
     );
 \probe_in_reg_reg[5]\: unisim.vcomponents.FDRE
@@ -2755,7 +3550,7 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity vio_core_0_vio_v3_0_17_probe_width is
   port (
-    Q : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    Q : out STD_LOGIC_VECTOR ( 2 downto 0 );
     rd_probe_in_width : in STD_LOGIC;
     s_rst_o : in STD_LOGIC;
     internal_cnt_rst : in STD_LOGIC;
@@ -2766,38 +3561,52 @@ entity vio_core_0_vio_v3_0_17_probe_width is
 end vio_core_0_vio_v3_0_17_probe_width;
 
 architecture STRUCTURE of vio_core_0_vio_v3_0_17_probe_width is
-  signal addr_count : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal addr_count : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal \addr_count[0]_i_1_n_0\ : STD_LOGIC;
   signal \addr_count[1]_i_1_n_0\ : STD_LOGIC;
+  signal \addr_count[2]_i_1_n_0\ : STD_LOGIC;
   signal probe_width_mem : STD_LOGIC_VECTOR ( 11 downto 3 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \addr_count[0]_i_1\ : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \addr_count[1]_i_1\ : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \probe_width_int[11]_i_1\ : label is "soft_lutpair13";
-  attribute SOFT_HLUTNM of \probe_width_int[3]_i_1\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \probe_width_int[11]_i_1\ : label is "soft_lutpair14";
+  attribute SOFT_HLUTNM of \probe_width_int[9]_i_1\ : label is "soft_lutpair14";
 begin
-\addr_count[0]_i_1\: unisim.vcomponents.LUT4
+\addr_count[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0006"
+      INIT => X"0000000000006266"
     )
         port map (
       I0 => addr_count(0),
       I1 => rd_probe_in_width,
-      I2 => s_rst_o,
-      I3 => internal_cnt_rst,
+      I2 => addr_count(1),
+      I3 => addr_count(2),
+      I4 => s_rst_o,
+      I5 => internal_cnt_rst,
       O => \addr_count[0]_i_1_n_0\
     );
 \addr_count[1]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0000006A"
+      INIT => X"00000078"
     )
         port map (
-      I0 => addr_count(1),
-      I1 => addr_count(0),
-      I2 => rd_probe_in_width,
+      I0 => addr_count(0),
+      I1 => rd_probe_in_width,
+      I2 => addr_count(1),
       I3 => s_rst_o,
       I4 => internal_cnt_rst,
       O => \addr_count[1]_i_1_n_0\
+    );
+\addr_count[2]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000000007B80"
+    )
+        port map (
+      I0 => addr_count(0),
+      I1 => rd_probe_in_width,
+      I2 => addr_count(1),
+      I3 => addr_count(2),
+      I4 => s_rst_o,
+      I5 => internal_cnt_rst,
+      O => \addr_count[2]_i_1_n_0\
     );
 \addr_count_reg[0]\: unisim.vcomponents.FDRE
      port map (
@@ -2815,30 +3624,50 @@ begin
       Q => addr_count(1),
       R => '0'
     );
-\probe_width_int[11]_i_1\: unisim.vcomponents.LUT2
+\addr_count_reg[2]\: unisim.vcomponents.FDRE
+     port map (
+      C => CLK,
+      CE => '1',
+      D => \addr_count[2]_i_1_n_0\,
+      Q => addr_count(2),
+      R => '0'
+    );
+\probe_width_int[11]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"2"
+      INIT => X"04"
     )
         port map (
-      I0 => addr_count(1),
-      I1 => addr_count(0),
+      I0 => addr_count(2),
+      I1 => addr_count(1),
+      I2 => addr_count(0),
       O => probe_width_mem(11)
     );
-\probe_width_int[3]_i_1\: unisim.vcomponents.LUT2
+\probe_width_int[3]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"8"
+      INIT => X"18"
     )
         port map (
       I0 => addr_count(0),
       I1 => addr_count(1),
+      I2 => addr_count(2),
       O => probe_width_mem(3)
+    );
+\probe_width_int[9]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"06"
+    )
+        port map (
+      I0 => addr_count(1),
+      I1 => addr_count(0),
+      I2 => addr_count(2),
+      O => probe_width_mem(9)
     );
 \probe_width_int_reg[11]\: unisim.vcomponents.FDRE
      port map (
       C => CLK,
       CE => '1',
       D => probe_width_mem(11),
-      Q => Q(1),
+      Q => Q(2),
       R => '0'
     );
 \probe_width_int_reg[3]\: unisim.vcomponents.FDRE
@@ -2847,6 +3676,14 @@ begin
       CE => '1',
       D => probe_width_mem(3),
       Q => Q(0),
+      R => '0'
+    );
+\probe_width_int_reg[9]\: unisim.vcomponents.FDRE
+     port map (
+      C => CLK,
+      CE => '1',
+      D => probe_width_mem(9),
+      Q => Q(1),
       R => '0'
     );
 end STRUCTURE;
@@ -5852,12 +6689,12 @@ entity vio_core_0_vio_v3_0_17_vio is
     probe_in0 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe_in1 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe_in2 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe_in3 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe_in3 : in STD_LOGIC_VECTOR ( 2 downto 0 );
     probe_in4 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe_in5 : in STD_LOGIC_VECTOR ( 15 downto 0 );
     probe_in6 : in STD_LOGIC_VECTOR ( 15 downto 0 );
     probe_in7 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe_in8 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe_in8 : in STD_LOGIC_VECTOR ( 15 downto 0 );
     probe_in9 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe_in10 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe_in11 : in STD_LOGIC_VECTOR ( 0 to 0 );
@@ -6399,7 +7236,7 @@ entity vio_core_0_vio_v3_0_17_vio is
   attribute C_NEXT_SLAVE : integer;
   attribute C_NEXT_SLAVE of vio_core_0_vio_v3_0_17_vio : entity is 0;
   attribute C_NUM_PROBE_IN : integer;
-  attribute C_NUM_PROBE_IN of vio_core_0_vio_v3_0_17_vio : entity is 7;
+  attribute C_NUM_PROBE_IN of vio_core_0_vio_v3_0_17_vio : entity is 9;
   attribute C_NUM_PROBE_OUT : integer;
   attribute C_NUM_PROBE_OUT of vio_core_0_vio_v3_0_17_vio : entity is 0;
   attribute C_PIPE_IFACE : integer;
@@ -6783,7 +7620,7 @@ entity vio_core_0_vio_v3_0_17_vio is
   attribute C_PROBE_IN39_WIDTH : integer;
   attribute C_PROBE_IN39_WIDTH of vio_core_0_vio_v3_0_17_vio : entity is 1;
   attribute C_PROBE_IN3_WIDTH : integer;
-  attribute C_PROBE_IN3_WIDTH of vio_core_0_vio_v3_0_17_vio : entity is 1;
+  attribute C_PROBE_IN3_WIDTH of vio_core_0_vio_v3_0_17_vio : entity is 3;
   attribute C_PROBE_IN40_WIDTH : integer;
   attribute C_PROBE_IN40_WIDTH of vio_core_0_vio_v3_0_17_vio : entity is 1;
   attribute C_PROBE_IN41_WIDTH : integer;
@@ -6893,7 +7730,7 @@ entity vio_core_0_vio_v3_0_17_vio is
   attribute C_PROBE_IN89_WIDTH : integer;
   attribute C_PROBE_IN89_WIDTH of vio_core_0_vio_v3_0_17_vio : entity is 1;
   attribute C_PROBE_IN8_WIDTH : integer;
-  attribute C_PROBE_IN8_WIDTH of vio_core_0_vio_v3_0_17_vio : entity is 1;
+  attribute C_PROBE_IN8_WIDTH of vio_core_0_vio_v3_0_17_vio : entity is 16;
   attribute C_PROBE_IN90_WIDTH : integer;
   attribute C_PROBE_IN90_WIDTH of vio_core_0_vio_v3_0_17_vio : entity is 1;
   attribute C_PROBE_IN91_WIDTH : integer;
@@ -8975,7 +9812,7 @@ entity vio_core_0_vio_v3_0_17_vio is
   attribute LC_LOW_BIT_POS_PROBE_OUT99 : string;
   attribute LC_LOW_BIT_POS_PROBE_OUT99 of vio_core_0_vio_v3_0_17_vio : entity is "16'b0000000001100011";
   attribute LC_PROBE_IN_WIDTH_STRING : string;
-  attribute LC_PROBE_IN_WIDTH_STRING of vio_core_0_vio_v3_0_17_vio : entity is "2048'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111000011110000000000000000000000000000000000000000";
+  attribute LC_PROBE_IN_WIDTH_STRING of vio_core_0_vio_v3_0_17_vio : entity is "2048'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011110000000000001111000011110000000000000010000000000000000000000000";
   attribute LC_PROBE_OUT_HIGH_BIT_POS_STRING : string;
   attribute LC_PROBE_OUT_HIGH_BIT_POS_STRING of vio_core_0_vio_v3_0_17_vio : entity is "4096'b0000000011111111000000001111111000000000111111010000000011111100000000001111101100000000111110100000000011111001000000001111100000000000111101110000000011110110000000001111010100000000111101000000000011110011000000001111001000000000111100010000000011110000000000001110111100000000111011100000000011101101000000001110110000000000111010110000000011101010000000001110100100000000111010000000000011100111000000001110011000000000111001010000000011100100000000001110001100000000111000100000000011100001000000001110000000000000110111110000000011011110000000001101110100000000110111000000000011011011000000001101101000000000110110010000000011011000000000001101011100000000110101100000000011010101000000001101010000000000110100110000000011010010000000001101000100000000110100000000000011001111000000001100111000000000110011010000000011001100000000001100101100000000110010100000000011001001000000001100100000000000110001110000000011000110000000001100010100000000110001000000000011000011000000001100001000000000110000010000000011000000000000001011111100000000101111100000000010111101000000001011110000000000101110110000000010111010000000001011100100000000101110000000000010110111000000001011011000000000101101010000000010110100000000001011001100000000101100100000000010110001000000001011000000000000101011110000000010101110000000001010110100000000101011000000000010101011000000001010101000000000101010010000000010101000000000001010011100000000101001100000000010100101000000001010010000000000101000110000000010100010000000001010000100000000101000000000000010011111000000001001111000000000100111010000000010011100000000001001101100000000100110100000000010011001000000001001100000000000100101110000000010010110000000001001010100000000100101000000000010010011000000001001001000000000100100010000000010010000000000001000111100000000100011100000000010001101000000001000110000000000100010110000000010001010000000001000100100000000100010000000000010000111000000001000011000000000100001010000000010000100000000001000001100000000100000100000000010000001000000001000000000000000011111110000000001111110000000000111110100000000011111000000000001111011000000000111101000000000011110010000000001111000000000000111011100000000011101100000000001110101000000000111010000000000011100110000000001110010000000000111000100000000011100000000000001101111000000000110111000000000011011010000000001101100000000000110101100000000011010100000000001101001000000000110100000000000011001110000000001100110000000000110010100000000011001000000000001100011000000000110001000000000011000010000000001100000000000000101111100000000010111100000000001011101000000000101110000000000010110110000000001011010000000000101100100000000010110000000000001010111000000000101011000000000010101010000000001010100000000000101001100000000010100100000000001010001000000000101000000000000010011110000000001001110000000000100110100000000010011000000000001001011000000000100101000000000010010010000000001001000000000000100011100000000010001100000000001000101000000000100010000000000010000110000000001000010000000000100000100000000010000000000000000111111000000000011111000000000001111010000000000111100000000000011101100000000001110100000000000111001000000000011100000000000001101110000000000110110000000000011010100000000001101000000000000110011000000000011001000000000001100010000000000110000000000000010111100000000001011100000000000101101000000000010110000000000001010110000000000101010000000000010100100000000001010000000000000100111000000000010011000000000001001010000000000100100000000000010001100000000001000100000000000100001000000000010000000000000000111110000000000011110000000000001110100000000000111000000000000011011000000000001101000000000000110010000000000011000000000000001011100000000000101100000000000010101000000000001010000000000000100110000000000010010000000000001000100000000000100000000000000001111000000000000111000000000000011010000000000001100000000000000101100000000000010100000000000001001000000000000100000000000000001110000000000000110000000000000010100000000000001000000000000000011000000000000001000000000000000010000000000000000";
   attribute LC_PROBE_OUT_INIT_VAL_STRING : string;
@@ -8985,7 +9822,7 @@ entity vio_core_0_vio_v3_0_17_vio is
   attribute LC_PROBE_OUT_WIDTH_STRING : string;
   attribute LC_PROBE_OUT_WIDTH_STRING of vio_core_0_vio_v3_0_17_vio : entity is "2048'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
   attribute LC_TOTAL_PROBE_IN_WIDTH : integer;
-  attribute LC_TOTAL_PROBE_IN_WIDTH of vio_core_0_vio_v3_0_17_vio : entity is 37;
+  attribute LC_TOTAL_PROBE_IN_WIDTH of vio_core_0_vio_v3_0_17_vio : entity is 56;
   attribute LC_TOTAL_PROBE_OUT_WIDTH : integer;
   attribute LC_TOTAL_PROBE_OUT_WIDTH of vio_core_0_vio_v3_0_17_vio : entity is 0;
   attribute ORIG_REF_NAME : string;
@@ -9324,7 +10161,8 @@ DECODER_INST: entity work.vio_core_0_vio_v3_0_17_decoder
       Q(0) => \bus_data_int_reg_n_0_[0]\,
       internal_cnt_rst => internal_cnt_rst,
       \out\ => bus_clk,
-      \probe_width_int_reg[11]\(1) => probe_width_int(11),
+      \probe_width_int_reg[11]\(2) => probe_width_int(11),
+      \probe_width_int_reg[11]\(1) => probe_width_int(9),
       \probe_width_int_reg[11]\(0) => probe_width_int(3),
       \rd_en_reg[5]_0\ => DECODER_INST_n_2,
       rd_probe_in_width => rd_probe_in_width,
@@ -9342,10 +10180,12 @@ GND: unisim.vcomponents.GND
 PROBE_IN_INST: entity work.vio_core_0_vio_v3_0_17_probe_in_one
      port map (
       CLK => bus_clk,
-      D(36 downto 21) => probe_in6(15 downto 0),
-      D(20 downto 5) => probe_in5(15 downto 0),
-      D(4) => probe_in4(0),
-      D(3) => probe_in3(0),
+      D(55 downto 40) => probe_in8(15 downto 0),
+      D(39) => probe_in7(0),
+      D(38 downto 23) => probe_in6(15 downto 0),
+      D(22 downto 7) => probe_in5(15 downto 0),
+      D(6) => probe_in4(0),
+      D(5 downto 3) => probe_in3(2 downto 0),
       D(2) => probe_in2(0),
       D(1) => probe_in1(0),
       D(0) => probe_in0(0),
@@ -9361,7 +10201,8 @@ PROBE_IN_INST: entity work.vio_core_0_vio_v3_0_17_probe_in_one
 PROBE_IN_WIDTH_INST: entity work.vio_core_0_vio_v3_0_17_probe_width
      port map (
       CLK => bus_clk,
-      Q(1) => probe_width_int(11),
+      Q(2) => probe_width_int(11),
+      Q(1) => probe_width_int(9),
       Q(0) => probe_width_int(3),
       internal_cnt_rst => internal_cnt_rst,
       rd_probe_in_width => rd_probe_in_width,
@@ -9519,10 +10360,12 @@ entity vio_core_0 is
     probe_in0 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe_in1 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe_in2 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe_in3 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe_in3 : in STD_LOGIC_VECTOR ( 2 downto 0 );
     probe_in4 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe_in5 : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    probe_in6 : in STD_LOGIC_VECTOR ( 15 downto 0 )
+    probe_in6 : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    probe_in7 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe_in8 : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of vio_core_0 : entity is true;
@@ -9825,7 +10668,7 @@ architecture STRUCTURE of vio_core_0 is
   attribute C_NEXT_SLAVE : integer;
   attribute C_NEXT_SLAVE of inst : label is 0;
   attribute C_NUM_PROBE_IN : integer;
-  attribute C_NUM_PROBE_IN of inst : label is 7;
+  attribute C_NUM_PROBE_IN of inst : label is 9;
   attribute C_NUM_PROBE_OUT : integer;
   attribute C_NUM_PROBE_OUT of inst : label is 0;
   attribute C_PIPE_IFACE : integer;
@@ -10209,7 +11052,7 @@ architecture STRUCTURE of vio_core_0 is
   attribute C_PROBE_IN39_WIDTH : integer;
   attribute C_PROBE_IN39_WIDTH of inst : label is 1;
   attribute C_PROBE_IN3_WIDTH : integer;
-  attribute C_PROBE_IN3_WIDTH of inst : label is 1;
+  attribute C_PROBE_IN3_WIDTH of inst : label is 3;
   attribute C_PROBE_IN40_WIDTH : integer;
   attribute C_PROBE_IN40_WIDTH of inst : label is 1;
   attribute C_PROBE_IN41_WIDTH : integer;
@@ -10319,7 +11162,7 @@ architecture STRUCTURE of vio_core_0 is
   attribute C_PROBE_IN89_WIDTH : integer;
   attribute C_PROBE_IN89_WIDTH of inst : label is 1;
   attribute C_PROBE_IN8_WIDTH : integer;
-  attribute C_PROBE_IN8_WIDTH of inst : label is 1;
+  attribute C_PROBE_IN8_WIDTH of inst : label is 16;
   attribute C_PROBE_IN90_WIDTH : integer;
   attribute C_PROBE_IN90_WIDTH of inst : label is 1;
   attribute C_PROBE_IN91_WIDTH : integer;
@@ -12403,7 +13246,7 @@ architecture STRUCTURE of vio_core_0 is
   attribute LC_LOW_BIT_POS_PROBE_OUT99 : string;
   attribute LC_LOW_BIT_POS_PROBE_OUT99 of inst : label is "16'b0000000001100011";
   attribute LC_PROBE_IN_WIDTH_STRING : string;
-  attribute LC_PROBE_IN_WIDTH_STRING of inst : label is "2048'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111000011110000000000000000000000000000000000000000";
+  attribute LC_PROBE_IN_WIDTH_STRING of inst : label is "2048'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011110000000000001111000011110000000000000010000000000000000000000000";
   attribute LC_PROBE_OUT_HIGH_BIT_POS_STRING : string;
   attribute LC_PROBE_OUT_HIGH_BIT_POS_STRING of inst : label is "4096'b0000000011111111000000001111111000000000111111010000000011111100000000001111101100000000111110100000000011111001000000001111100000000000111101110000000011110110000000001111010100000000111101000000000011110011000000001111001000000000111100010000000011110000000000001110111100000000111011100000000011101101000000001110110000000000111010110000000011101010000000001110100100000000111010000000000011100111000000001110011000000000111001010000000011100100000000001110001100000000111000100000000011100001000000001110000000000000110111110000000011011110000000001101110100000000110111000000000011011011000000001101101000000000110110010000000011011000000000001101011100000000110101100000000011010101000000001101010000000000110100110000000011010010000000001101000100000000110100000000000011001111000000001100111000000000110011010000000011001100000000001100101100000000110010100000000011001001000000001100100000000000110001110000000011000110000000001100010100000000110001000000000011000011000000001100001000000000110000010000000011000000000000001011111100000000101111100000000010111101000000001011110000000000101110110000000010111010000000001011100100000000101110000000000010110111000000001011011000000000101101010000000010110100000000001011001100000000101100100000000010110001000000001011000000000000101011110000000010101110000000001010110100000000101011000000000010101011000000001010101000000000101010010000000010101000000000001010011100000000101001100000000010100101000000001010010000000000101000110000000010100010000000001010000100000000101000000000000010011111000000001001111000000000100111010000000010011100000000001001101100000000100110100000000010011001000000001001100000000000100101110000000010010110000000001001010100000000100101000000000010010011000000001001001000000000100100010000000010010000000000001000111100000000100011100000000010001101000000001000110000000000100010110000000010001010000000001000100100000000100010000000000010000111000000001000011000000000100001010000000010000100000000001000001100000000100000100000000010000001000000001000000000000000011111110000000001111110000000000111110100000000011111000000000001111011000000000111101000000000011110010000000001111000000000000111011100000000011101100000000001110101000000000111010000000000011100110000000001110010000000000111000100000000011100000000000001101111000000000110111000000000011011010000000001101100000000000110101100000000011010100000000001101001000000000110100000000000011001110000000001100110000000000110010100000000011001000000000001100011000000000110001000000000011000010000000001100000000000000101111100000000010111100000000001011101000000000101110000000000010110110000000001011010000000000101100100000000010110000000000001010111000000000101011000000000010101010000000001010100000000000101001100000000010100100000000001010001000000000101000000000000010011110000000001001110000000000100110100000000010011000000000001001011000000000100101000000000010010010000000001001000000000000100011100000000010001100000000001000101000000000100010000000000010000110000000001000010000000000100000100000000010000000000000000111111000000000011111000000000001111010000000000111100000000000011101100000000001110100000000000111001000000000011100000000000001101110000000000110110000000000011010100000000001101000000000000110011000000000011001000000000001100010000000000110000000000000010111100000000001011100000000000101101000000000010110000000000001010110000000000101010000000000010100100000000001010000000000000100111000000000010011000000000001001010000000000100100000000000010001100000000001000100000000000100001000000000010000000000000000111110000000000011110000000000001110100000000000111000000000000011011000000000001101000000000000110010000000000011000000000000001011100000000000101100000000000010101000000000001010000000000000100110000000000010010000000000001000100000000000100000000000000001111000000000000111000000000000011010000000000001100000000000000101100000000000010100000000000001001000000000000100000000000000001110000000000000110000000000000010100000000000001000000000000000011000000000000001000000000000000010000000000000000";
   attribute LC_PROBE_OUT_INIT_VAL_STRING : string;
@@ -12413,7 +13256,7 @@ architecture STRUCTURE of vio_core_0 is
   attribute LC_PROBE_OUT_WIDTH_STRING : string;
   attribute LC_PROBE_OUT_WIDTH_STRING of inst : label is "2048'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
   attribute LC_TOTAL_PROBE_IN_WIDTH : integer;
-  attribute LC_TOTAL_PROBE_IN_WIDTH of inst : label is 37;
+  attribute LC_TOTAL_PROBE_IN_WIDTH of inst : label is 56;
   attribute LC_TOTAL_PROBE_OUT_WIDTH : integer;
   attribute LC_TOTAL_PROBE_OUT_WIDTH of inst : label is 0;
   attribute syn_noprune : string;
@@ -12601,7 +13444,7 @@ inst: entity work.vio_core_0_vio_v3_0_17_vio
       probe_in27(0) => '0',
       probe_in28(0) => '0',
       probe_in29(0) => '0',
-      probe_in3(0) => probe_in3(0),
+      probe_in3(2 downto 0) => probe_in3(2 downto 0),
       probe_in30(0) => '0',
       probe_in31(0) => '0',
       probe_in32(0) => '0',
@@ -12645,7 +13488,7 @@ inst: entity work.vio_core_0_vio_v3_0_17_vio
       probe_in67(0) => '0',
       probe_in68(0) => '0',
       probe_in69(0) => '0',
-      probe_in7(0) => '0',
+      probe_in7(0) => probe_in7(0),
       probe_in70(0) => '0',
       probe_in71(0) => '0',
       probe_in72(0) => '0',
@@ -12656,7 +13499,7 @@ inst: entity work.vio_core_0_vio_v3_0_17_vio
       probe_in77(0) => '0',
       probe_in78(0) => '0',
       probe_in79(0) => '0',
-      probe_in8(0) => '0',
+      probe_in8(15 downto 0) => probe_in8(15 downto 0),
       probe_in80(0) => '0',
       probe_in81(0) => '0',
       probe_in82(0) => '0',

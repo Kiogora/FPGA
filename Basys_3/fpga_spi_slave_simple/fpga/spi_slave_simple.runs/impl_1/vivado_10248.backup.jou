@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sun Aug  5 20:34:46 2018
-# Process ID: 2868
+# Start of session at: Sat Aug 11 23:11:31 2018
+# Process ID: 10248
 # Current directory: /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/impl_1
 # Command line: vivado -log led_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source led_top.tcl -notrace
 # Log file: /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/impl_1/led_top.vdi
