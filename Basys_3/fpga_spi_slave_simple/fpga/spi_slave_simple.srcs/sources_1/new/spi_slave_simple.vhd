@@ -113,7 +113,6 @@ elsif(rising_edge(clk_i)) then
             if(sck_rise = '1') then
                 input_shift_register<=input_shift_register(datawidth-2 downto 0) & synced_mosi;
             elsif(sck_fall = '1') then
-                miso_o <= output_shift_register(datawidth-1);
                 output_shift_register<=output_shift_register(datawidth-2 downto 0) & '0';
             end if;
             next_state <= shift;
@@ -124,6 +123,7 @@ elsif(rising_edge(clk_i)) then
         next_state<= idle;
 end case;
 end  if;
+    miso_o <= output_shift_register(datawidth-1);
 end process;
 
 

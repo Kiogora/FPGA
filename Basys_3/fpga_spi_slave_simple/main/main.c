@@ -22,6 +22,8 @@ There is no command or address bits in the transaction, which contains data only
 
 static const char* TAG = "[FPGA_SPI_SLAVE]";
 
+uint16_t prev_state=0;
+
 void set_read_basys3_leds(spi_transaction_t* transaction, spi_device_handle_t* handler)
 {
     //Generate pseudorandom 16 bit value with initial default seed = 1 for traceability during reruns.
@@ -46,12 +48,22 @@ void set_read_basys3_leds(spi_transaction_t* transaction, spi_device_handle_t* h
 	//Convert from four element byte array to 32 bit integer variable with endianness preserved
 	readstate =  (((uint16_t)(transaction->rx_data[0]<<8))|transaction->rx_data[1]);
         ESP_LOGI(TAG, "Note: SPI read success");
-	ESP_LOGI(TAG, "Value read is 0x%04x\n", readstate);
+	ESP_LOGI(TAG, "Value read is 0x%04x", readstate);
+	if(readstate == prev_state)
+	{
+	    ESP_LOGI(TAG, "Value match :)\n");
+        }
+	else
+	{
+	    ESP_LOGE(TAG, "Value mismatch :(\n");
+	}
     }
     else
     {
         ESP_LOGE(TAG, "ERROR: SPI read failure\n");
     }
+    //Inittial may have a mismatch based on LED initialisation
+    prev_state=ledstate;
     
 }
 
@@ -96,7 +108,7 @@ void app_main()
     while(1)
     {
         set_read_basys3_leds(&tx, &spi);
-	vTaskDelay(5000 / portTICK_PERIOD_MS);
+	vTaskDelay(10 / portTICK_PERIOD_MS);
     }
 
 }
