@@ -60,18 +60,12 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
   set_param board.repoPaths /home/alois/.vivado_boards
-  set_param tcl.collectionResultDisplayLimit 0
-  set_param synth.incrementalSynthesisCache ./.Xil/Vivado-3350-bae/incrSyn
   create_project -in_memory -part xc7a35tcpg236-1
   set_property board_part_repo_paths /home/alois/.vivado_boards [current_project]
   set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]

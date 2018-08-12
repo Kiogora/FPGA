@@ -34,7 +34,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity led_top is
   Port (JA : in std_logic_vector(2 downto 0); -- SPI lines ss, sck, mosi connected to Pmod connectors
         JB : out std_logic_vector(0 downto 0); --miso output
-        LED : buffer std_logic_vector(15 downto 0); --All 16 LEDs on the Basys 3 board. Initialise output as low.
+        LED : out std_logic_vector(15 downto 0); --All 16 LEDs on the Basys 3 board. Initialise output as low.
         CLK100MHZ : in std_logic);
 end led_top;
 
@@ -96,7 +96,7 @@ signal ready : std_logic;
 
 signal debug_mosi, debug_miso, debug_ss, debug_sck, debug_ready, clk_buffer : std_logic;
 signal debug_state : std_logic_vector(2 downto 0);
-signal debug_input_shift_reg, debug_output_shift_reg, output_buffer, input_buffer : std_logic_vector(15 downto 0);
+signal debug_input_shift_reg, debug_output_shift_reg, output_buffer, input_buffer, aux_led : std_logic_vector(15 downto 0);
 
 begin
 
@@ -145,10 +145,11 @@ dbg_ss_o => debug_ss,
 dbg_mosi_o => debug_mosi,
 dbg_miso_o => debug_miso);
 
+--Input buffer is used as an auxiliary signal before writing to the LED and output buffer, leading to state synchronisation
 LED <= input_buffer;
 
---input_buffer <= output_buffer;
-output_buffer <= LED;
+output_buffer <= input_buffer;
+
 --Debug signals sent via IO for external debug probing here
 
 end behavioral;

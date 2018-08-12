@@ -38,8 +38,8 @@ void set_read_basys3_leds(spi_transaction_t* transaction, spi_device_handle_t* h
     //Byte 0 is sent out first which should be the MSByte, sent as msb first.
     transaction->tx_data[0]=(uint8_t)((ledstate>>8) & 0xff);
     transaction->tx_data[1]=(uint8_t)(ledstate & 0xff);
-    ESP_LOGI(TAG, "Upper byte of asembled state value sent firstly is 0x%02x", transaction->tx_data[0]);
-    ESP_LOGI(TAG, "Lower byte of asembled state value sent lastly is 0x%02x", transaction->tx_data[1]);
+    //ESP_LOGI(TAG, "Upper byte of asembled state value sent firstly is 0x%02x", transaction->tx_data[0]);
+    //ESP_LOGI(TAG, "Lower byte of asembled state value sent lastly is 0x%02x", transaction->tx_data[1]);
 
     esp_err_t ret=spi_device_transmit(*(handler), transaction);
 

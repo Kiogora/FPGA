@@ -132,7 +132,7 @@ dbg_sck_o <= synced_sck;
 dbg_ss_o <= synced_ss;
 miso_buffer <= synced_mosi;
 
-dbg_miso_o <= miso_o;
+dbg_miso_o <= output_shift_register(datawidth-1);
 dbg_mosi_o <= mosi_i;
 
 dbg_input_shift_register_state_o <= input_shift_register;
