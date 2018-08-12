@@ -1,10 +1,9 @@
 ESP32-master FPGA-slave SPI communication
 =========================================
-![Captured communication](./logic_analyzer_cap/From_vivado/schematic.png)
+![Schematic](./logic_analyzer_cap/From_vivado/schematic.png)
 
 
 ![Captured communication](./logic_analyzer_cap/with_fpga/full_duplex.png)
-/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/logic_analyzer_cap
 
 Purpose of this project is to test spi communication between an ESP32 and Basys3 FPGA board with the Artix-7 35T FPGA.
 
