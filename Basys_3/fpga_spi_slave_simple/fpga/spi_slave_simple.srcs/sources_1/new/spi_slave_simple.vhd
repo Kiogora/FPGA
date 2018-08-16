@@ -22,17 +22,8 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 --Default working of this SPI slave is in SPI mode 0(CPOL_CPHA='00')
---May not work reliably for other SPI modes.
+--Untested for other SPI modes.
 entity spi_slave_simple is
 generic(datawidth: integer:= 16);
 port ( 
@@ -41,17 +32,17 @@ clk_i: in std_logic;
 sck_i: in std_logic;
 ss_i: in std_logic;
 mosi_i: in std_logic;
-miso_o: buffer std_logic;
+miso_o: inout std_logic; --Tristate buffer to disconnect the miso line when ss is high
 data_i: in std_logic_vector(datawidth-1 downto 0);
 data_o: out std_logic_vector(datawidth-1 downto 0);
-dbg_input_shift_register_state_o: out std_logic_vector(datawidth-1 downto 0);
-dbg_output_shift_register_state_o: out std_logic_vector(datawidth-1 downto 0);
+dbg_input_shift_register_state_o: out std_logic_vector(datawidth-1 downto 0);  --Debug port for checking the input shift register
+dbg_output_shift_register_state_o: out std_logic_vector(datawidth-1 downto 0); --Debug port for checking the output shift register
 ready_o: out std_logic;
 dbg_state_o: out std_logic_vector(2 downto 0); --Debug port for checking the internal state
-dbg_sck_o: out std_logic; --Debug port for checking synchronised sck output
-dbg_ss_o: out std_logic; --Debug port for checking synchronised ss output
-dbg_mosi_o: out std_logic; --Debug port for checking synchronised mosi input
-dbg_miso_o: out std_logic); --Debug port for checking synchronised mosi input
+dbg_sck_o: out std_logic;                      --Debug port for checking synchronised sck input
+dbg_ss_o: out std_logic;                       --Debug port for checking synchronised ss input
+dbg_mosi_o: out std_logic;                     --Debug port for checking synchronised mosi input
+dbg_miso_o: out std_logic);                    --Debug port for checking synchronised miso output
 end spi_slave_simple;
 
 architecture behavioral of spi_slave_simple is
@@ -59,9 +50,12 @@ architecture behavioral of spi_slave_simple is
 type state_type is (load, idle, shift, store);
 signal next_state : state_type ;
 
+type bus_state is (active, hi_z);
+signal miso_state: bus_state;
+
 signal input_shift_register, output_shift_register : std_logic_vector(datawidth-1 downto 0);
 
-signal synced_mosi, synced_sck, synced_ss, sck_rise, sck_fall, ss_rise, ss_fall, init_done, store_done, miso_buffer: std_logic;
+signal synced_mosi, synced_sck, synced_ss, sck_rise, sck_fall, ss_rise, ss_fall, init_done, store_done: std_logic;
 
 
 component synchronizer is
@@ -77,7 +71,7 @@ end component;
     
 begin
 
-ss_sync: synchronizer generic map(stages => 3) port map(clk_i => clk_i, i => ss_i, o => synced_ss, rise_o => ss_rise, fall_o => ss_fall);
+ss_sync: synchronizer generic map(stages => 3) port map(clk_i => clk_i, i => ss_i, o => synced_ss, rise_o => open, fall_o => open);
 sck_sync: synchronizer generic map(stages => 3) port map(clk_i => clk_i, i => sck_i, o => synced_sck, rise_o => sck_rise, fall_o => sck_fall);
 mosi_sync: synchronizer generic map(stages => 3) port map(clk_i => clk_i, i => mosi_i, o => synced_mosi, rise_o => open, fall_o => open);
 
@@ -89,6 +83,7 @@ if(rst_i = '0')then
 data_o<=(others => '0');
 output_shift_register<=(others => '0');
 input_shift_register<=(others => '0');
+miso_state <= hi_z;
 ready_o <= '0';
 next_state<= idle;
 elsif(rising_edge(clk_i)) then
@@ -102,9 +97,11 @@ elsif(rising_edge(clk_i)) then
     when idle => 
         if(synced_ss = '0') then
             --input_shift_register<=(others => '0');
+            miso_state <= active;
             ready_o <= '0';
             next_state<=load;
         else
+            miso_state <= hi_z;
             ready_o <= '1';
             next_state<=idle;
         end if;
@@ -123,18 +120,20 @@ elsif(rising_edge(clk_i)) then
         next_state<= idle;
 end case;
 end  if;
+
+if(miso_state = active) then
     miso_o <= output_shift_register(datawidth-1);
+else 
+    miso_o <= 'Z';
+end if;
+
 end process;
 
-
---Debug output section
+--Debugging signals
 dbg_sck_o <= synced_sck;
 dbg_ss_o <= synced_ss;
-miso_buffer <= synced_mosi;
-
 dbg_miso_o <= output_shift_register(datawidth-1);
 dbg_mosi_o <= mosi_i;
-
 dbg_input_shift_register_state_o <= input_shift_register;
 dbg_output_shift_register_state_o <= output_shift_register;
    
@@ -143,6 +142,5 @@ with next_state select
                   "001" when shift,
                   "010" when load,
                   "011" when store,
-                  "100" when others;    
-                  
+                  "100" when others;               
 end behavioral;

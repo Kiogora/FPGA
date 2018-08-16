@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date             : Sun Aug 12 21:52:18 2018
+| Date             : Thu Aug 16 12:35:04 2018
 | Host             : bae running 64-bit Ubuntu 16.04.4 LTS
 | Command          : report_power -file led_top_power_routed.rpt -pb led_top_power_summary_routed.pb -rpx led_top_power_routed.rpx
 | Design           : led_top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.094        |
+| Total On-Chip Power (W)  | 0.093        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.022        |
+| Dynamic (W)              | 0.021        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.5         |
@@ -53,19 +53,19 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.014 |        4 |       --- |             --- |
-| Slice Logic              |     0.001 |     6295 |       --- |             --- |
+| Slice Logic              |     0.001 |     6297 |       --- |             --- |
 |   LUT as Logic           |    <0.001 |     1813 |     20800 |            8.72 |
-|   Register               |    <0.001 |     3290 |     41600 |            7.91 |
+|   Register               |    <0.001 |     3291 |     41600 |            7.91 |
 |   CARRY4                 |    <0.001 |       71 |      8150 |            0.87 |
 |   LUT as Shift Register  |    <0.001 |      218 |      9600 |            2.27 |
 |   LUT as Distributed RAM |    <0.001 |       24 |      9600 |            0.25 |
 |   F7/F8 Muxes            |    <0.001 |       79 |     32600 |            0.24 |
 |   Others                 |     0.000 |      388 |       --- |             --- |
-| Signals                  |     0.002 |     4469 |       --- |             --- |
+| Signals                  |     0.002 |     4474 |       --- |             --- |
 | Block RAM                |     0.001 |        2 |        50 |            4.00 |
 | I/O                      |     0.003 |       21 |       106 |           19.81 |
 | Static Power             |     0.072 |          |           |                 |
-| Total                    |     0.094 |          |           |                 |
+| Total                    |     0.093 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.028 |       0.019 |      0.010 |
+| Vccint    |       1.000 |     0.028 |       0.018 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -145,11 +145,11 @@ Table of Contents
 +------------------------------------------------------------------------------------+-----------+
 | Name                                                                               | Power (W) |
 +------------------------------------------------------------------------------------+-----------+
-| led_top                                                                            |     0.022 |
+| led_top                                                                            |     0.021 |
 |   dbg_hub                                                                          |     0.003 |
 |     inst                                                                           |     0.003 |
 |       BSCANID.u_xsdbm_id                                                           |     0.003 |
-|         CORE_XSDB.UUT_MASTER                                                       |     0.003 |
+|         CORE_XSDB.UUT_MASTER                                                       |     0.002 |
 |           U_ICON_INTERFACE                                                         |     0.002 |
 |             U_CMD1                                                                 |    <0.001 |
 |             U_CMD2                                                                 |    <0.001 |
@@ -228,9 +228,9 @@ Table of Contents
 |           U_SYNC                                                                   |    <0.001 |
 |         SWITCH_N_EXT_BSCAN.bscan_inst                                              |    <0.001 |
 |         SWITCH_N_EXT_BSCAN.bscan_switch                                            |    <0.001 |
-|   ila_core                                                                         |     0.013 |
-|     U0                                                                             |     0.013 |
-|       ila_core_inst                                                                |     0.013 |
+|   ila_core                                                                         |     0.012 |
+|     U0                                                                             |     0.012 |
+|       ila_core_inst                                                                |     0.012 |
 |         ila_trace_memory_inst                                                      |     0.001 |
 |           SUBCORE_RAM_BLK_MEM_1.trace_block_memory                                 |     0.001 |
 |             inst_blk_mem_gen                                                       |     0.001 |
@@ -402,7 +402,7 @@ Table of Contents
 |                   u_srlB                                                           |    <0.001 |
 |                   u_srlC                                                           |    <0.001 |
 |                   u_srlD                                                           |    <0.001 |
-|           U_TM                                                                     |     0.002 |
+|           U_TM                                                                     |     0.001 |
 |             N_DDR_MODE.G_NMU[0].U_M                                                |    <0.001 |
 |               allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst              |    <0.001 |
 |                 DUT                                                                |    <0.001 |
@@ -585,9 +585,9 @@ Table of Contents
 |   vio_core                                                                         |     0.002 |
 |     inst                                                                           |     0.002 |
 |       DECODER_INST                                                                 |    <0.001 |
-|       PROBE_IN_INST                                                                |     0.001 |
+|       PROBE_IN_INST                                                                |    <0.001 |
 |       PROBE_IN_WIDTH_INST                                                          |    <0.001 |
-|       U_XSDB_SLAVE                                                                 |     0.001 |
+|       U_XSDB_SLAVE                                                                 |    <0.001 |
 +------------------------------------------------------------------------------------+-----------+
 
 

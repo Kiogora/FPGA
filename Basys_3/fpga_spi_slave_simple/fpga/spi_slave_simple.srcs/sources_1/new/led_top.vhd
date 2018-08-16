@@ -22,18 +22,9 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity led_top is
   Port (JA : in std_logic_vector(2 downto 0); -- SPI lines ss, sck, mosi connected to Pmod connectors
-        JB : out std_logic_vector(0 downto 0); --miso output
+        JB : inout std_logic_vector(0 downto 0); --miso output
         LED : out std_logic_vector(15 downto 0); --All 16 LEDs on the Basys 3 board. Initialise output as low.
         CLK100MHZ : in std_logic);
 end led_top;
@@ -48,16 +39,16 @@ rst_i: in std_logic; --Async reset
 clk_i: in std_logic;
 sck_i: in std_logic;
 ss_i: in std_logic;
-miso_o: out std_logic;
+miso_o: inout std_logic;
 mosi_i: in std_logic;
 data_i: in std_logic_vector(datawidth-1 downto 0);
 data_o: out std_logic_vector(datawidth-1 downto 0);
 dbg_input_shift_register_state_o: out std_logic_vector(datawidth-1 downto 0);
 dbg_output_shift_register_state_o: out std_logic_vector(datawidth-1 downto 0);
 ready_o: out std_logic;
-dbg_state_o: out std_logic_vector(2 downto 0); --Debug port for checking the internal states
-dbg_sck_o: out std_logic; --Debug port for checking synchronised sck output
-dbg_ss_o: out std_logic; --Debug port for checking synchronised ss output
+dbg_state_o: out std_logic_vector(2 downto 0);
+dbg_sck_o: out std_logic;
+dbg_ss_o: out std_logic;
 dbg_mosi_o: out std_logic;
 dbg_miso_o: out std_logic);
 end component;

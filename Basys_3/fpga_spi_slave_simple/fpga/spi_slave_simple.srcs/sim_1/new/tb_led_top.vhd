@@ -51,20 +51,43 @@ signal shift_register_state: std_logic_vector(15 downto 0);
 component spi_slave_simple is
     generic(datawidth: integer:= 16);
     port ( rst_i: in std_logic; --Async reset
-           clk_i: in std_logic;
-           sck_i: in std_logic;
-           ss_i: in std_logic;
-           mosi_i: in std_logic;
-           data_o: out std_logic_vector(datawidth-1 downto 0);
-           shift_register_state_o: out std_logic_vector(datawidth-1 downto 0);
-           ready_o: out std_logic;
-           state_o: out std_logic);
+    clk_i: in std_logic;
+    sck_i: in std_logic;
+    ss_i: in std_logic;
+    mosi_i: in std_logic;
+    miso_o: inout std_logic; --Tristate buffer to disconnect the miso line when ss is high
+    data_i: in std_logic_vector(datawidth-1 downto 0);
+    data_o: out std_logic_vector(datawidth-1 downto 0);
+    dbg_input_shift_register_state_o: out std_logic_vector(datawidth-1 downto 0);  --Debug port for checking the input shift register
+    dbg_output_shift_register_state_o: out std_logic_vector(datawidth-1 downto 0); --Debug port for checking the output shift register
+    ready_o: out std_logic;
+    dbg_state_o: out std_logic_vector(2 downto 0); --Debug port for checking the internal state
+    dbg_sck_o: out std_logic;                      --Debug port for checking synchronised sck input
+    dbg_ss_o: out std_logic;                       --Debug port for checking synchronised ss input
+    dbg_mosi_o: out std_logic;                     --Debug port for checking synchronised mosi input
+    dbg_miso_o: out std_logic);                    --Debug port for checking synchronised miso output);
 end component;
 
 
 begin
 
-uut : spi_slave_simple generic map(datawidth => 16) port map (rst_i => rst, shift_register_state_o => shift_register_state, clk_i => clk, sck_i => sck, ss_i => ss, mosi_i => mosi, data_o => data, ready_o => ready, state_o => state);
+uut : spi_slave_simple generic map(datawidth => 16) port map (rst_i => rst, shift_register_state_o => shift_register_state, clk_i => clk, sck_i => sck, ss_i => ss, mosi_i => mosi, data_o => data, ready_o => ready, state_o => state
+rst_i => rst, 
+clk_i => clk, 
+ss_i => ss,
+sck_i => sck, 
+mosi_i => mosi,
+miso_o=> JB(0),
+data_i => output_buffer,
+data_o => input_buffer,
+ready_o => debug_ready,
+dbg_input_shift_register_state_o => debug_input_shift_reg, 
+dbg_output_shift_register_state_o => debug_output_shift_reg, 
+dbg_state_o => debug_state,
+dbg_sck_o => debug_sck,
+dbg_ss_o => debug_ss,
+dbg_mosi_o => debug_mosi,
+dbg_miso_o => debug_miso);
 
 rst <= '1';
 
