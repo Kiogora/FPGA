@@ -1,8 +1,8 @@
-Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date             : Thu Aug 16 12:35:04 2018
-| Host             : bae running 64-bit Ubuntu 16.04.4 LTS
+| Tool Version     : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date             : Tue Oct 16 12:52:25 2018
+| Host             : badass running 64-bit Ubuntu 18.04.1 LTS
 | Command          : report_power -file led_top_power_routed.rpt -pb led_top_power_summary_routed.pb -rpx led_top_power_routed.rpx
 | Design           : led_top
 | Device           : xc7a35tcpg236-1
@@ -30,15 +30,15 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.093        |
+| Total On-Chip Power (W)  | 0.073        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.021        |
-| Device Static (W)        | 0.072        |
+| Dynamic (W)              | 0.002        |
+| Device Static (W)        | 0.070        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.5         |
-| Junction Temperature (C) | 25.5         |
-| Confidence Level         | Medium       |
+| Max Ambient (C)          | 84.6         |
+| Junction Temperature (C) | 25.4         |
+| Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
 | Design Nets Matched      | NA           |
@@ -52,20 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.014 |        4 |       --- |             --- |
-| Slice Logic              |     0.001 |     6297 |       --- |             --- |
-|   LUT as Logic           |    <0.001 |     1813 |     20800 |            8.72 |
-|   Register               |    <0.001 |     3291 |     41600 |            7.91 |
+| Clocks                   |    <0.001 |        3 |       --- |             --- |
+| Slice Logic              |    <0.001 |     6368 |       --- |             --- |
+|   LUT as Logic           |    <0.001 |     1849 |     20800 |            8.89 |
+|   Register               |    <0.001 |     3315 |     41600 |            7.97 |
 |   CARRY4                 |    <0.001 |       71 |      8150 |            0.87 |
 |   LUT as Shift Register  |    <0.001 |      218 |      9600 |            2.27 |
+|   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
 |   LUT as Distributed RAM |    <0.001 |       24 |      9600 |            0.25 |
-|   F7/F8 Muxes            |    <0.001 |       79 |     32600 |            0.24 |
-|   Others                 |     0.000 |      388 |       --- |             --- |
-| Signals                  |     0.002 |     4474 |       --- |             --- |
-| Block RAM                |     0.001 |        2 |        50 |            4.00 |
-| I/O                      |     0.003 |       21 |       106 |           19.81 |
-| Static Power             |     0.072 |          |           |                 |
-| Total                    |     0.093 |          |           |                 |
+|   F7/F8 Muxes            |    <0.001 |       82 |     32600 |            0.25 |
+|   Others                 |     0.000 |      402 |       --- |             --- |
+| Signals                  |    <0.001 |     4519 |       --- |             --- |
+| Block RAM                |    <0.001 |        2 |        50 |            4.00 |
+| I/O                      |    <0.001 |       21 |       106 |           19.81 |
+| Static Power             |     0.070 |          |           |                 |
+| Total                    |     0.073 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,11 +76,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.028 |       0.018 |      0.010 |
+| Vccint    |       1.000 |     0.012 |       0.002 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
-| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
-| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vcco18    |       1.800 |     0.001 |       0.000 |      0.001 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
@@ -94,17 +95,17 @@ Table of Contents
 1.3 Confidence Level
 --------------------
 
-+-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| User Input Data             | Confidence | Details                                               | Action                                                                                                     |
-+-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| Design implementation state | High       | Design is routed                                      |                                                                                                            |
-| Clock nodes activity        | High       | User specified more than 95% of clocks                |                                                                                                            |
-| I/O nodes activity          | Medium     | More than 5% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
-| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes        | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
-| Device models               | High       | Device models are Production                          |                                                                                                            |
-|                             |            |                                                       |                                                                                                            |
-| Overall confidence level    | Medium     |                                                       |                                                                                                            |
-+-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                             |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                                    |
+| Clock nodes activity        | Low        | User specified less than 75% of clocks                 | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view           |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views         |
+| Device models               | High       | Device models are Production                           |                                                                                                                    |
+|                             |            |                                                        |                                                                                                                    |
+| Overall confidence level    | Low        |                                                        |                                                                                                                    |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 
 2. Settings
@@ -132,7 +133,6 @@ Table of Contents
 | Clock                                                                                      | Domain                                                               | Constraint (ns) |
 +--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-----------------+
 | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/tck_bs |            33.0 |
-| sys_clk_pin                                                                                | CLK100MHZ                                                            |            10.0 |
 +--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-----------------+
 
 
@@ -145,12 +145,12 @@ Table of Contents
 +------------------------------------------------------------------------------------+-----------+
 | Name                                                                               | Power (W) |
 +------------------------------------------------------------------------------------+-----------+
-| led_top                                                                            |     0.021 |
-|   dbg_hub                                                                          |     0.003 |
-|     inst                                                                           |     0.003 |
-|       BSCANID.u_xsdbm_id                                                           |     0.003 |
-|         CORE_XSDB.UUT_MASTER                                                       |     0.002 |
-|           U_ICON_INTERFACE                                                         |     0.002 |
+| led_top                                                                            |     0.002 |
+|   dbg_hub                                                                          |     0.001 |
+|     inst                                                                           |     0.001 |
+|       BSCANID.u_xsdbm_id                                                           |     0.001 |
+|         CORE_XSDB.UUT_MASTER                                                       |    <0.001 |
+|           U_ICON_INTERFACE                                                         |    <0.001 |
 |             U_CMD1                                                                 |    <0.001 |
 |             U_CMD2                                                                 |    <0.001 |
 |             U_CMD3                                                                 |    <0.001 |
@@ -170,9 +170,11 @@ Table of Contents
 |                         gntv_or_sync_fifo.gl0.rd                                   |    <0.001 |
 |                           gr1.gr1_int.rfwft                                        |    <0.001 |
 |                           gras.rsts                                                |    <0.001 |
+|                           grhf.rhf                                                 |    <0.001 |
 |                           rpntr                                                    |    <0.001 |
 |                         gntv_or_sync_fifo.gl0.wr                                   |    <0.001 |
 |                           gwas.wsts                                                |    <0.001 |
+|                           gwhf.whf                                                 |    <0.001 |
 |                           wpntr                                                    |    <0.001 |
 |                         gntv_or_sync_fifo.mem                                      |    <0.001 |
 |                           gdm.dm_gen.dm                                            |    <0.001 |
@@ -197,9 +199,11 @@ Table of Contents
 |                           gnxpm_cdc.gsync_stage[2].wr_stg_inst                     |    <0.001 |
 |                         gntv_or_sync_fifo.gl0.rd                                   |    <0.001 |
 |                           gras.rsts                                                |    <0.001 |
+|                           grhf.rhf                                                 |    <0.001 |
 |                           rpntr                                                    |    <0.001 |
 |                         gntv_or_sync_fifo.gl0.wr                                   |    <0.001 |
 |                           gwas.wsts                                                |    <0.001 |
+|                           gwhf.whf                                                 |    <0.001 |
 |                           wpntr                                                    |    <0.001 |
 |                         gntv_or_sync_fifo.mem                                      |    <0.001 |
 |                           gdm.dm_gen.dm                                            |    <0.001 |
@@ -228,14 +232,14 @@ Table of Contents
 |           U_SYNC                                                                   |    <0.001 |
 |         SWITCH_N_EXT_BSCAN.bscan_inst                                              |    <0.001 |
 |         SWITCH_N_EXT_BSCAN.bscan_switch                                            |    <0.001 |
-|   ila_core                                                                         |     0.012 |
-|     U0                                                                             |     0.012 |
-|       ila_core_inst                                                                |     0.012 |
-|         ila_trace_memory_inst                                                      |     0.001 |
-|           SUBCORE_RAM_BLK_MEM_1.trace_block_memory                                 |     0.001 |
-|             inst_blk_mem_gen                                                       |     0.001 |
-|               gnbram.gnativebmg.native_blk_mem_gen                                 |     0.001 |
-|                 valid.cstr                                                         |     0.001 |
+|   ila_core                                                                         |    <0.001 |
+|     U0                                                                             |    <0.001 |
+|       ila_core_inst                                                                |    <0.001 |
+|         ila_trace_memory_inst                                                      |    <0.001 |
+|           SUBCORE_RAM_BLK_MEM_1.trace_block_memory                                 |    <0.001 |
+|             inst_blk_mem_gen                                                       |    <0.001 |
+|               gnbram.gnativebmg.native_blk_mem_gen                                 |    <0.001 |
+|                 valid.cstr                                                         |    <0.001 |
 |                   ramloop[0].ram.r                                                 |    <0.001 |
 |                     prim_noinit.ram                                                |    <0.001 |
 |                   ramloop[1].ram.r                                                 |    <0.001 |
@@ -247,53 +251,53 @@ Table of Contents
 |           u_cap_addrgen                                                            |    <0.001 |
 |             U_CMPRESET                                                             |    <0.001 |
 |             u_cap_sample_counter                                                   |    <0.001 |
-|               U_SCE                                                                |    <0.001 |
-|               U_SCMPCE                                                             |    <0.001 |
+|               U_SCE                                                                |     0.000 |
+|               U_SCMPCE                                                             |     0.000 |
 |               U_SCRST                                                              |    <0.001 |
-|               u_scnt_cmp                                                           |    <0.001 |
-|                 allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst            |    <0.001 |
-|                   DUT                                                              |    <0.001 |
-|                     I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                   |    <0.001 |
-|                       u_srlA                                                       |    <0.001 |
-|                       u_srlB                                                       |    <0.001 |
-|                       u_srlC                                                       |    <0.001 |
-|                       u_srlD                                                       |    <0.001 |
-|                     I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE                   |    <0.001 |
-|                       u_srlA                                                       |    <0.001 |
-|                       u_srlB                                                       |    <0.001 |
-|                       u_srlC                                                       |    <0.001 |
-|                       u_srlD                                                       |    <0.001 |
+|               u_scnt_cmp                                                           |     0.000 |
+|                 allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst            |     0.000 |
+|                   DUT                                                              |     0.000 |
+|                     I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                   |     0.000 |
+|                       u_srlA                                                       |     0.000 |
+|                       u_srlB                                                       |     0.000 |
+|                       u_srlC                                                       |     0.000 |
+|                       u_srlD                                                       |     0.000 |
+|                     I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE                   |     0.000 |
+|                       u_srlA                                                       |     0.000 |
+|                       u_srlB                                                       |     0.000 |
+|                       u_srlC                                                       |     0.000 |
+|                       u_srlD                                                       |     0.000 |
 |             u_cap_window_counter                                                   |    <0.001 |
-|               U_WCE                                                                |    <0.001 |
-|               U_WHCMPCE                                                            |    <0.001 |
-|               U_WLCMPCE                                                            |    <0.001 |
-|               u_wcnt_hcmp                                                          |    <0.001 |
-|                 allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst            |    <0.001 |
-|                   DUT                                                              |    <0.001 |
-|                     I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                   |    <0.001 |
-|                       u_srlA                                                       |    <0.001 |
-|                       u_srlB                                                       |    <0.001 |
-|                       u_srlC                                                       |    <0.001 |
-|                       u_srlD                                                       |    <0.001 |
-|                     I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE                   |    <0.001 |
-|                       u_srlA                                                       |    <0.001 |
-|                       u_srlB                                                       |    <0.001 |
-|                       u_srlC                                                       |    <0.001 |
-|                       u_srlD                                                       |    <0.001 |
+|               U_WCE                                                                |     0.000 |
+|               U_WHCMPCE                                                            |     0.000 |
+|               U_WLCMPCE                                                            |     0.000 |
+|               u_wcnt_hcmp                                                          |     0.000 |
+|                 allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst            |     0.000 |
+|                   DUT                                                              |     0.000 |
+|                     I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                   |     0.000 |
+|                       u_srlA                                                       |     0.000 |
+|                       u_srlB                                                       |     0.000 |
+|                       u_srlC                                                       |     0.000 |
+|                       u_srlD                                                       |     0.000 |
+|                     I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE                   |     0.000 |
+|                       u_srlA                                                       |     0.000 |
+|                       u_srlB                                                       |     0.000 |
+|                       u_srlC                                                       |     0.000 |
+|                       u_srlD                                                       |     0.000 |
 |               u_wcnt_lcmp                                                          |    <0.001 |
 |                 allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst            |    <0.001 |
-|                   DUT                                                              |    <0.001 |
-|                     I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                   |    <0.001 |
-|                       u_srlA                                                       |    <0.001 |
-|                       u_srlB                                                       |    <0.001 |
-|                       u_srlC                                                       |    <0.001 |
-|                       u_srlD                                                       |    <0.001 |
-|                     I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE                   |    <0.001 |
-|                       u_srlA                                                       |    <0.001 |
-|                       u_srlB                                                       |    <0.001 |
-|                       u_srlC                                                       |    <0.001 |
-|                       u_srlD                                                       |    <0.001 |
-|         u_ila_regs                                                                 |     0.007 |
+|                   DUT                                                              |     0.000 |
+|                     I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                   |     0.000 |
+|                       u_srlA                                                       |     0.000 |
+|                       u_srlB                                                       |     0.000 |
+|                       u_srlC                                                       |     0.000 |
+|                       u_srlD                                                       |     0.000 |
+|                     I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE                   |     0.000 |
+|                       u_srlA                                                       |     0.000 |
+|                       u_srlB                                                       |     0.000 |
+|                       u_srlC                                                       |     0.000 |
+|                       u_srlD                                                       |     0.000 |
+|         u_ila_regs                                                                 |    <0.001 |
 |           MU_SRL[0].mu_srl_reg                                                     |    <0.001 |
 |           MU_SRL[10].mu_srl_reg                                                    |    <0.001 |
 |           MU_SRL[11].mu_srl_reg                                                    |    <0.001 |
@@ -314,7 +318,7 @@ Table of Contents
 |           MU_SRL[9].mu_srl_reg                                                     |    <0.001 |
 |           STRG_QUAL.qual_strg_srl_reg                                              |    <0.001 |
 |           TC_SRL[0].tc_srl_reg                                                     |    <0.001 |
-|           U_XSDB_SLAVE                                                             |     0.001 |
+|           U_XSDB_SLAVE                                                             |    <0.001 |
 |           reg_15                                                                   |    <0.001 |
 |             I_EN_CTL_EQ1.U_CTL                                                     |    <0.001 |
 |           reg_16                                                                   |    <0.001 |
@@ -345,19 +349,19 @@ Table of Contents
 |             I_EN_CTL_EQ1.U_CTL                                                     |    <0.001 |
 |           reg_85                                                                   |    <0.001 |
 |             I_EN_CTL_EQ1.U_CTL                                                     |    <0.001 |
-|           reg_887                                                                  |    <0.001 |
-|             I_EN_STAT_EQ1.U_STAT                                                   |    <0.001 |
+|           reg_887                                                                  |     0.000 |
+|             I_EN_STAT_EQ1.U_STAT                                                   |     0.000 |
 |           reg_88d                                                                  |    <0.001 |
 |             I_EN_STAT_EQ1.U_STAT                                                   |    <0.001 |
-|           reg_890                                                                  |    <0.001 |
-|             I_EN_STAT_EQ1.U_STAT                                                   |    <0.001 |
+|           reg_890                                                                  |     0.000 |
+|             I_EN_STAT_EQ1.U_STAT                                                   |     0.000 |
 |           reg_9                                                                    |    <0.001 |
 |             I_EN_STAT_EQ1.U_STAT                                                   |    <0.001 |
 |           reg_srl_fff                                                              |    <0.001 |
 |           reg_stream_ffd                                                           |    <0.001 |
 |             I_EN_CTL_EQ1.U_CTL                                                     |    <0.001 |
-|           reg_stream_ffe                                                           |    <0.001 |
-|             I_EN_STAT_EQ1.U_STAT                                                   |    <0.001 |
+|           reg_stream_ffe                                                           |     0.000 |
+|             I_EN_STAT_EQ1.U_STAT                                                   |     0.000 |
 |         u_ila_reset_ctrl                                                           |    <0.001 |
 |           arm_detection_inst                                                       |    <0.001 |
 |           asyncrounous_transfer.arm_in_transfer_inst                               |    <0.001 |
@@ -365,44 +369,44 @@ Table of Contents
 |           asyncrounous_transfer.halt_in_transfer_inst                              |    <0.001 |
 |           asyncrounous_transfer.halt_out_transfer_inst                             |    <0.001 |
 |           halt_detection_inst                                                      |    <0.001 |
-|         u_trig                                                                     |     0.002 |
+|         u_trig                                                                     |    <0.001 |
 |           N_DDR_TC.N_DDR_TC_INST[0].U_TC                                           |    <0.001 |
-|             allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst                |    <0.001 |
-|               DUT                                                                  |    <0.001 |
-|                 I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                       |    <0.001 |
-|                   u_srlA                                                           |    <0.001 |
-|                   u_srlB                                                           |    <0.001 |
-|                   u_srlC                                                           |    <0.001 |
-|                   u_srlD                                                           |    <0.001 |
-|                 I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE                       |    <0.001 |
-|                   u_srlA                                                           |    <0.001 |
-|                   u_srlB                                                           |    <0.001 |
-|                   u_srlC                                                           |    <0.001 |
-|                   u_srlD                                                           |    <0.001 |
-|                 I_WHOLE_SLICE.G_SLICE_IDX[2].U_ALL_SRL_SLICE                       |    <0.001 |
-|                   u_srlA                                                           |    <0.001 |
-|                   u_srlB                                                           |    <0.001 |
-|                   u_srlC                                                           |    <0.001 |
-|                   u_srlD                                                           |    <0.001 |
+|             allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst                |     0.000 |
+|               DUT                                                                  |     0.000 |
+|                 I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                       |     0.000 |
+|                   u_srlA                                                           |     0.000 |
+|                   u_srlB                                                           |     0.000 |
+|                   u_srlC                                                           |     0.000 |
+|                   u_srlD                                                           |     0.000 |
+|                 I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE                       |     0.000 |
+|                   u_srlA                                                           |     0.000 |
+|                   u_srlB                                                           |     0.000 |
+|                   u_srlC                                                           |     0.000 |
+|                   u_srlD                                                           |     0.000 |
+|                 I_WHOLE_SLICE.G_SLICE_IDX[2].U_ALL_SRL_SLICE                       |     0.000 |
+|                   u_srlA                                                           |     0.000 |
+|                   u_srlB                                                           |     0.000 |
+|                   u_srlC                                                           |     0.000 |
+|                   u_srlD                                                           |     0.000 |
 |           STRG_QUAL.U_STRG_QUAL                                                    |    <0.001 |
 |             allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst                |    <0.001 |
 |               DUT                                                                  |    <0.001 |
-|                 I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                       |    <0.001 |
-|                   u_srlA                                                           |    <0.001 |
-|                   u_srlB                                                           |    <0.001 |
-|                   u_srlC                                                           |    <0.001 |
-|                   u_srlD                                                           |    <0.001 |
-|                 I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE                       |    <0.001 |
-|                   u_srlA                                                           |    <0.001 |
-|                   u_srlB                                                           |    <0.001 |
-|                   u_srlC                                                           |    <0.001 |
-|                   u_srlD                                                           |    <0.001 |
+|                 I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                       |     0.000 |
+|                   u_srlA                                                           |     0.000 |
+|                   u_srlB                                                           |     0.000 |
+|                   u_srlC                                                           |     0.000 |
+|                   u_srlD                                                           |     0.000 |
+|                 I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE                       |     0.000 |
+|                   u_srlA                                                           |     0.000 |
+|                   u_srlB                                                           |     0.000 |
+|                   u_srlC                                                           |     0.000 |
+|                   u_srlD                                                           |     0.000 |
 |                 I_WHOLE_SLICE.G_SLICE_IDX[2].U_ALL_SRL_SLICE                       |    <0.001 |
-|                   u_srlA                                                           |    <0.001 |
-|                   u_srlB                                                           |    <0.001 |
-|                   u_srlC                                                           |    <0.001 |
-|                   u_srlD                                                           |    <0.001 |
-|           U_TM                                                                     |     0.001 |
+|                   u_srlA                                                           |     0.000 |
+|                   u_srlB                                                           |     0.000 |
+|                   u_srlC                                                           |     0.000 |
+|                   u_srlD                                                           |     0.000 |
+|           U_TM                                                                     |    <0.001 |
 |             N_DDR_MODE.G_NMU[0].U_M                                                |    <0.001 |
 |               allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst              |    <0.001 |
 |                 DUT                                                                |    <0.001 |
@@ -414,97 +418,97 @@ Table of Contents
 |             N_DDR_MODE.G_NMU[10].U_M                                               |    <0.001 |
 |               allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst              |    <0.001 |
 |                 DUT                                                                |    <0.001 |
-|                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
+|                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |     0.000 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
 |                   I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
 |             N_DDR_MODE.G_NMU[11].U_M                                               |    <0.001 |
 |               allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst              |    <0.001 |
 |                 DUT                                                                |    <0.001 |
-|                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
+|                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |     0.000 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
 |                   I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
 |             N_DDR_MODE.G_NMU[12].U_M                                               |    <0.001 |
 |               allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst              |    <0.001 |
 |                 DUT                                                                |    <0.001 |
-|                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
+|                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |     0.000 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
 |                   I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
-|             N_DDR_MODE.G_NMU[13].U_M                                               |    <0.001 |
-|               allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst              |    <0.001 |
-|                 DUT                                                                |    <0.001 |
-|                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
-|                   I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
+|             N_DDR_MODE.G_NMU[13].U_M                                               |     0.000 |
+|               allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst              |     0.000 |
+|                 DUT                                                                |     0.000 |
+|                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |     0.000 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
+|                   I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE                     |     0.000 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
 |             N_DDR_MODE.G_NMU[14].U_M                                               |    <0.001 |
 |               allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst              |    <0.001 |
 |                 DUT                                                                |    <0.001 |
 |                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
 |             N_DDR_MODE.G_NMU[15].U_M                                               |    <0.001 |
 |               allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst              |    <0.001 |
 |                 DUT                                                                |    <0.001 |
 |                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
 |             N_DDR_MODE.G_NMU[16].U_M                                               |    <0.001 |
 |               allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst              |    <0.001 |
 |                 DUT                                                                |    <0.001 |
-|                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
+|                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |     0.000 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
 |                   I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
 |             N_DDR_MODE.G_NMU[17].U_M                                               |    <0.001 |
 |               allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst              |    <0.001 |
 |                 DUT                                                                |    <0.001 |
-|                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
+|                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |     0.000 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
 |                   I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
 |             N_DDR_MODE.G_NMU[1].U_M                                                |    <0.001 |
 |               allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst              |    <0.001 |
 |                 DUT                                                                |    <0.001 |
@@ -517,18 +521,18 @@ Table of Contents
 |               allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst              |    <0.001 |
 |                 DUT                                                                |    <0.001 |
 |                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
 |             N_DDR_MODE.G_NMU[3].U_M                                                |    <0.001 |
 |               allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst              |    <0.001 |
 |                 DUT                                                                |    <0.001 |
 |                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
 |             N_DDR_MODE.G_NMU[4].U_M                                                |    <0.001 |
 |               allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst              |    <0.001 |
 |                 DUT                                                                |    <0.001 |
@@ -549,41 +553,41 @@ Table of Contents
 |               allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst              |    <0.001 |
 |                 DUT                                                                |    <0.001 |
 |                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
 |             N_DDR_MODE.G_NMU[7].U_M                                                |    <0.001 |
 |               allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst              |    <0.001 |
 |                 DUT                                                                |    <0.001 |
 |                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
 |             N_DDR_MODE.G_NMU[8].U_M                                                |    <0.001 |
 |               allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst              |    <0.001 |
 |                 DUT                                                                |    <0.001 |
 |                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
 |             N_DDR_MODE.G_NMU[9].U_M                                                |    <0.001 |
 |               allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst              |    <0.001 |
 |                 DUT                                                                |    <0.001 |
 |                   I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE                     |    <0.001 |
-|                     u_srlA                                                         |    <0.001 |
-|                     u_srlB                                                         |    <0.001 |
-|                     u_srlC                                                         |    <0.001 |
-|                     u_srlD                                                         |    <0.001 |
+|                     u_srlA                                                         |     0.000 |
+|                     u_srlB                                                         |     0.000 |
+|                     u_srlC                                                         |     0.000 |
+|                     u_srlD                                                         |     0.000 |
 |         xsdb_memory_read_inst                                                      |    <0.001 |
 |   spi_slave_input                                                                  |    <0.001 |
 |     mosi_sync                                                                      |    <0.001 |
 |     sck_sync                                                                       |    <0.001 |
 |     ss_sync                                                                        |    <0.001 |
-|   vio_core                                                                         |     0.002 |
-|     inst                                                                           |     0.002 |
+|   vio_core                                                                         |    <0.001 |
+|     inst                                                                           |    <0.001 |
 |       DECODER_INST                                                                 |    <0.001 |
 |       PROBE_IN_INST                                                                |    <0.001 |
 |       PROBE_IN_WIDTH_INST                                                          |    <0.001 |

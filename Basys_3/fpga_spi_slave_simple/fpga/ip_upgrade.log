@@ -1,0 +1,37 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date         : Sun Oct 14 02:59:06 2018
+| Host         : badass running 64-bit Ubuntu 18.04.1 LTS
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'vio_core_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of vio_core_0 (xilinx.com:ip:vio:3.0) from (Rev. 17) to (Rev. 19)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date         : Sun Oct 14 02:59:03 2018
+| Host         : badass running 64-bit Ubuntu 18.04.1 LTS
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ila_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of ila_0 (xilinx.com:ip:ila:6.2) from (Rev. 5) to (Rev. 7)
+

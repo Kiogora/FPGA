@@ -1,2 +1,0 @@
-vio_core_0.vhd,vhdl,xil_defaultlib,../../../../spi_slave_simple.srcs/sources_1/ip/vio_core_0/sim/vio_core_0.vhd,incdir="../../../../spi_slave_simple.srcs/sources_1/ip/vio_core_0/hdl/verilog"incdir="../../../../spi_slave_simple.srcs/sources_1/ip/vio_core_0/hdl"
-glbl.v,Verilog,xil_defaultlib,glbl.v

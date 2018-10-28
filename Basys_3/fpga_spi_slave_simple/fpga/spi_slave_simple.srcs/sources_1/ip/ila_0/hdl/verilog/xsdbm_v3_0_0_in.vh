@@ -80,6 +80,7 @@
 `define FAMILY_VIRTEXU            "virtexu"
 `define FAMILY_VIRTEXUPLUS        "virtexuplus"
 `define FAMILY_VIRTEXUPLUSHBM     "virtexuplusHBM"
+`define FAMILY_VIRTEXUPLUS58G     "virtexuplus58g"
 `define FAMILY_ZYNQUPLUS          "zynquplus"
 
   //

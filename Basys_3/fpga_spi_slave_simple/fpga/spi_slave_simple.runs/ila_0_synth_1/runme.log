@@ -3,23 +3,22 @@
     with args -log ila_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ila_0.tcl
 
 
-****** Vivado v2017.4 (64-bit)
-  **** SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
-  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
-Sourcing tcl script '/home/alois/.Xilinx/Vivado/Vivado_init.tcl'
 source ila_0.tcl -notrace
 Command: synth_design -top ila_0 -part xc7a35tcpg236-1 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 12518 
+INFO: Helper process launched with PID 6874 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 1323.562 ; gain = 108.996 ; free physical = 2158 ; free virtual = 6187
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 1338.539 ; gain = 99.902 ; free physical = 130 ; free virtual = 4616
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'ila_0' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'ila_0' [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:70]
 	Parameter C_XLNX_HW_PROBE_INFO bound to: DEFAULT - type: string 
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
 	Parameter C_CORE_TYPE bound to: 1 - type: integer 
@@ -30,8 +29,8 @@ INFO: [Synth 8-638] synthesizing module 'ila_0' [/home/alois/Music/esp32_spi_tri
 	Parameter C_TC_TYPE bound to: 0 - type: integer 
 	Parameter C_NUM_OF_PROBES bound to: 9 - type: integer 
 	Parameter C_DATA_DEPTH bound to: 1024 - type: integer 
-	Parameter C_MAJOR_VERSION bound to: 2017 - type: integer 
-	Parameter C_MINOR_VERSION bound to: 4 - type: integer 
+	Parameter C_MAJOR_VERSION bound to: 2018 - type: integer 
+	Parameter C_MINOR_VERSION bound to: 2 - type: integer 
 	Parameter C_BUILD_REVISION bound to: 0 - type: integer 
 	Parameter C_CORE_MAJOR_VER bound to: 6 - type: integer 
 	Parameter C_CORE_MINOR_VER bound to: 2 - type: integer 
@@ -3122,21 +3121,21 @@ INFO: [Synth 8-638] synthesizing module 'ila_0' [/home/alois/Music/esp32_spi_tri
 	Parameter C_PROBE1021_TYPE bound to: 1 - type: integer 
 	Parameter C_PROBE1022_TYPE bound to: 1 - type: integer 
 	Parameter C_PROBE1023_TYPE bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'ila_v6_2_5_ila' declared at '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/hdl/ila_v6_2_syn_rfs.v:5526' bound to instance 'U0' of component 'ila_v6_2_5_ila' [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-638] synthesizing module 'CFGLUT5' [/opt/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:998]
-INFO: [Synth 8-256] done synthesizing module 'CFGLUT5' (8#1) [/opt/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:998]
-INFO: [Synth 8-638] synthesizing module 'CARRY4' [/opt/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:961]
-INFO: [Synth 8-256] done synthesizing module 'CARRY4' (9#1) [/opt/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:961]
-INFO: [Synth 8-638] synthesizing module 'SRLC32E' [/opt/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50855]
-INFO: [Synth 8-256] done synthesizing module 'SRLC32E' (19#1) [/opt/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50855]
-INFO: [Synth 8-638] synthesizing module 'SRL16E' [/opt/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705]
-INFO: [Synth 8-256] done synthesizing module 'SRL16E' (21#1) [/opt/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50705]
-INFO: [Synth 8-638] synthesizing module 'SRLC16E' [/opt/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50794]
-INFO: [Synth 8-256] done synthesizing module 'SRLC16E' (23#1) [/opt/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:50794]
-INFO: [Synth 8-638] synthesizing module 'FDRE' [/opt/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964]
-INFO: [Synth 8-256] done synthesizing module 'FDRE' (28#1) [/opt/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:3964]
-WARNING: [Synth 8-3848] Net sl_iport0 in module/entity ila_0 does not have driver. [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4252]
-INFO: [Synth 8-256] done synthesizing module 'ila_0' (46#1) [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:70]
+INFO: [Synth 8-3491] module 'ila_v6_2_7_ila' declared at '/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/hdl/ila_v6_2_syn_rfs.v:5640' bound to instance 'U0' of component 'ila_v6_2_7_ila' [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-6157] synthesizing module 'CFGLUT5' [/opt/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:1000]
+INFO: [Synth 8-6155] done synthesizing module 'CFGLUT5' (8#1) [/opt/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:1000]
+INFO: [Synth 8-6157] synthesizing module 'CARRY4' [/opt/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:963]
+INFO: [Synth 8-6155] done synthesizing module 'CARRY4' (9#1) [/opt/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:963]
+INFO: [Synth 8-6157] synthesizing module 'SRLC32E' [/opt/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:50861]
+INFO: [Synth 8-6155] done synthesizing module 'SRLC32E' (19#1) [/opt/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:50861]
+INFO: [Synth 8-6157] synthesizing module 'SRL16E' [/opt/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:50711]
+INFO: [Synth 8-6155] done synthesizing module 'SRL16E' (21#1) [/opt/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:50711]
+INFO: [Synth 8-6157] synthesizing module 'SRLC16E' [/opt/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:50800]
+INFO: [Synth 8-6155] done synthesizing module 'SRLC16E' (23#1) [/opt/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:50800]
+INFO: [Synth 8-6157] synthesizing module 'FDRE' [/opt/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:3966]
+INFO: [Synth 8-6155] done synthesizing module 'FDRE' (28#1) [/opt/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:3966]
+WARNING: [Synth 8-3848] Net sl_iport0 in module/entity ila_0 does not have driver. [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4252]
+INFO: [Synth 8-256] done synthesizing module 'ila_0' (46#1) [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:70]
 WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized0 has unconnected port SSRA
 WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized0 has unconnected port REGCEA
 WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized0 has unconnected port SSRB
@@ -3239,7 +3238,7 @@ WARNING: [Synth 8-3331] design blk_mem_gen_generic_cstr has unconnected port WEB
 WARNING: [Synth 8-3331] design blk_mem_gen_generic_cstr has unconnected port WEB[3]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:46 ; elapsed = 00:02:04 . Memory (MB): peak = 1669.281 ; gain = 454.715 ; free physical = 2054 ; free virtual = 6085
+Finished RTL Elaboration : Time (s): cpu = 00:01:14 ; elapsed = 00:01:32 . Memory (MB): peak = 1627.398 ; gain = 388.762 ; free physical = 857 ; free virtual = 4971
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -3248,45 +3247,51 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[36] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[35] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[34] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[33] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[32] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[31] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[30] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[29] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[28] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[27] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[26] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[25] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[24] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[23] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[22] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[21] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[20] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[19] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[18] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[17] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[16] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[15] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[14] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[13] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[12] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[11] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[10] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[9] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[8] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[7] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[6] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[5] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[4] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[3] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[2] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[1] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[0] to constant 0 [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[36] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[35] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[34] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[33] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[32] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[31] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[30] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[29] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[28] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[27] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[26] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[25] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[24] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[23] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[22] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[21] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[20] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[19] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[18] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[17] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[16] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[15] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[14] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[13] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[12] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[11] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[10] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[9] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[8] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[7] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[6] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[5] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[4] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[3] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[2] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[1] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[0] to constant 0 [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/synth/ila_0.vhd:4255]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:47 ; elapsed = 00:02:05 . Memory (MB): peak = 1669.281 ; gain = 454.715 ; free physical = 2083 ; free virtual = 6115
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:15 ; elapsed = 00:01:33 . Memory (MB): peak = 1627.398 ; gain = 388.762 ; free physical = 877 ; free virtual = 4991
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:15 ; elapsed = 00:01:33 . Memory (MB): peak = 1627.398 ; gain = 388.762 ; free physical = 877 ; free virtual = 4991
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 228 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -3295,12 +3300,12 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc] for cell 'U0'
-Parsing XDC File [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'U0'
-Finished Parsing XDC File [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'U0'
-Parsing XDC File [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/ila_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/ila_0_synth_1/dont_touch.xdc]
+Parsing XDC File [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'U0'
+Parsing XDC File [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/ila_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/ila_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
@@ -3308,94 +3313,174 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 144 instances
   CFGLUT5 => SRLC32E: 23 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1760.297 ; gain = 0.000 ; free physical = 1873 ; free virtual = 5905
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.08 . Memory (MB): peak = 1754.414 ; gain = 1.000 ; free physical = 640 ; free virtual = 4786
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:02:06 ; elapsed = 00:02:35 . Memory (MB): peak = 1760.297 ; gain = 545.730 ; free physical = 1962 ; free virtual = 5994
+Finished Constraint Validation : Time (s): cpu = 00:01:27 ; elapsed = 00:01:57 . Memory (MB): peak = 1754.414 ; gain = 515.777 ; free physical = 729 ; free virtual = 4885
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:02:06 ; elapsed = 00:02:35 . Memory (MB): peak = 1760.297 ; gain = 545.730 ; free physical = 1962 ; free virtual = 5994
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:27 ; elapsed = 00:01:57 . Memory (MB): peak = 1754.414 ; gain = 515.777 ; free physical = 729 ; free virtual = 4885
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for U0. (constraint file  /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/ila_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for U0. (constraint file  /home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/ila_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:06 ; elapsed = 00:02:35 . Memory (MB): peak = 1760.297 ; gain = 545.730 ; free physical = 1965 ; free virtual = 5996
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:27 ; elapsed = 00:01:57 . Memory (MB): peak = 1754.414 ; gain = 515.777 ; free physical = 731 ; free virtual = 4888
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized18'
-INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized18'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized19'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized19'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized0'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized0'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized1'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized1'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized2'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized2'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized3'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized3'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized4'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized4'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized5'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized5'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized6'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized6'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized7'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized7'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized8'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized8'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized9'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized9'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized10'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized10'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized11'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized11'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized12'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized12'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized13'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized13'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized14'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized14'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized15'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized15'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized16'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized16'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized17'
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Common 17-14] Message 'Synth 8-5544' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized17'
 INFO: [Synth 8-5546] ROM "drdy_mux_temp" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "adv_drdy" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "read_addr" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "curr_read_block" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "read_en" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm1DAE46800'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm233B3D300'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm2221EB000'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm258D25800'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm217F20B00'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm217F5B200'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsmD26B6500'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm25B270D00'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm20C2AC000'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm20C246800'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm240D61B00'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm2129FC300'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm213C17600'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm22B031E00'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm1EED25D00'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm24380D100'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm243834400'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm1F4BDB800'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm1EDD22C00'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm21E7F2E00'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'fsm23840E100'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:08 ; elapsed = 00:02:38 . Memory (MB): peak = 1760.297 ; gain = 545.730 ; free physical = 1953 ; free virtual = 5985
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:30 ; elapsed = 00:02:01 . Memory (MB): peak = 1754.414 ; gain = 515.777 ; free physical = 717 ; free virtual = 4854
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3409,6 +3494,7 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     10 Bit       Adders := 3     
+	   2 Input      9 Bit       Adders := 1     
 	   2 Input      7 Bit       Adders := 2     
 	   2 Input      6 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 21    
@@ -3426,12 +3512,13 @@ Detailed RTL Component Info :
 	               17 Bit    Registers := 2     
 	               16 Bit    Registers := 146   
 	               10 Bit    Registers := 9     
+	                9 Bit    Registers := 1     
 	                7 Bit    Registers := 3     
 	                6 Bit    Registers := 2     
-	                4 Bit    Registers := 44    
+	                4 Bit    Registers := 23    
 	                3 Bit    Registers := 4     
 	                2 Bit    Registers := 6     
-	                1 Bit    Registers := 199   
+	                1 Bit    Registers := 208   
 +---Muxes : 
 	   2 Input     56 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 31    
@@ -3445,13 +3532,13 @@ Detailed RTL Component Info :
 	   8 Input      7 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 4     
 	   2 Input      5 Bit        Muxes := 2     
-	   3 Input      4 Bit        Muxes := 21    
-	   2 Input      4 Bit        Muxes := 22    
+	   5 Input      4 Bit        Muxes := 21    
+	   2 Input      4 Bit        Muxes := 64    
 	   2 Input      3 Bit        Muxes := 21    
 	  10 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 5     
 	   8 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 89    
+	   2 Input      1 Bit        Muxes := 140   
 	   3 Input      1 Bit        Muxes := 21    
 	   9 Input      1 Bit        Muxes := 1     
 	   4 Input      1 Bit        Muxes := 1     
@@ -3471,15 +3558,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_xsdbs 
 Detailed RTL Component Info : 
@@ -3570,15 +3657,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_reg_stream 
 Detailed RTL Component Info : 
@@ -3598,15 +3685,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_reg_p2s__parameterized0 
 Detailed RTL Component Info : 
@@ -3616,15 +3703,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_reg_p2s__parameterized1 
 Detailed RTL Component Info : 
@@ -3634,15 +3721,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_reg_p2s__parameterized2 
 Detailed RTL Component Info : 
@@ -3652,15 +3739,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_reg_p2s__parameterized3 
 Detailed RTL Component Info : 
@@ -3670,15 +3757,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_reg_p2s__parameterized4 
 Detailed RTL Component Info : 
@@ -3688,15 +3775,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_reg_p2s__parameterized5 
 Detailed RTL Component Info : 
@@ -3706,15 +3793,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_reg_p2s__parameterized6 
 Detailed RTL Component Info : 
@@ -3724,15 +3811,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_reg_p2s__parameterized7 
 Detailed RTL Component Info : 
@@ -3742,15 +3829,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_reg_p2s__parameterized8 
 Detailed RTL Component Info : 
@@ -3760,15 +3847,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_reg_p2s__parameterized9 
 Detailed RTL Component Info : 
@@ -3778,15 +3865,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_reg_p2s__parameterized10 
 Detailed RTL Component Info : 
@@ -3796,15 +3883,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_reg_p2s__parameterized11 
 Detailed RTL Component Info : 
@@ -3814,15 +3901,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_reg_p2s__parameterized12 
 Detailed RTL Component Info : 
@@ -3832,15 +3919,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_reg_p2s__parameterized13 
 Detailed RTL Component Info : 
@@ -3850,15 +3937,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_reg_p2s__parameterized14 
 Detailed RTL Component Info : 
@@ -3868,15 +3955,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_reg_p2s__parameterized15 
 Detailed RTL Component Info : 
@@ -3886,15 +3973,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_reg_p2s__parameterized16 
 Detailed RTL Component Info : 
@@ -3904,15 +3991,15 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 Module xsdbs_v1_0_2_reg_p2s__parameterized17 
 Detailed RTL Component Info : 
@@ -3922,28 +4009,30 @@ Detailed RTL Component Info :
 	   2 Input     13 Bit         XORs := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
-Module ila_v6_2_5_ila_register 
+Module ila_v6_2_7_ila_register 
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input      9 Bit       Adders := 1     
 	   2 Input      7 Bit       Adders := 2     
 	   2 Input      6 Bit       Adders := 1     
 +---Registers : 
 	             1024 Bit    Registers := 2     
 	               17 Bit    Registers := 1     
 	               16 Bit    Registers := 12    
+	                9 Bit    Registers := 1     
 	                7 Bit    Registers := 2     
 	                6 Bit    Registers := 1     
-	                1 Bit    Registers := 22    
+	                1 Bit    Registers := 31    
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 9     
 	   4 Input     16 Bit        Muxes := 1     
@@ -3953,7 +4042,7 @@ Detailed RTL Component Info :
 	   2 Input      6 Bit        Muxes := 4     
 	   2 Input      5 Bit        Muxes := 2     
 	  10 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 13    
 	   9 Input      1 Bit        Muxes := 1     
 Module ltlib_v1_0_0_all_typeA_slice__parameterized0 
 Detailed RTL Component Info : 
@@ -3991,7 +4080,7 @@ Module ltlib_v1_0_0_match__parameterized2
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 1     
-Module ila_v6_2_5_ila_trigger 
+Module ila_v6_2_7_ila_trigger 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 3     
@@ -4008,7 +4097,7 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input      2 Bit        Muxes := 2     
-Module ila_v6_2_5_ila_reset_ctrl 
+Module ila_v6_2_7_ila_reset_ctrl 
 Detailed RTL Component Info : 
 +---Registers : 
 	                6 Bit    Registers := 1     
@@ -4027,19 +4116,19 @@ Module ltlib_v1_0_0_allx_typeA_nodelay
 Detailed RTL Component Info : 
 +---Registers : 
 	               10 Bit    Registers := 1     
-Module ila_v6_2_5_ila_cap_sample_counter 
+Module ila_v6_2_7_ila_cap_sample_counter 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     10 Bit       Adders := 1     
 +---Registers : 
 	               10 Bit    Registers := 1     
-Module ila_v6_2_5_ila_cap_window_counter 
+Module ila_v6_2_7_ila_cap_window_counter 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     10 Bit       Adders := 1     
 +---Registers : 
 	               10 Bit    Registers := 1     
-Module ila_v6_2_5_ila_cap_addrgen 
+Module ila_v6_2_7_ila_cap_addrgen 
 Detailed RTL Component Info : 
 +---Registers : 
 	               33 Bit    Registers := 2     
@@ -4054,7 +4143,7 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 1     
-Module ila_v6_2_5_ila_cap_ctrl_legacy 
+Module ila_v6_2_7_ila_cap_ctrl_legacy 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 3     
@@ -4085,7 +4174,7 @@ Detailed RTL Component Info :
 	   2 Input      2 Bit        Muxes := 1     
 	   8 Input      2 Bit        Muxes := 1     
 	   8 Input      1 Bit        Muxes := 5     
-Module ila_v6_2_5_ila_core 
+Module ila_v6_2_7_ila_core 
 Detailed RTL Component Info : 
 +---Registers : 
 	               56 Bit    Registers := 9     
@@ -4094,7 +4183,7 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 5     
 +---Muxes : 
 	   2 Input     56 Bit        Muxes := 1     
-Module ila_v6_2_5_ila 
+Module ila_v6_2_7_ila 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 6     
@@ -4113,11 +4202,12 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
 INFO: [Synth 8-5546] ROM "ila_core_inst/xsdb_memory_read_inst/curr_read_block" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "ila_core_inst/xsdb_memory_read_inst/read_en" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "ila_core_inst/xsdb_memory_read_inst/read_addr" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-3332] Sequential element (ila_core_inst/xsdb_memory_read_inst/multiple_read_latency.read_enable_out_reg[0]) is unused and will be removed from module ila_v6_2_5_ila.
-INFO: [Synth 8-3332] Sequential element (ila_core_inst/xsdb_memory_read_inst/multiple_enable_latency.enable_out_reg[0]) is unused and will be removed from module ila_v6_2_5_ila.
+INFO: [Synth 8-3332] Sequential element (ila_core_inst/xsdb_memory_read_inst/multiple_read_latency.read_enable_out_reg[0]) is unused and will be removed from module ila_v6_2_7_ila.
+INFO: [Synth 8-3332] Sequential element (ila_core_inst/xsdb_memory_read_inst/multiple_enable_latency.enable_out_reg[0]) is unused and will be removed from module ila_v6_2_7_ila.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs /\shift_reg1_reg[1008] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs /\shift_reg0_reg[1008] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs /\shift_reg1_reg[1009] )
@@ -4281,107 +4371,107 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_c
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs /\slaveRegDo_mux_1_reg[13] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs /\slaveRegDo_mux_1_reg[14] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs /\slaveRegDo_mux_1_reg[15] )
-INFO: [Synth 8-3332] Sequential element (reg_stream_ffd/I_EN_CTL_EQ1.temp_en_reg) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[16]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[15]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[14]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[13]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[12]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[11]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[10]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[9]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[8]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[7]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[6]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[5]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[4]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[3]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[2]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[1]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[0]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (FSM_BRAM_WE_O_reg) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (FSM_BRAM_EN_RB_O_reg) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[15]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[14]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[13]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[12]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[11]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[10]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[9]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[8]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[7]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[6]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[5]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[4]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[3]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[2]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[1]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[0]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff8_reg[14]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1023]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1022]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1021]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1020]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1019]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1018]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1017]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1016]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1015]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1014]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1013]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1012]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1011]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1010]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1009]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1008]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1007]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1006]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1005]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1004]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1003]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1002]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1001]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1000]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[999]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[998]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[997]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[996]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[995]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[994]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[993]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[992]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[991]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[990]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[989]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[988]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[987]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[986]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[985]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[984]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[983]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[982]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[981]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[980]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[979]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[978]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[977]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[976]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[975]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[974]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[973]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[972]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[971]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[970]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[969]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[968]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[967]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[966]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[965]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[964]) is unused and will be removed from module ila_v6_2_5_ila_register.
-INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[963]) is unused and will be removed from module ila_v6_2_5_ila_register.
+INFO: [Synth 8-3332] Sequential element (reg_stream_ffd/I_EN_CTL_EQ1.temp_en_reg) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[16]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[15]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[14]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[13]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[12]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[11]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[10]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[9]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[8]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[7]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[6]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[5]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[4]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[3]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[2]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[1]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (FSM_BRAM_ADDR_O_reg[0]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (FSM_BRAM_WE_O_reg) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (FSM_BRAM_EN_RB_O_reg) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[15]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[14]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[13]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[12]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[11]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[10]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[9]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[8]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[7]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[6]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[5]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[4]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[3]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[2]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[1]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff7_reg[0]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (slaveRegDo_ff8_reg[14]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1023]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1022]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1021]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1020]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1019]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1018]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1017]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1016]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1015]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1014]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1013]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1012]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1011]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1010]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1009]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1008]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1007]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1006]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1005]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1004]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1003]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1002]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1001]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[1000]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[999]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[998]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[997]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[996]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[995]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[994]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[993]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[992]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[991]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[990]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[989]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[988]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[987]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[986]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[985]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[984]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[983]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[982]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[981]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[980]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[979]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[978]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[977]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[976]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[975]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[974]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[973]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[972]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[971]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[970]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[969]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[968]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[967]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[966]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[965]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[964]) is unused and will be removed from module ila_v6_2_7_ila_register.
+INFO: [Synth 8-3332] Sequential element (shift_reg0_reg[963]) is unused and will be removed from module ila_v6_2_7_ila_register.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:16 ; elapsed = 00:02:47 . Memory (MB): peak = 1760.297 ; gain = 545.730 ; free physical = 1927 ; free virtual = 5960
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:39 ; elapsed = 00:02:10 . Memory (MB): peak = 1754.414 ; gain = 515.777 ; free physical = 710 ; free virtual = 4841
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -4393,13 +4483,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:23 ; elapsed = 00:02:58 . Memory (MB): peak = 1760.297 ; gain = 545.730 ; free physical = 1809 ; free virtual = 5842
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:46 ; elapsed = 00:02:21 . Memory (MB): peak = 1754.414 ; gain = 515.777 ; free physical = 599 ; free virtual = 4721
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:24 ; elapsed = 00:02:58 . Memory (MB): peak = 1760.297 ; gain = 545.730 ; free physical = 1806 ; free virtual = 5839
+Finished Timing Optimization : Time (s): cpu = 00:01:47 ; elapsed = 00:02:21 . Memory (MB): peak = 1754.414 ; gain = 515.777 ; free physical = 596 ; free virtual = 4718
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -4411,7 +4501,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:25 ; elapsed = 00:02:59 . Memory (MB): peak = 1760.297 ; gain = 545.730 ; free physical = 1805 ; free virtual = 5838
+Finished Technology Mapping : Time (s): cpu = 00:01:48 ; elapsed = 00:02:22 . Memory (MB): peak = 1754.414 ; gain = 515.777 ; free physical = 593 ; free virtual = 4714
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -4473,7 +4563,7 @@ INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[2] to constant 0
 INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[1] to constant 0
 INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[0] to constant 0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:26 ; elapsed = 00:03:00 . Memory (MB): peak = 1760.297 ; gain = 545.730 ; free physical = 1805 ; free virtual = 5837
+Finished IO Insertion : Time (s): cpu = 00:01:49 ; elapsed = 00:02:23 . Memory (MB): peak = 1754.414 ; gain = 515.777 ; free physical = 590 ; free virtual = 4712
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -4486,7 +4576,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:26 ; elapsed = 00:03:00 . Memory (MB): peak = 1760.297 ; gain = 545.730 ; free physical = 1805 ; free virtual = 5837
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:49 ; elapsed = 00:02:23 . Memory (MB): peak = 1754.414 ; gain = 515.777 ; free physical = 590 ; free virtual = 4712
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -4498,25 +4588,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:26 ; elapsed = 00:03:00 . Memory (MB): peak = 1760.297 ; gain = 545.730 ; free physical = 1805 ; free virtual = 5837
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:49 ; elapsed = 00:02:23 . Memory (MB): peak = 1754.414 ; gain = 515.777 ; free physical = 590 ; free virtual = 4712
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:26 ; elapsed = 00:03:00 . Memory (MB): peak = 1760.297 ; gain = 545.730 ; free physical = 1805 ; free virtual = 5837
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:49 ; elapsed = 00:02:23 . Memory (MB): peak = 1754.414 ; gain = 515.777 ; free physical = 590 ; free virtual = 4712
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:26 ; elapsed = 00:03:01 . Memory (MB): peak = 1760.297 ; gain = 545.730 ; free physical = 1804 ; free virtual = 5837
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:49 ; elapsed = 00:02:24 . Memory (MB): peak = 1754.414 ; gain = 515.777 ; free physical = 590 ; free virtual = 4712
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:26 ; elapsed = 00:03:01 . Memory (MB): peak = 1760.297 ; gain = 545.730 ; free physical = 1804 ; free virtual = 5837
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:49 ; elapsed = 00:02:24 . Memory (MB): peak = 1754.414 ; gain = 515.777 ; free physical = 590 ; free virtual = 4712
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -4526,10 +4616,10 @@ Static Shift Register Report:
 +---------------+----------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 |Module Name    | RTL Name                                                                         | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
 +---------------+----------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|ila_v6_2_5_ila | ila_core_inst/u_ila_regs/adv_rb_drdy4_reg                                        | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|ila_v6_2_5_ila | ila_core_inst/shifted_data_in_reg[8][55]                                         | 9      | 56    | NO           | NO                 | YES               | 56     | 0       | 
-|ila_v6_2_5_ila | ila_core_inst/xsdb_memory_read_inst/multiple_read_latency.read_enable_out_reg[3] | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|ila_v6_2_5_ila | ila_core_inst/xsdb_memory_read_inst/multiple_enable_latency.enable_out_reg[3]    | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|ila_v6_2_7_ila | ila_core_inst/u_ila_regs/adv_rb_drdy4_reg                                        | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|ila_v6_2_7_ila | ila_core_inst/shifted_data_in_reg[8][55]                                         | 9      | 56    | NO           | NO                 | YES               | 56     | 0       | 
+|ila_v6_2_7_ila | ila_core_inst/xsdb_memory_read_inst/multiple_read_latency.read_enable_out_reg[3] | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|ila_v6_2_7_ila | ila_core_inst/xsdb_memory_read_inst/multiple_enable_latency.enable_out_reg[3]    | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 +---------------+----------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 ---------------------------------------------------------------------------------
@@ -4551,19 +4641,19 @@ Report Cell Usage:
 +------+---------+------+
 |1     |CARRY4   |    59|
 |2     |CFGLUT5  |   167|
-|3     |LUT1     |    45|
-|4     |LUT2     |    49|
-|5     |LUT3     |   106|
-|6     |LUT4     |   256|
-|7     |LUT5     |   168|
-|8     |LUT6     |   739|
-|9     |MUXF7    |    61|
-|10    |MUXF8    |    18|
+|3     |LUT1     |    47|
+|4     |LUT2     |    50|
+|5     |LUT3     |   114|
+|6     |LUT4     |   257|
+|7     |LUT5     |   166|
+|8     |LUT6     |   742|
+|9     |MUXF7    |    63|
+|10    |MUXF8    |    19|
 |11    |RAMB36E1 |     2|
 |12    |SRL16E   |    60|
 |13    |SRLC16E  |     2|
 |14    |SRLC32E  |    17|
-|15    |FDRE     |  2111|
+|15    |FDRE     |  2130|
 |16    |FDSE     |     9|
 +------+---------+------+
 
@@ -4571,10 +4661,10 @@ Report Instance Areas:
 +------+------------------------------------------------------------------------+-------------------------------------------------+------+
 |      |Instance                                                                |Module                                           |Cells |
 +------+------------------------------------------------------------------------+-------------------------------------------------+------+
-|1     |top                                                                     |                                                 |  3869|
-|2     |  U0                                                                    |ila_v6_2_5_ila                                   |  3869|
-|3     |    ila_core_inst                                                       |ila_v6_2_5_ila_core                              |  3862|
-|4     |      ila_trace_memory_inst                                             |ila_v6_2_5_ila_trace_memory                      |     2|
+|1     |top                                                                     |                                                 |  3904|
+|2     |  U0                                                                    |ila_v6_2_7_ila                                   |  3904|
+|3     |    ila_core_inst                                                       |ila_v6_2_7_ila_core                              |  3897|
+|4     |      ila_trace_memory_inst                                             |ila_v6_2_7_ila_trace_memory                      |     2|
 |5     |        \SUBCORE_RAM_BLK_MEM_1.trace_block_memory                       |blk_mem_gen_v8_3_6                               |     2|
 |6     |          inst_blk_mem_gen                                              |blk_mem_gen_v8_3_6_synth                         |     2|
 |7     |            \gnbram.gnativebmg.native_blk_mem_gen                       |blk_mem_gen_top                                  |     2|
@@ -4583,13 +4673,13 @@ Report Instance Areas:
 |10    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper                         |     1|
 |11    |                \ramloop[1].ram.r                                       |blk_mem_gen_prim_width__parameterized0           |     1|
 |12    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized0         |     1|
-|13    |      u_ila_cap_ctrl                                                    |ila_v6_2_5_ila_cap_ctrl_legacy                   |   276|
+|13    |      u_ila_cap_ctrl                                                    |ila_v6_2_7_ila_cap_ctrl_legacy                   |   277|
 |14    |        U_CDONE                                                         |ltlib_v1_0_0_cfglut6__parameterized0             |     5|
 |15    |        U_NS0                                                           |ltlib_v1_0_0_cfglut7                             |     6|
 |16    |        U_NS1                                                           |ltlib_v1_0_0_cfglut7_98                          |     6|
-|17    |        u_cap_addrgen                                                   |ila_v6_2_5_ila_cap_addrgen                       |   254|
+|17    |        u_cap_addrgen                                                   |ila_v6_2_7_ila_cap_addrgen                       |   254|
 |18    |          U_CMPRESET                                                    |ltlib_v1_0_0_cfglut6                             |     3|
-|19    |          u_cap_sample_counter                                          |ila_v6_2_5_ila_cap_sample_counter                |    60|
+|19    |          u_cap_sample_counter                                          |ila_v6_2_7_ila_cap_sample_counter                |    60|
 |20    |            U_SCE                                                       |ltlib_v1_0_0_cfglut4_105                         |     1|
 |21    |            U_SCMPCE                                                    |ltlib_v1_0_0_cfglut5_106                         |     1|
 |22    |            U_SCRST                                                     |ltlib_v1_0_0_cfglut6_107                         |     4|
@@ -4598,7 +4688,7 @@ Report Instance Areas:
 |25    |                DUT                                                     |ltlib_v1_0_0_all_typeA__parameterized2_110       |    12|
 |26    |                  \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE         |ltlib_v1_0_0_all_typeA_slice__parameterized1_111 |     5|
 |27    |                  \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE         |ltlib_v1_0_0_all_typeA_slice__parameterized2_112 |     5|
-|28    |          u_cap_window_counter                                          |ila_v6_2_5_ila_cap_window_counter                |    60|
+|28    |          u_cap_window_counter                                          |ila_v6_2_7_ila_cap_window_counter                |    60|
 |29    |            U_WCE                                                       |ltlib_v1_0_0_cfglut4                             |     1|
 |30    |            U_WHCMPCE                                                   |ltlib_v1_0_0_cfglut5                             |     1|
 |31    |            U_WLCMPCE                                                   |ltlib_v1_0_0_cfglut5_99                          |     1|
@@ -4612,8 +4702,8 @@ Report Instance Areas:
 |39    |                DUT                                                     |ltlib_v1_0_0_all_typeA__parameterized2           |    12|
 |40    |                  \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE         |ltlib_v1_0_0_all_typeA_slice__parameterized1     |     5|
 |41    |                  \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE         |ltlib_v1_0_0_all_typeA_slice__parameterized2     |     5|
-|42    |      u_ila_regs                                                        |ila_v6_2_5_ila_register                          |  2857|
-|43    |        U_XSDB_SLAVE                                                    |xsdbs_v1_0_2_xsdbs                               |   303|
+|42    |      u_ila_regs                                                        |ila_v6_2_7_ila_register                          |  2893|
+|43    |        U_XSDB_SLAVE                                                    |xsdbs_v1_0_2_xsdbs                               |   302|
 |44    |        reg_890                                                         |xsdbs_v1_0_2_reg__parameterized69                |    16|
 |45    |          \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_97                         |    16|
 |46    |        \MU_SRL[0].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s                             |    74|
@@ -4636,24 +4726,24 @@ Report Instance Areas:
 |63    |        \MU_SRL[9].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized8             |    74|
 |64    |        \STRG_QUAL.qual_strg_srl_reg                                    |xsdbs_v1_0_2_reg_p2s__parameterized18            |   106|
 |65    |        \TC_SRL[0].tc_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized17            |    76|
-|66    |        reg_15                                                          |xsdbs_v1_0_2_reg__parameterized51                |    38|
-|67    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_96                          |    38|
+|66    |        reg_15                                                          |xsdbs_v1_0_2_reg__parameterized51                |    39|
+|67    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_96                          |    39|
 |68    |        reg_16                                                          |xsdbs_v1_0_2_reg__parameterized52                |    19|
 |69    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_95                          |    19|
 |70    |        reg_17                                                          |xsdbs_v1_0_2_reg__parameterized53                |    19|
 |71    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_94                          |    19|
-|72    |        reg_18                                                          |xsdbs_v1_0_2_reg__parameterized54                |    38|
-|73    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_93                          |    38|
+|72    |        reg_18                                                          |xsdbs_v1_0_2_reg__parameterized54                |    37|
+|73    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_93                          |    37|
 |74    |        reg_19                                                          |xsdbs_v1_0_2_reg__parameterized55                |    19|
 |75    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_92                          |    19|
 |76    |        reg_1a                                                          |xsdbs_v1_0_2_reg__parameterized56                |    19|
 |77    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl__parameterized1_91          |    19|
 |78    |        reg_6                                                           |xsdbs_v1_0_2_reg__parameterized36                |    41|
 |79    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_90                          |    41|
-|80    |        reg_7                                                           |xsdbs_v1_0_2_reg__parameterized37                |    33|
-|81    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl__parameterized0             |    33|
-|82    |        reg_8                                                           |xsdbs_v1_0_2_reg__parameterized38                |     4|
-|83    |          \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_89                         |     4|
+|80    |        reg_7                                                           |xsdbs_v1_0_2_reg__parameterized37                |    35|
+|81    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl__parameterized0             |    35|
+|82    |        reg_8                                                           |xsdbs_v1_0_2_reg__parameterized38                |     5|
+|83    |          \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_89                         |     5|
 |84    |        reg_80                                                          |xsdbs_v1_0_2_reg__parameterized57                |    17|
 |85    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl__parameterized1_88          |    17|
 |86    |        reg_81                                                          |xsdbs_v1_0_2_reg__parameterized58                |    17|
@@ -4677,14 +4767,14 @@ Report Instance Areas:
 |104   |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl                             |    19|
 |105   |        reg_stream_ffe                                                  |xsdbs_v1_0_2_reg_stream__parameterized0          |    16|
 |106   |          \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat                            |    16|
-|107   |      u_ila_reset_ctrl                                                  |ila_v6_2_5_ila_reset_ctrl                        |    46|
+|107   |      u_ila_reset_ctrl                                                  |ila_v6_2_7_ila_reset_ctrl                        |    46|
 |108   |        arm_detection_inst                                              |ltlib_v1_0_0_rising_edge_detection               |     5|
 |109   |        \asyncrounous_transfer.arm_in_transfer_inst                     |ltlib_v1_0_0_async_edge_xfer                     |     7|
 |110   |        \asyncrounous_transfer.arm_out_transfer_inst                    |ltlib_v1_0_0_async_edge_xfer_77                  |     6|
 |111   |        \asyncrounous_transfer.halt_in_transfer_inst                    |ltlib_v1_0_0_async_edge_xfer_78                  |     7|
 |112   |        \asyncrounous_transfer.halt_out_transfer_inst                   |ltlib_v1_0_0_async_edge_xfer_79                  |     6|
 |113   |        halt_detection_inst                                             |ltlib_v1_0_0_rising_edge_detection_80            |     6|
-|114   |      u_trig                                                            |ila_v6_2_5_ila_trigger                           |   365|
+|114   |      u_trig                                                            |ila_v6_2_7_ila_trigger                           |   364|
 |115   |        \N_DDR_TC.N_DDR_TC_INST[0].U_TC                                 |ltlib_v1_0_0_match                               |    20|
 |116   |          \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst      |ltlib_v1_0_0_allx_typeA_72                       |    18|
 |117   |            DUT                                                         |ltlib_v1_0_0_all_typeA_73                        |    18|
@@ -4697,7 +4787,7 @@ Report Instance Areas:
 |124   |              \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE             |ltlib_v1_0_0_all_typeA_slice_69                  |     5|
 |125   |              \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE             |ltlib_v1_0_0_all_typeA_slice_70                  |     5|
 |126   |              \I_WHOLE_SLICE.G_SLICE_IDX[2].U_ALL_SRL_SLICE             |ltlib_v1_0_0_all_typeA_slice__parameterized0_71  |     6|
-|127   |        U_TM                                                            |ila_v6_2_5_ila_trig_match                        |   304|
+|127   |        U_TM                                                            |ila_v6_2_7_ila_trig_match                        |   304|
 |128   |          \N_DDR_MODE.G_NMU[0].U_M                                      |ltlib_v1_0_0_match__parameterized0               |    11|
 |129   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized0_66       |    10|
 |130   |              DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized0_67        |     8|
@@ -4776,16 +4866,16 @@ Report Instance Areas:
 |203   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized0          |     8|
 |204   |              DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized0           |     8|
 |205   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0     |     6|
-|206   |      xsdb_memory_read_inst                                             |ltlib_v1_0_0_generic_memrd                       |   130|
+|206   |      xsdb_memory_read_inst                                             |ltlib_v1_0_0_generic_memrd                       |   128|
 +------+------------------------------------------------------------------------+-------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:26 ; elapsed = 00:03:01 . Memory (MB): peak = 1760.297 ; gain = 545.730 ; free physical = 1804 ; free virtual = 5837
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:49 ; elapsed = 00:02:24 . Memory (MB): peak = 1754.414 ; gain = 515.777 ; free physical = 590 ; free virtual = 4712
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1163 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:16 ; elapsed = 00:02:39 . Memory (MB): peak = 1760.297 ; gain = 454.715 ; free physical = 1856 ; free virtual = 5889
-Synthesis Optimization Complete : Time (s): cpu = 00:02:26 ; elapsed = 00:03:01 . Memory (MB): peak = 1760.305 ; gain = 545.730 ; free physical = 1863 ; free virtual = 5896
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:39 ; elapsed = 00:02:02 . Memory (MB): peak = 1754.414 ; gain = 388.762 ; free physical = 644 ; free virtual = 4766
+Synthesis Optimization Complete : Time (s): cpu = 00:01:49 ; elapsed = 00:02:24 . Memory (MB): peak = 1754.422 ; gain = 515.777 ; free physical = 655 ; free virtual = 4777
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 307 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 310 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -4795,15 +4885,15 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   CFGLUT5 => SRLC32E: 23 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-439 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+519 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:29 ; elapsed = 00:03:03 . Memory (MB): peak = 1760.305 ; gain = 559.113 ; free physical = 1862 ; free virtual = 5895
-INFO: [Common 17-600] The following parameters have non-default value.
-tcl.collectionResultDisplayLimit
-INFO: [Common 17-1381] The checkpoint '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/ila_0_synth_1/ila_0.dcp' has been generated.
-INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/ila_0.xci
+synth_design: Time (s): cpu = 00:01:52 ; elapsed = 00:02:26 . Memory (MB): peak = 1754.422 ; gain = 515.883 ; free physical = 646 ; free virtual = 4769
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/ila_0_synth_1/ila_0.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/ila_0.xci
 INFO: [Coretcl 2-1174] Renamed 205 cell refs.
-INFO: [Common 17-1381] The checkpoint '/home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/ila_0_synth_1/ila_0.dcp' has been generated.
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/ila_0_synth_1/ila_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file ila_0_utilization_synth.rpt -pb ila_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.14 . Memory (MB): peak = 1784.309 ; gain = 0.000 ; free physical = 1848 ; free virtual = 5889
-INFO: [Common 17-206] Exiting Vivado at Sat Aug 11 23:37:06 2018...
+report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.13 . Memory (MB): peak = 1778.426 ; gain = 0.000 ; free physical = 596 ; free virtual = 4769
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 16 12:45:27 2018...

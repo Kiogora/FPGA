@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1534411817">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1539682963">
   <File Type="VDS-TIMING-PB" Name="led_top_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="led_top_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="led_top.dcp"/>
@@ -36,14 +36,14 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../../../../../Xilinx_projects/constraints/basys3.xdc">
+    <File Path="$PPRDIR/../../../../../build_systems/xilinx/constraints/basys3.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
     <Config>
-      <Option Name="TargetConstrsFile" Val="$PPRDIR/../../../../../Xilinx_projects/constraints/basys3.xdc"/>
+      <Option Name="TargetConstrsFile" Val="$PPRDIR/../../../../../build_systems/xilinx/constraints/basys3.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -53,6 +53,6 @@
       <Option Id="FlattenHierarchy">1</Option>
     </Step>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
   <BlockFileSet Type="BlockSrcs" Name="vio_core_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
 </GenRun>

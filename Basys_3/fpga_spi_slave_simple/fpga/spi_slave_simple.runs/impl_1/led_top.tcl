@@ -65,22 +65,13 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param board.repoPaths /home/alois/.vivado_boards
-  create_project -in_memory -part xc7a35tcpg236-1
-  set_property board_part_repo_paths /home/alois/.vivado_boards [current_project]
-  set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.cache/wt [current_project]
-  set_property parent.project_path /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.xpr [current_project]
-  set_property ip_output_repo /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.cache/ip [current_project]
+  reset_param project.defaultXPMLibraries 
+  open_checkpoint /home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/impl_1/led_top.dcp
+  set_property webtalk.parent_dir /home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.cache/wt [current_project]
+  set_property parent.project_path /home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.xpr [current_project]
+  set_property ip_output_repo /home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/led_top.dcp
-  read_ip -quiet /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/vio_core_0.xci
-  read_ip -quiet /home/alois/Music/esp32_spi_trials/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/ila_0.xci
-  read_xdc /home/alois/Xilinx_projects/constraints/basys3.xdc
-  link_design -top led_top -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
@@ -112,7 +103,9 @@ start_step place_design
 set ACTIVE_STEP place_design
 set rc [catch {
   create_msg_db place_design.pb
-  implement_debug_core 
+  if { [llength [get_debug_cores -quiet] ] > 0 }  { 
+    implement_debug_core 
+  } 
   place_design 
   write_checkpoint -force led_top_placed.dcp
   create_report "impl_1_place_report_io_0" "report_io -file led_top_io_placed.rpt"
@@ -138,9 +131,10 @@ set rc [catch {
   create_report "impl_1_route_report_methodology_0" "report_methodology -file led_top_methodology_drc_routed.rpt -pb led_top_methodology_drc_routed.pb -rpx led_top_methodology_drc_routed.rpx"
   create_report "impl_1_route_report_power_0" "report_power -file led_top_power_routed.rpt -pb led_top_power_summary_routed.pb -rpx led_top_power_routed.rpx"
   create_report "impl_1_route_report_route_status_0" "report_route_status -file led_top_route_status.rpt -pb led_top_route_status.pb"
-  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file led_top_timing_summary_routed.rpt -rpx led_top_timing_summary_routed.rpx -warn_on_violation "
+  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file led_top_timing_summary_routed.rpt -pb led_top_timing_summary_routed.pb -rpx led_top_timing_summary_routed.rpx -warn_on_violation "
   create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file led_top_incremental_reuse_routed.rpt"
   create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file led_top_clock_utilization_routed.rpt"
+  create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file led_top_bus_skew_routed.rpt -pb led_top_bus_skew_routed.pb -rpx led_top_bus_skew_routed.rpx"
   close_msg_db -file route_design.pb
 } RESULT]
 if {$rc} {
@@ -149,25 +143,6 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
-  unset ACTIVE_STEP 
-}
-
-start_step write_bitstream
-set ACTIVE_STEP write_bitstream
-set rc [catch {
-  create_msg_db write_bitstream.pb
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  catch { write_mem_info -force led_top.mmi }
-  write_bitstream -force led_top.bit 
-  catch {write_debug_probes -quiet -force led_top}
-  catch {file copy -force led_top.ltx debug_nets.ltx}
-  close_msg_db -file write_bitstream.pb
-} RESULT]
-if {$rc} {
-  step_failed write_bitstream
-  return -code error $RESULT
-} else {
-  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 
