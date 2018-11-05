@@ -65,13 +65,20 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  reset_param project.defaultXPMLibraries 
-  open_checkpoint /home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/impl_1/led_top.dcp
+  set_param xicom.use_bs_reader 1
+  create_project -in_memory -part xc7a35tcpg236-1
+  set_property design_mode GateLvl [current_fileset]
+  set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir /home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.cache/wt [current_project]
   set_property parent.project_path /home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.xpr [current_project]
   set_property ip_output_repo /home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+  add_files -quiet /home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.runs/synth_1/led_top.dcp
+  read_ip -quiet /home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/ila_0/ila_0.xci
+  read_ip -quiet /home/alois/Documents/projects/FPGA/Basys_3/fpga_spi_slave_simple/fpga/spi_slave_simple.srcs/sources_1/ip/vio_core_0/vio_core_0.xci
+  read_xdc /home/alois/Documents/build_systems/xilinx/constraints/basys3.xdc
+  link_design -top led_top -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
@@ -143,6 +150,25 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
+  unset ACTIVE_STEP 
+}
+
+start_step write_bitstream
+set ACTIVE_STEP write_bitstream
+set rc [catch {
+  create_msg_db write_bitstream.pb
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+  catch { write_mem_info -force led_top.mmi }
+  write_bitstream -force led_top.bit 
+  catch {write_debug_probes -quiet -force led_top}
+  catch {file copy -force led_top.ltx debug_nets.ltx}
+  close_msg_db -file write_bitstream.pb
+} RESULT]
+if {$rc} {
+  step_failed write_bitstream
+  return -code error $RESULT
+} else {
+  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 

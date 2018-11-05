@@ -108,7 +108,7 @@ void app_main()
     while(1)
     {
         set_read_basys3_leds(&tx, &spi);
-	vTaskDelay(10 / portTICK_PERIOD_MS);
+	vTaskDelay(2000 / portTICK_PERIOD_MS);
     }
 
 }

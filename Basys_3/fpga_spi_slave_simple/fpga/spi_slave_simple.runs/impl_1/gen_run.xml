@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1539683246">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1541254554">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BG-DRC" Name="led_top.drc"/>
   <File Type="BG-BGN" Name="led_top.bgn"/>
@@ -15,6 +15,7 @@
   <File Type="BG-BIT" Name="led_top.bit"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="led_top_bus_skew_postroute_physopted.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="led_top_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="led_top_bus_skew_postroute_physopted.rpt"/>
   <File Type="RDI-RDI" Name="led_top.vdi"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="led_top_timing_summary_postroute_physopted.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="led_top_timing_summary_postroute_physopted.pb"/>
@@ -68,8 +69,6 @@
   <File Type="REPORTS-TCL" Name="led_top_reports.tcl"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="led_top_bus_skew_routed.pb"/>
   <File Type="PA-TCL" Name="led_top.tcl"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="led_top_bus_skew_postroute_physopted.rpt"/>
-  <File Type="PA-DCP" Name="led_top.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/spi_slave_simple.vhd">

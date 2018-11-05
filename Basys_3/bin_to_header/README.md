@@ -17,6 +17,6 @@ xxd utility.
 
 ## Usage
 
-`bash mkarray.sh infile
+`bash mkarray.sh infile`
 
 Where infile is the name of the input binary file.

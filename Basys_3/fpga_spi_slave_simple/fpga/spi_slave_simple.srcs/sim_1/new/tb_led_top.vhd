@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 08/02/2018 11:26:09 AM
 -- Design Name: 
--- Module Name: tb_led_top - Behavioral
+-- Module Name: tb_LED_top - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -33,10 +33,10 @@ use STD.TEXTIO.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity tb_led_top is
-end tb_led_top;
+entity tb_LED_top is
+end tb_LED_top;
 
-architecture Behavioral of tb_led_top is
+architecture Behavioral of tb_LED_top is
 
 signal rst: std_logic ;
 signal clk: std_logic ;
